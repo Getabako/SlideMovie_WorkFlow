@@ -7,29 +7,24 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./remotion-project
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: List files for debugging
-        run: ls -R
-        working-directory: .
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'remotion-project/package-lock.json'
+          cache-dependency-path: remotion-project/package-lock.json
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./remotion-project
 
       - name: Render video
         run: npm run build
+        working-directory: ./remotion-project
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

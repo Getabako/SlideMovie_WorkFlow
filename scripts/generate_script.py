@@ -134,7 +134,7 @@ def generate_full_script(slide_file, output_file):
     print(f"\n原稿を保存しました: {output_file}")
 
     # テキスト版も保存
-    text_output = output_file.replace('.json', '.txt')
+    text_output = str(output_file).replace('.json', '.txt')
     with open(text_output, 'w', encoding='utf-8') as f:
         for script in scripts:
             f.write(f"=== スライド {script['index']}: {script['title']} ===\n\n")

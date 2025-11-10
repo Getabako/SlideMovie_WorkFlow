@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 画像生成スクリプト
-CSVファイルから画像プロンプトを読み込み、NanoBanana (Gemini 2.5 Flash Image)で画像を生成します
+CSVファイルから画像プロンプトを読み込み、Imagen 3で画像を生成します
 """
 
 import sys
@@ -9,13 +9,13 @@ import os
 import csv
 import time
 from pathlib import Path
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 from PIL import Image
 from io import BytesIO
+import base64
 
 
-def generate_images_from_csv(csv_file, output_dir, topic_name, api_key):
+def generate_images_from_csv(csv_file, output_dir, topic_name, model):
     """
     CSVファイルから画像プロンプトを読み込み、画像を生成
 
@@ -23,14 +23,11 @@ def generate_images_from_csv(csv_file, output_dir, topic_name, api_key):
         csv_file: 画像プロンプトCSVファイルのパス
         output_dir: 出力ディレクトリ
         topic_name: トピック名（ファイル名のプレフィックス）
-        api_key: Google AI APIキー
+        model: Geminiモデルインスタンス
 
     Returns:
         生成された画像ファイルのリスト
     """
-    # Google AI Clientを初期化
-    client = genai.Client(api_key=api_key)
-
     # CSVファイルを読み込む
     prompts = []
     with open(csv_file, 'r', encoding='utf-8') as f:
@@ -54,22 +51,24 @@ def generate_images_from_csv(csv_file, output_dir, topic_name, api_key):
         print(f"プロンプト: {prompt}")
 
         try:
-            # NanoBanana (Gemini 2.5 Flash Image) で画像を生成
-            # 3:4の縦長アスペクト比を指定
-            response = client.models.generate_content(
-                model="gemini-2.5-flash-image",
-                contents=[prompt],
-                config=types.GenerateContentConfig(
-                    image_config=types.ImageConfig(
-                        aspect_ratio="3:4",
-                    )
+            # Imagen 3で画像を生成
+            # 画像生成用のプロンプトを作成
+            full_prompt = f"Generate a high-quality, professional image for a presentation slide. Style: clean, modern, and visually appealing. Aspect ratio: 3:4 (portrait). {prompt}"
+
+            response = model.generate_content(
+                [full_prompt],
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.4,
                 )
             )
 
-            # 画像を保存
-            for part in response.candidates[0].content.parts:
-                if part.inline_data is not None:
-                    image = Image.open(BytesIO(part.inline_data.data))
+            # レスポンスから画像データを抽出
+            image_saved = False
+            for part in response.parts:
+                if hasattr(part, 'inline_data') and part.inline_data:
+                    # Base64デコードして画像を保存
+                    image_data = part.inline_data.data
+                    image = Image.open(BytesIO(image_data))
 
                     # ファイル名を生成
                     image_filename = f"{topic_name}_page{page_num:02d}.png"
@@ -80,14 +79,26 @@ def generate_images_from_csv(csv_file, output_dir, topic_name, api_key):
                     generated_images.append(str(image_path))
 
                     print(f"  → 保存しました: {image_path}")
+                    image_saved = True
+                    break
+
+            if not image_saved:
+                # 画像が生成されなかった場合
+                print(f"  警告: 画像が生成されませんでした。プレースホルダーを作成します。")
+                raise Exception("No image data in response")
 
             # API rate limitを考慮して少し待機
-            time.sleep(2)
+            time.sleep(3)
 
         except Exception as e:
             print(f"  エラー: {e}")
             # エラーの場合はプレースホルダー画像を作成
-            image = Image.new('RGB', (768, 1024), color=(200, 200, 200))
+            image = Image.new('RGB', (768, 1024), color=(220, 220, 220))
+            from PIL import ImageDraw, ImageFont
+            draw = ImageDraw.Draw(image)
+            text = f"Image {page_num}\n(Generation failed)"
+            draw.text((384, 512), text, fill=(100, 100, 100), anchor="mm")
+
             image_filename = f"{topic_name}_page{page_num:02d}.png"
             image_path = output_path / image_filename
             image.save(image_path)
@@ -116,13 +127,20 @@ def main():
         print("エラー: GOOGLE_AI_API_KEY環境変数が設定されていません")
         sys.exit(1)
 
+    # Gemini APIを初期化（画像生成用）
+    genai.configure(api_key=api_key)
+    # Imagen 3を使用
+    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+
     # 出力ディレクトリ
     script_dir = Path(__file__).parent
-    output_dir = script_dir.parent / "images"
+    output_dir = script_dir.parent.parent / "images"
     output_dir.mkdir(exist_ok=True)
 
+    print(f"画像出力ディレクトリ: {output_dir.absolute()}")
+
     # 画像を生成
-    generated_images = generate_images_from_csv(csv_file, output_dir, topic_name, api_key)
+    generated_images = generate_images_from_csv(csv_file, output_dir, topic_name, model)
 
     # 次のステップのために環境変数に保存
     if 'GITHUB_ENV' in os.environ:

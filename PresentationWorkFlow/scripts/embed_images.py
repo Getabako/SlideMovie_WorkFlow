@@ -76,6 +76,9 @@ def embed_images_in_slides(slide_file, image_dir, topic_name, output_file, use_s
     # 各スライドに画像を埋め込む
     image_path = Path(image_dir)
 
+    print(f"\n画像ディレクトリ: {image_path.absolute()}")
+    print(f"スライドファイル: {Path(slide_file).absolute()}")
+
     for i, slide in enumerate(slides, start=1):
         # ページ区切り
         if i > 1:
@@ -94,6 +97,11 @@ def embed_images_in_slides(slide_file, image_dir, topic_name, output_file, use_s
             image_file = image_path / image_filename
             image_exists = image_file.exists()
 
+            print(f"\nページ {i}:")
+            print(f"  画像ファイル名: {image_filename}")
+            print(f"  画像パス: {image_file.absolute()}")
+            print(f"  存在: {image_exists}")
+
             if image_exists:
                 # スライドファイルからの相対パスを計算
                 # slides/ から images/ へは ../images/... となる
@@ -101,9 +109,11 @@ def embed_images_in_slides(slide_file, image_dir, topic_name, output_file, use_s
                 try:
                     relative_path = image_file.relative_to(slide_dir.parent)
                     image_url = str(Path('..') / relative_path).replace('\\', '/')
+                    print(f"  相対パス: {image_url}")
                 except ValueError:
                     # 相対パスが計算できない場合は絶対パスを使用
                     image_url = str(image_file.absolute()).replace('\\', '/')
+                    print(f"  絶対パス: {image_url}")
 
         # 画像を配置
         if image_exists:
@@ -112,9 +122,11 @@ def embed_images_in_slides(slide_file, image_dir, topic_name, output_file, use_s
             content.append(f"![bg right:40% fit]({image_url})")
             content.append("")
             content.append(slide)
+            print(f"  → 画像を埋め込みました: ![bg right:40% fit]({image_url})")
         else:
             # 画像がない場合は元のスライドをそのまま追加
             content.append(slide)
+            print(f"  → 画像なし（スライドのみ）")
 
         content.append("")
 

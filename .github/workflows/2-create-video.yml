@@ -74,7 +74,6 @@ jobs:
 
       - name: Generate audio
         run: |
-          SCRIPT_FILE=$(ls -t scripts_output/*.json | head -1)
           python3 scripts/generate_audio.py "$SCRIPT_FILE"
 
       - name: Generate timings
@@ -109,7 +108,7 @@ jobs:
         run: |
           cp remotion-project/out/video.mp4 videos/${{ github.event.inputs.presentation_name }}/
           cp audio_output/video_timings.json videos/${{ github.event.inputs.presentation_name }}/
-          cp -r scripts_output videos/${{ github.event.inputs.presentation_name }}/
+          cp -r presentations/scripts_output videos/${{ github.event.inputs.presentation_name }}/scripts_output
           cp -r audio_output videos/${{ github.event.inputs.presentation_name }}/
 
       - name: Create safe artifact name
@@ -142,7 +141,7 @@ jobs:
       - name: Commit video files
         run: |
           git add videos/${{ github.event.inputs.presentation_name }}/
-          git add scripts_output/
+          git add presentations/scripts_output/ || true
           git add audio_output/
           git commit -m "feat: Add video - ${{ github.event.inputs.presentation_name }}
 

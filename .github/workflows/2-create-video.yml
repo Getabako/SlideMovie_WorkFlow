@@ -110,10 +110,26 @@ jobs:
           cp -r scripts_output videos/${{ github.event.inputs.presentation_name }}/
           cp -r audio_output videos/${{ github.event.inputs.presentation_name }}/
 
-      - name: Upload video artifact
+      - name: Create safe artifact name
+        id: artifact_name
+        run: |
+          # 日本語を含むプレゼンテーション名をASCII安全な名前に変換
+          SAFE_NAME=$(echo "${{ github.event.inputs.presentation_name }}" | iconv -t ascii//TRANSLIT 2>/dev/null || echo "video")
+          SAFE_NAME=$(echo "$SAFE_NAME" | sed 's/[^a-zA-Z0-9_-]/_/g')
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          ARTIFACT_NAME="video_${SAFE_NAME}_${TIMESTAMP}"
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
+
+      - name: Upload video MP4
         uses: actions/upload-artifact@v4
         with:
-          name: video-${{ github.event.inputs.presentation_name }}
+          name: ${{ env.ARTIFACT_NAME }}_MP4
+          path: videos/${{ github.event.inputs.presentation_name }}/video.mp4
+
+      - name: Upload all video files
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}_ALL
           path: videos/${{ github.event.inputs.presentation_name }}/
 
       - name: Configure Git
@@ -139,13 +155,21 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Presentation:** ${{ github.event.inputs.presentation_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Download Artifacts:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.ARTIFACT_NAME }}_MP4\` - Final video (ready to use)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.ARTIFACT_NAME }}_ALL\` - All files including scripts and audio" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Files saved to repository:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`videos/${{ github.event.inputs.presentation_name }}/\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Generated Files:**" >> $GITHUB_STEP_SUMMARY
-          echo "- Video with character animations (videos/${{ github.event.inputs.presentation_name }}/video.mp4)" >> $GITHUB_STEP_SUMMARY
+          echo "- Video with character animations" >> $GITHUB_STEP_SUMMARY
           echo "- Subtitles and timing data" >> $GITHUB_STEP_SUMMARY
           echo "- Audio files" >> $GITHUB_STEP_SUMMARY
           echo "- Script data" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Features:**" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Slide images as background" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ Talk animation when speaking (talk1-6)" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ Idle animation when not speaking (idle1-6)" >> $GITHUB_STEP_SUMMARY
           echo "- ✅ Auto-generated subtitles" >> $GITHUB_STEP_SUMMARY

@@ -22,17 +22,20 @@ def get_audio_duration(audio_file):
     audio = AudioSegment.from_file(audio_file)
     return len(audio) / 1000.0  # ミリ秒から秒に変換
 
-def split_text_into_segments(text, max_chars=40):
+def split_text_into_segments(text, max_chars_per_line=25, max_lines=2):
     """
-    テキストを字幕用のセグメントに分割
+    テキストを字幕用のセグメントに分割（最大2行まで）
 
     Args:
         text: 原稿テキスト
-        max_chars: 1行あたりの最大文字数
+        max_chars_per_line: 1行あたりの最大文字数
+        max_lines: 1セグメントあたりの最大行数
 
     Returns:
         分割されたテキストのリスト
     """
+    max_segment_chars = max_chars_per_line * max_lines
+
     # 句読点で分割
     sentences = []
     current = ""
@@ -47,22 +50,25 @@ def split_text_into_segments(text, max_chars=40):
     if current.strip():
         sentences.append(current.strip())
 
-    # 長い文を分割
+    # 長い文を分割してセグメントを生成
     segments = []
     for sentence in sentences:
-        if len(sentence) <= max_chars:
+        if len(sentence) <= max_segment_chars:
             segments.append(sentence)
         else:
             # 読点で分割を試みる
             parts = sentence.split('、')
             current_segment = ""
             for part in parts:
-                if len(current_segment + part) <= max_chars:
-                    current_segment += part + '、'
+                # 次のパートを追加しても最大文字数を超えない場合
+                test_segment = current_segment + part + ('、' if part != parts[-1] else '')
+                if len(test_segment) <= max_segment_chars:
+                    current_segment = test_segment
                 else:
+                    # 現在のセグメントを保存
                     if current_segment:
                         segments.append(current_segment.rstrip('、'))
-                    current_segment = part + '、'
+                    current_segment = part + ('、' if part != parts[-1] else '')
 
             if current_segment:
                 segments.append(current_segment.rstrip('、'))

@@ -7,6 +7,7 @@ Gemini APIを使用してスライドの内容から自然な原稿を生成し�
 import sys
 import os
 import json
+import re
 from pathlib import Path
 import google.generativeai as genai
 
@@ -51,6 +52,35 @@ def parse_marp_slides(slide_file):
 
     return slides
 
+def clean_declarative_phrases(script):
+    """
+    原稿から不要な宣言的フレーズを削除
+
+    Args:
+        script: 生成された原稿テキスト
+
+    Returns:
+        クリーンアップされた原稿テキスト
+    """
+    # 削除するパターン（正規表現）
+    patterns_to_remove = [
+        r'^.*これからスライド\d+の原稿を作成します.*[\n。]?',  # 冒頭の作成宣言
+        r'^.*スライド\d+の原稿を作成します.*[\n。]?',
+        r'^.*では、?スライド\d+.*[\n。]?',
+        r'^.*それでは、?スライド\d+.*[\n。]?',
+        r'^.*次に、?スライド\d+.*[\n。]?',
+        r'^.*続いて、?スライド\d+.*[\n。]?',
+    ]
+
+    cleaned = script
+    for pattern in patterns_to_remove:
+        cleaned = re.sub(pattern, '', cleaned, flags=re.MULTILINE | re.IGNORECASE)
+
+    # 先頭の空白行を削除
+    cleaned = cleaned.lstrip('\n').strip()
+
+    return cleaned
+
 def generate_script_for_slide(model, slide, total_slides):
     """
     1枚のスライドに対する原稿を生成
@@ -84,7 +114,12 @@ def generate_script_for_slide(model, slide, total_slides):
 """
 
     response = model.generate_content(prompt)
-    return response.text.strip()
+    script = response.text.strip()
+
+    # 不要な宣言的フレーズを削除
+    script = clean_declarative_phrases(script)
+
+    return script
 
 def generate_full_script(slide_file, output_file):
     """

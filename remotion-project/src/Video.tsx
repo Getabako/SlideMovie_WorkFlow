@@ -63,10 +63,10 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     (slide) => frame >= slide.startFrame && frame < slide.endFrame
   );
 
-  // 字幕として現在のスライドの原稿全体を表示
-  const currentSubtitle = currentSlide ? {
-    text: currentSlide.fullScript
-  } : null;
+  // 現在の字幕を見つける（セグメント方式）
+  const currentSubtitle = currentSlide?.subtitles.find(
+    (subtitle) => frame >= subtitle.startFrame && frame < subtitle.endFrame
+  );
 
   // 音声が再生中かどうかを判定（簡易的に、スライドが存在する場合は話している）
   const isTalking = currentSlide !== undefined;
@@ -74,8 +74,8 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
   // 使用する画像配列を選択
   const images = isTalking ? talkImages : idleImages;
 
-  // 5フレームごとに画像を切り替える
-  const imageIndex = Math.floor(frame / 5) % images.length;
+  // 3フレームごとに画像を切り替える（口パクを早く）
+  const imageIndex = Math.floor(frame / 3) % images.length;
   const imageToShow = images[imageIndex];
 
   // 現在のスライド画像を取得
@@ -138,30 +138,23 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
         <div
           style={{
             position: "absolute",
-            bottom: 60,
+            bottom: 80,
             left: 0,
             right: 0,
             textAlign: "center",
-            padding: "0 40px",
+            padding: "0 60px",
           }}
         >
           <div
             style={{
-              display: "inline-block",
-              backgroundColor: "rgba(0, 0, 0, 0.85)",
               color: "white",
-              fontSize: 32,
-              padding: "20px 35px",
-              borderRadius: 8,
-              maxWidth: "90%",
-              maxHeight: "350px",
-              lineHeight: 1.6,
+              fontSize: 48,
+              lineHeight: 1.4,
               fontWeight: "bold",
-              textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
-              border: "2px solid rgba(255, 255, 255, 0.3)",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "pre-wrap",
+              textShadow: "3px 3px 6px rgba(0,0,0,0.95), -1px -1px 3px rgba(0,0,0,0.95), 1px -1px 3px rgba(0,0,0,0.95), -1px 1px 3px rgba(0,0,0,0.95)",
+              fontFamily: "'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif",
+              maxWidth: "85%",
+              margin: "0 auto",
             }}
           >
             {currentSubtitle.text}

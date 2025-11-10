@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+*.log
+.env
+
+# Build outputs (keep in repo for archival)
+# slides/
+# images/
+# output/
+# presentations/
+# videos/
+# scripts_output/
+# audio_output/
+# slide_images/
+
+# Temporary files
+.tmp/
+*.tmp

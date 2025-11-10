@@ -18,6 +18,14 @@ const talkImages = [
   staticFile("talk6.png"),
 ];
 
+// スライド画像のメタデータをインポート
+let slidesMetadata: any;
+try {
+  slidesMetadata = require("../slides_metadata.json");
+} catch (error) {
+  slidesMetadata = { total_slides: 0, slides: [] };
+}
+
 interface Subtitle {
   text: string;
   start: number;
@@ -70,28 +78,59 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
   const imageIndex = Math.floor(frame / 5) % images.length;
   const imageToShow = images[imageIndex];
 
+  // 現在のスライド画像を取得
+  const currentSlideImage = currentSlide
+    ? staticFile(`slides/slide_${String(currentSlide.index).padStart(2, '0')}.png`)
+    : null;
+
   return (
     <div
       style={{
         width: "100%",
         height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
+        position: "relative",
         backgroundColor: "#2d2d2d",
       }}
     >
-      {/* キャラクター */}
+      {/* スライド画像（背景） */}
+      {currentSlideImage && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Img
+            src={currentSlideImage}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      )}
+
+      {/* キャラクター（右下に配置） */}
       <div
         style={{
-          flex: 1,
+          position: "absolute",
+          bottom: 120,
+          right: 80,
+          width: "300px",
+          height: "300px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Img src={imageToShow} style={{ height: "80%" }} />
+        <Img src={imageToShow} style={{ height: "100%" }} />
       </div>
 
       {/* 字幕 */}
@@ -99,25 +138,26 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
         <div
           style={{
             position: "absolute",
-            bottom: 100,
+            bottom: 60,
             left: 0,
             right: 0,
             textAlign: "center",
-            padding: "20px 40px",
+            padding: "0 40px",
           }}
         >
           <div
             style={{
               display: "inline-block",
-              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              backgroundColor: "rgba(0, 0, 0, 0.85)",
               color: "white",
-              fontSize: 48,
-              padding: "20px 40px",
-              borderRadius: 10,
-              maxWidth: "80%",
-              lineHeight: 1.5,
+              fontSize: 42,
+              padding: "15px 30px",
+              borderRadius: 8,
+              maxWidth: "85%",
+              lineHeight: 1.4,
               fontWeight: "bold",
               textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
             }}
           >
             {currentSubtitle.text}

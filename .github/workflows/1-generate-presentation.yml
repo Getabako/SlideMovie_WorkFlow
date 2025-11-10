@@ -1,0 +1,154 @@
+name: 1. Generate Presentation
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_file:
+        description: 'Input YAML file path (e.g., inputs/ai_industry_trends_2025.yml)'
+        required: true
+        default: 'inputs/ai_industry_trends_2025.yml'
+  push:
+    paths:
+      - 'inputs/*.yml'
+
+jobs:
+  generate-presentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Python dependencies
+        run: |
+          pip install pyyaml google-generativeai pillow
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Determine input file
+        id: input
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "INPUT_FILE=${{ github.event.inputs.input_file }}" >> $GITHUB_ENV
+          else
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^inputs/.*\.yml$' | head -1)
+            if [ -z "$CHANGED_FILES" ]; then
+              echo "No input YAML file changed"
+              exit 1
+            fi
+            echo "INPUT_FILE=$CHANGED_FILES" >> $GITHUB_ENV
+          fi
+          echo "Using input file: $INPUT_FILE"
+
+      - name: Get topic name
+        id: topic
+        run: |
+          TOPIC=$(python3 -c "
+          import yaml, sys
+          with open('${{ env.INPUT_FILE }}', 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f)
+              topic = data.get('topic', 'presentation')
+              safe_topic = topic.replace(' ', '_').replace('/', '_').replace('\\\\', '_')
+              print(safe_topic)
+          ")
+          echo "TOPIC_NAME=$TOPIC" >> $GITHUB_ENV
+
+      - name: Create directories
+        run: |
+          mkdir -p slides
+          mkdir -p images
+          mkdir -p output
+          mkdir -p presentations/${{ env.TOPIC_NAME }}
+
+      - name: Step 1 - Create slide
+        run: |
+          python3 scripts/create_slide.py ${{ env.INPUT_FILE }}
+
+      - name: Step 2 - Generate image prompts
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          python3 PresentationWorkFlow/scripts/generate_image_prompts.py slides/${{ env.TOPIC_NAME }}_slide.md
+
+      - name: Step 3 - Generate images
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          python3 PresentationWorkFlow/scripts/generate_images.py slides/${{ env.TOPIC_NAME }}_imageprompt.csv ${{ env.TOPIC_NAME }}
+
+      - name: Step 4 - Embed images in slides
+        run: |
+          python3 PresentationWorkFlow/scripts/embed_images.py slides/${{ env.TOPIC_NAME }}_slide.md images ${{ env.TOPIC_NAME }}
+
+      - name: Step 5 - Convert to HTML and PDF
+        run: |
+          marp slides/${{ env.TOPIC_NAME }}_slide_with_images.md -o output/${{ env.TOPIC_NAME }}.html --html --allow-local-files
+          marp slides/${{ env.TOPIC_NAME }}_slide_with_images.md -o output/${{ env.TOPIC_NAME }}.pdf --pdf --allow-local-files
+
+      - name: Step 6 - Export slides as individual images
+        run: |
+          marp slides/${{ env.TOPIC_NAME }}_slide_with_images.md -o presentations/${{ env.TOPIC_NAME }}/slide-%d.png --images png --allow-local-files
+
+      - name: Copy files to presentation directory
+        run: |
+          cp ${{ env.INPUT_FILE }} presentations/${{ env.TOPIC_NAME }}/input.yml
+          cp slides/${{ env.TOPIC_NAME }}_slide.md presentations/${{ env.TOPIC_NAME }}/
+          cp slides/${{ env.TOPIC_NAME }}_slide_with_images.md presentations/${{ env.TOPIC_NAME }}/
+          cp slides/${{ env.TOPIC_NAME }}_imageprompt.csv presentations/${{ env.TOPIC_NAME }}/ || true
+          cp -r images presentations/${{ env.TOPIC_NAME }}/
+          cp output/${{ env.TOPIC_NAME }}.html presentations/${{ env.TOPIC_NAME }}/
+          cp output/${{ env.TOPIC_NAME }}.pdf presentations/${{ env.TOPIC_NAME }}/
+
+      - name: Upload presentation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-${{ env.TOPIC_NAME }}
+          path: presentations/${{ env.TOPIC_NAME }}/
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit presentation files
+        run: |
+          git add presentations/${{ env.TOPIC_NAME }}/
+          git add slides/
+          git add images/
+          git add output/
+          git commit -m "feat: Add presentation - ${{ env.TOPIC_NAME }}
+
+          Generated from ${{ env.INPUT_FILE }}
+
+          🤖 Generated by GitHub Actions" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+
+      - name: Summary
+        run: |
+          echo "## Presentation Generated! 🎨" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Topic:** ${{ env.TOPIC_NAME }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Generated Files:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Markdown slides with images" >> $GITHUB_STEP_SUMMARY
+          echo "- HTML presentation" >> $GITHUB_STEP_SUMMARY
+          echo "- PDF presentation" >> $GITHUB_STEP_SUMMARY
+          echo "- Individual slide images" >> $GITHUB_STEP_SUMMARY
+          echo "- AI-generated content images" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Next Step:**" >> $GITHUB_STEP_SUMMARY
+          echo "Run workflow '2. Create Video' to generate video with character and subtitles" >> $GITHUB_STEP_SUMMARY

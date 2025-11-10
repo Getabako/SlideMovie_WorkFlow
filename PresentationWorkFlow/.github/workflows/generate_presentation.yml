@@ -1,0 +1,113 @@
+name: Generate Presentation with AI Images
+
+on:
+  # 手動実行を許可
+  workflow_dispatch:
+    inputs:
+      input_file:
+        description: '入力YAMLファイルのパス（例: inputs/sample.yml）'
+        required: true
+        default: 'inputs/sample.yml'
+
+  # プッシュ時に自動実行（inputsディレクトリのYAMLファイルが変更された場合）
+  push:
+    paths:
+      - 'inputs/*.yml'
+
+jobs:
+  generate_presentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python環境のセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 依存関係のインストール
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Node.js環境のセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Marp CLIのインストール
+        run: |
+          npm install -g @marp-team/marp-cli
+
+      - name: 入力ファイルの決定
+        id: input
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            INPUT_FILE="${{ github.event.inputs.input_file }}"
+          else
+            # pushイベントの場合、変更されたYAMLファイルを使用
+            # git diffで変更ファイルを検出（エラーを無視）
+            INPUT_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} 2>/dev/null | grep '^inputs/.*\.yml$' | head -n 1 || true)
+
+            # 変更ファイルが見つからない場合は、inputs/配下のYAMLファイルを検索
+            if [ -z "$INPUT_FILE" ]; then
+              echo "git diffで変更ファイルが見つかりませんでした。inputs/配下を検索します。"
+              INPUT_FILE=$(ls inputs/*.yml 2>/dev/null | head -n 1 || echo "inputs/sample.yml")
+            fi
+          fi
+          echo "input_file=$INPUT_FILE" >> $GITHUB_OUTPUT
+          echo "使用する入力ファイル: $INPUT_FILE"
+
+      - name: スライドの作成
+        run: |
+          python scripts/create_slide.py "${{ steps.input.outputs.input_file }}"
+
+      - name: 画像プロンプトの生成
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          python scripts/generate_image_prompts.py "${{ env.SLIDE_FILE }}"
+
+      - name: 画像の生成
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          python scripts/generate_images.py "${{ env.IMAGE_PROMPT_CSV }}" "${{ env.TOPIC_NAME }}"
+
+      - name: 画像をサーバーにアップロード
+        env:
+          UPLOAD_PASSWORD: ${{ secrets.IMAGE_UPLOAD_PASSWORD }}
+        run: |
+          python scripts/upload_images.py "${{ env.IMAGE_DIR }}" "${{ env.TOPIC_NAME }}" "$UPLOAD_PASSWORD"
+
+      - name: スライドに画像を埋め込む
+        run: |
+          python scripts/embed_images.py "${{ env.SLIDE_FILE }}" "${{ env.IMAGE_DIR }}" "${{ env.TOPIC_NAME }}"
+
+      - name: MarpでPDFを生成
+        run: |
+          # 出力ディレクトリを作成
+          mkdir -p output
+
+          # PDFに変換（ローカル画像を使用）
+          marp "${{ env.FINAL_SLIDE_FILE }}" -o "output/${{ env.TOPIC_NAME }}.pdf" --pdf --allow-local-files
+
+      - name: 成果物のアップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-${{ env.TOPIC_NAME }}
+          path: |
+            output/${{ env.TOPIC_NAME }}.pdf
+            slides/${{ env.TOPIC_NAME }}_slide_with_images.md
+            images/${{ env.TOPIC_NAME }}_*.png
+
+      - name: 成果物をリポジトリにコミット（オプション）
+        if: github.event_name == 'push'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add output/ slides/ images/
+          git diff --staged --quiet || git commit -m "Generate presentation: ${{ env.TOPIC_NAME }}"
+          git push

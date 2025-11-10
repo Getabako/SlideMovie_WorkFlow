@@ -9,7 +9,7 @@ import os
 import csv
 import re
 from pathlib import Path
-import google.generativeai as genai
+from google import genai
 
 
 def parse_slides(slide_file):
@@ -45,18 +45,20 @@ def parse_slides(slide_file):
     return slides
 
 
-def generate_image_prompt(slide_content, slide_number, model):
+def generate_image_prompt(slide_content, slide_number, api_key):
     """
     Gemini APIを使用してスライド内容から画像プロンプトを生成
 
     Args:
         slide_content: スライドの内容
         slide_number: スライド番号
-        model: Geminiモデルインスタンス
+        api_key: Google AI APIキー
 
     Returns:
         生成された画像プロンプト
     """
+    client = genai.Client(api_key=api_key)
+
     prompt = f"""以下のスライドの内容に基づいて、このスライドに添える画像の説明（画像生成AIへのプロンプト）を作成してください。
 
 スライド内容:
@@ -71,18 +73,22 @@ def generate_image_prompt(slide_content, slide_number, model):
 
 画像プロンプト（日本語または英語）:"""
 
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",
+        contents=prompt
+    )
+
     return response.text.strip()
 
 
-def create_image_prompts_csv(slide_file, output_dir, model):
+def create_image_prompts_csv(slide_file, output_dir, api_key):
     """
     スライドファイルから画像プロンプトCSVを作成
 
     Args:
         slide_file: スライドファイルのパス
         output_dir: 出力ディレクトリ
-        model: Geminiモデルインスタンス
+        api_key: Google AI APIキー
 
     Returns:
         生成されたCSVファイルのパス
@@ -104,7 +110,7 @@ def create_image_prompts_csv(slide_file, output_dir, model):
 
             # Gemini APIを使用してプロンプトを生成
             try:
-                image_prompt = generate_image_prompt(slide_content, i, model)
+                image_prompt = generate_image_prompt(slide_content, i, api_key)
                 writer.writerow([i, image_prompt])
                 print(f"  → {image_prompt}")
             except Exception as e:
@@ -139,17 +145,13 @@ def main():
         print("エラー: GOOGLE_AI_API_KEY環境変数が設定されていません")
         sys.exit(1)
 
-    # Gemini APIを初期化
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.0-flash-exp')
-
     # 出力ディレクトリ
     script_dir = Path(__file__).parent
-    output_dir = script_dir.parent.parent / "slides"
+    output_dir = script_dir.parent / "slides"
     output_dir.mkdir(exist_ok=True)
 
     # 画像プロンプトCSVを作成
-    csv_file = create_image_prompts_csv(slide_file, output_dir, model)
+    csv_file = create_image_prompts_csv(slide_file, output_dir, api_key)
 
     # 次のステップのために環境変数に保存
     if 'GITHUB_ENV' in os.environ:

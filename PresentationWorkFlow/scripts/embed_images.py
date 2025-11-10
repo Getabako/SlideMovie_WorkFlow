@@ -108,8 +108,8 @@ def embed_images_in_slides(slide_file, image_dir, topic_name, output_file, use_s
         # 画像を配置
         if image_exists:
             # Marpのbg directiveを使用して画像を右側に配置
-            # bg right:40% を使用して右側40%を画像に割り当て
-            content.append(f"![bg right:40%]({image_url})")
+            # bg right:40% fit を使用して右側40%を画像に割り当て、縦幅をスライドに合わせる
+            content.append(f"![bg right:40% fit]({image_url})")
             content.append("")
             content.append(slide)
         else:

@@ -89,10 +89,16 @@ jobs:
           GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
         run: |
           python3 PresentationWorkFlow/scripts/generate_images.py slides/${{ env.TOPIC_NAME }}_imageprompt.csv ${{ env.TOPIC_NAME }}
+          echo "Generated images:"
+          ls -la images/ || echo "No images directory"
 
       - name: Step 4 - Embed images in slides
         run: |
           python3 PresentationWorkFlow/scripts/embed_images.py slides/${{ env.TOPIC_NAME }}_slide.md images ${{ env.TOPIC_NAME }}
+          echo "Checking embedded slide file:"
+          ls -la slides/${{ env.TOPIC_NAME }}_slide_with_images.md
+          echo "First 50 lines of embedded slide:"
+          head -50 slides/${{ env.TOPIC_NAME }}_slide_with_images.md
 
       - name: Step 5 - Convert to HTML and PDF
         run: |

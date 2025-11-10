@@ -21,10 +21,26 @@ def prepare_slides(presentation_dir, output_dir):
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    # スライド画像を検索
+    # スライド画像を検索（複数のパターンを試す）
+    print(f"スライド画像を検索中: {presentation_path}")
+    print(f"ディレクトリの内容:")
+    for item in presentation_path.iterdir():
+        print(f"  - {item.name}")
+
+    # パターン1: slide-*.png (Marpのデフォルト)
     slide_images = sorted(presentation_path.glob("slide-*.png"))
 
+    # パターン2: *.png (全てのPNG画像)
     if not slide_images:
+        print("slide-*.png が見つかりません。全てのPNG画像を検索します...")
+        slide_images = sorted(presentation_path.glob("*.png"))
+
+    if not slide_images:
+        # デバッグ情報を表示
+        all_files = list(presentation_path.iterdir())
+        print(f"\nディレクトリ内のファイル一覧 ({len(all_files)} 個):")
+        for f in all_files:
+            print(f"  - {f.name}")
         raise FileNotFoundError(f"スライド画像が見つかりません: {presentation_dir}")
 
     print(f"スライド画像数: {len(slide_images)}")

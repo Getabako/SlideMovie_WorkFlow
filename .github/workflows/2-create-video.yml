@@ -78,16 +78,16 @@ jobs:
 
       - name: Generate timings
         run: |
-          python3 scripts/generate_timings.py audio_output/audio_metadata.json
+          python3 scripts/generate_timings.py "$AUDIO_METADATA"
 
       - name: Prepare Remotion project
         run: |
           # タイミングデータをコピー
-          cp audio_output/video_timings.json remotion-project/timings.json
+          cp $AUDIO_DIR/video_timings.json remotion-project/timings.json
 
           # 音声ファイルをコピー
           mkdir -p remotion-project/public/audio
-          cp audio_output/*.mp3 remotion-project/public/audio/
+          cp $AUDIO_DIR/*.mp3 remotion-project/public/audio/
 
           # スライド画像をコピー
           mkdir -p remotion-project/public/slides
@@ -107,9 +107,9 @@ jobs:
       - name: Copy video and related files
         run: |
           cp remotion-project/out/video.mp4 videos/${{ github.event.inputs.presentation_name }}/
-          cp audio_output/video_timings.json videos/${{ github.event.inputs.presentation_name }}/
+          cp $AUDIO_DIR/video_timings.json videos/${{ github.event.inputs.presentation_name }}/
           cp -r presentations/scripts_output videos/${{ github.event.inputs.presentation_name }}/scripts_output
-          cp -r audio_output videos/${{ github.event.inputs.presentation_name }}/
+          cp -r $AUDIO_DIR videos/${{ github.event.inputs.presentation_name }}/audio_output
 
       - name: Create safe artifact name
         id: artifact_name
@@ -142,7 +142,7 @@ jobs:
         run: |
           git add videos/${{ github.event.inputs.presentation_name }}/
           git add presentations/scripts_output/ || true
-          git add audio_output/
+          git add presentations/audio_output/ || true
           git commit -m "feat: Add video - ${{ github.event.inputs.presentation_name }}
 
           Generated video with character animations and subtitles

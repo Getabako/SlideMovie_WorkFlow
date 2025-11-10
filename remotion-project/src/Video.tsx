@@ -63,10 +63,10 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     (slide) => frame >= slide.startFrame && frame < slide.endFrame
   );
 
-  // 現在の字幕を見つける
-  const currentSubtitle = currentSlide?.subtitles.find(
-    (subtitle) => frame >= subtitle.startFrame && frame < subtitle.endFrame
-  );
+  // 字幕として現在のスライドの原稿全体を表示
+  const currentSubtitle = currentSlide ? {
+    text: currentSlide.fullScript
+  } : null;
 
   // 音声が再生中かどうかを判定（簡易的に、スライドが存在する場合は話している）
   const isTalking = currentSlide !== undefined;
@@ -150,14 +150,18 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
               display: "inline-block",
               backgroundColor: "rgba(0, 0, 0, 0.85)",
               color: "white",
-              fontSize: 42,
-              padding: "15px 30px",
+              fontSize: 32,
+              padding: "20px 35px",
               borderRadius: 8,
-              maxWidth: "85%",
-              lineHeight: 1.4,
+              maxWidth: "90%",
+              maxHeight: "350px",
+              lineHeight: 1.6,
               fontWeight: "bold",
               textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
               border: "2px solid rgba(255, 255, 255, 0.3)",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "pre-wrap",
             }}
           >
             {currentSubtitle.text}

@@ -85,9 +85,9 @@ jobs:
           # タイミングデータをコピー
           cp $AUDIO_DIR/video_timings.json remotion-project/timings.json
 
-          # 音声ファイルをコピー
-          mkdir -p remotion-project/public/audio
-          cp $AUDIO_DIR/*.mp3 remotion-project/public/audio/
+          # 音声ファイルをコピー（Remotionが期待するパスに配置）
+          mkdir -p remotion-project/public/presentations/audio_output
+          cp $AUDIO_DIR/*.mp3 remotion-project/public/presentations/audio_output/
 
           # スライド画像をコピー
           mkdir -p remotion-project/public/slides

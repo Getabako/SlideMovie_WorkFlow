@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install pyyaml google-generativeai pillow
+          pip install pyyaml google-generativeai google-genai pillow
 
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli

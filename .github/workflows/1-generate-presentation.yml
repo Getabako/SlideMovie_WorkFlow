@@ -107,7 +107,7 @@ jobs:
 
       - name: Step 6 - Export slides as individual images
         run: |
-          marp slides/${{ env.TOPIC_NAME }}_slide_with_images.md -o presentations/${{ env.TOPIC_NAME }}/slide-%d.png --images png --allow-local-files
+          marp slides/${{ env.TOPIC_NAME }}_slide_with_images.md -o presentations/${{ env.TOPIC_NAME }}/slide.png --images png --allow-local-files
 
       - name: Copy files to presentation directory
         run: |

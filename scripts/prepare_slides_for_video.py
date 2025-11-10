@@ -27,12 +27,17 @@ def prepare_slides(presentation_dir, output_dir):
     for item in presentation_path.iterdir():
         print(f"  - {item.name}")
 
-    # パターン1: slide-*.png (Marpのデフォルト)
-    slide_images = sorted(presentation_path.glob("slide-*.png"))
+    # パターン1: slide.*.png (Marpの標準出力: slide.001.png, slide.002.png, ...)
+    slide_images = sorted(presentation_path.glob("slide.*.png"))
 
-    # パターン2: *.png (全てのPNG画像)
+    # パターン2: slide-*.png (旧パターン)
     if not slide_images:
-        print("slide-*.png が見つかりません。全てのPNG画像を検索します...")
+        print("slide.*.png が見つかりません。slide-*.png を検索します...")
+        slide_images = sorted(presentation_path.glob("slide-*.png"))
+
+    # パターン3: *.png (全てのPNG画像)
+    if not slide_images:
+        print("slide-*.png も見つかりません。全てのPNG画像を検索します...")
         slide_images = sorted(presentation_path.glob("*.png"))
 
     if not slide_images:

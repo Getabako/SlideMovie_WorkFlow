@@ -145,9 +145,9 @@ def main():
         print("エラー: GOOGLE_AI_API_KEY環境変数が設定されていません")
         sys.exit(1)
 
-    # 出力ディレクトリ
+    # 出力ディレクトリ（リポジトリルートのslides/）
     script_dir = Path(__file__).parent
-    output_dir = script_dir.parent / "slides"
+    output_dir = script_dir.parent.parent / "slides"
     output_dir.mkdir(exist_ok=True)
 
     # 画像プロンプトCSVを作成

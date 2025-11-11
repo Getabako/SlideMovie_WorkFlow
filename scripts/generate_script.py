@@ -8,8 +8,10 @@ import sys
 import os
 import json
 import re
+import time
 from pathlib import Path
 import google.generativeai as genai
+from google.api_core import exceptions as google_exceptions
 
 def parse_marp_slides(slide_file):
     """
@@ -81,14 +83,15 @@ def clean_declarative_phrases(script):
 
     return cleaned
 
-def generate_script_for_slide(model, slide, total_slides):
+def generate_script_for_slide(model, slide, total_slides, max_retries=3):
     """
-    1枚のスライドに対する原稿を生成
+    1枚のスライドに対する原稿を生成（リトライ機能付き）
 
     Args:
         model: Gemini モデル
         slide: スライド情報（辞書）
         total_slides: 総スライド数
+        max_retries: 最大リトライ回数
 
     Returns:
         生成された原稿テキスト
@@ -113,13 +116,33 @@ def generate_script_for_slide(model, slide, total_slides):
 原稿のみを出力してください（説明や補足は不要です）。
 """
 
-    response = model.generate_content(prompt)
-    script = response.text.strip()
+    for attempt in range(max_retries):
+        try:
+            response = model.generate_content(prompt)
+            script = response.text.strip()
 
-    # 不要な宣言的フレーズを削除
-    script = clean_declarative_phrases(script)
+            # 不要な宣言的フレーズを削除
+            script = clean_declarative_phrases(script)
 
-    return script
+            return script
+        except google_exceptions.ResourceExhausted as e:
+            if attempt < max_retries - 1:
+                wait_time = 45  # レート制限エラーの場合は45秒待機
+                print(f"  レート制限エラー（試行 {attempt + 1}/{max_retries}）")
+                print(f"  {wait_time}秒待機してリトライします...")
+                time.sleep(wait_time)
+            else:
+                print(f"  最大リトライ回数に達しました。エラー: {e}")
+                raise
+        except Exception as e:
+            if attempt < max_retries - 1:
+                wait_time = 10
+                print(f"  エラー発生（試行 {attempt + 1}/{max_retries}）: {str(e)[:100]}")
+                print(f"  {wait_time}秒待機してリトライします...")
+                time.sleep(wait_time)
+            else:
+                print(f"  最大リトライ回数に達しました。エラー: {e}")
+                raise
 
 def generate_full_script(slide_file, output_file):
     """
@@ -145,7 +168,7 @@ def generate_full_script(slide_file, output_file):
 
     # 各スライドの原稿を生成
     scripts = []
-    for slide in slides:
+    for i, slide in enumerate(slides):
         print(f"原稿生成中: スライド {slide['index']} - {slide['title']}")
         script = generate_script_for_slide(model, slide, len(slides))
 
@@ -156,6 +179,13 @@ def generate_full_script(slide_file, output_file):
         })
 
         print(f"  生成完了: {len(script)}文字")
+
+        # レート制限対策：各スライド間に7秒待機（最後のスライドを除く）
+        # Gemini APIは1分間に10リクエストまでなので、6秒に1リクエストのペース
+        if i < len(slides) - 1:
+            wait_time = 7
+            print(f"  レート制限対策のため{wait_time}秒待機中...")
+            time.sleep(wait_time)
 
     # JSONとして保存
     output_data = {

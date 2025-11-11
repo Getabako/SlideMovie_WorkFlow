@@ -107,20 +107,25 @@ def generate_timings(audio_metadata_file, output_file):
         subtitle_segments = split_text_into_segments(script)
         print(f"  字幕セグメント数: {len(subtitle_segments)}")
 
-        # 各セグメントのタイミングを計算（文字数ベース）
+        # 各セグメントのタイミングを計算（文字数ベース + ギャップ追加）
         subtitles = []
+        GAP_DURATION = 0.5  # セグメント間のギャップ（秒）
 
         if subtitle_segments:
             # 各セグメントの文字数を計算
             segment_lengths = [len(segment) for segment in subtitle_segments]
             total_chars = sum(segment_lengths)
 
+            # ギャップを考慮した利用可能時間を計算
+            total_gap_time = GAP_DURATION * (len(subtitle_segments) - 1)  # 最後のセグメント後にはギャップなし
+            available_duration = duration - total_gap_time
+
             segment_start_time = current_time
 
             for i, segment in enumerate(subtitle_segments):
-                # 文字数の割合で時間を配分
+                # 文字数の割合で時間を配分（ギャップを除いた時間で）
                 char_ratio = segment_lengths[i] / total_chars if total_chars > 0 else 1.0 / len(subtitle_segments)
-                segment_duration = duration * char_ratio
+                segment_duration = available_duration * char_ratio
 
                 start_time = segment_start_time
                 end_time = start_time + segment_duration
@@ -133,7 +138,13 @@ def generate_timings(audio_metadata_file, output_file):
                     'endFrame': int(end_time * fps)
                 })
 
-                segment_start_time = end_time
+                # 最後以外のセグメントにはギャップを追加（待機アニメーション表示用）
+                if i < len(subtitle_segments) - 1:
+                    segment_start_time = end_time + GAP_DURATION
+                else:
+                    segment_start_time = end_time
+
+            print(f"  セグメント間ギャップ: {GAP_DURATION}秒 × {len(subtitle_segments) - 1}回 = {total_gap_time:.2f}秒")
 
         slides_data.append({
             'index': audio_info['index'],

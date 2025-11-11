@@ -10,8 +10,9 @@ import json
 import time
 from pathlib import Path
 from gtts import gTTS
+from pydub import AudioSegment
 
-def generate_audio_for_slide(script_text, output_file, max_retries=3):
+def generate_audio_for_slide(script_text, output_file, max_retries=3, speed_factor=1.2):
     """
     1つの原稿から音声を生成（リトライ機能付き）
 
@@ -19,12 +20,28 @@ def generate_audio_for_slide(script_text, output_file, max_retries=3):
         script_text: 原稿テキスト
         output_file: 出力ファイルパス
         max_retries: 最大リトライ回数
+        speed_factor: 音声速度の倍率（1.2 = 1.2倍速）
     """
     for attempt in range(max_retries):
         try:
-            # gTTSで日本語音声を生成
+            # gTTSで日本語音声を生成（一時ファイル）
+            temp_file = str(output_file).replace('.mp3', '_temp.mp3')
             tts = gTTS(text=script_text, lang='ja', slow=False)
-            tts.save(output_file)
+            tts.save(temp_file)
+
+            # pydubで音声を速度調整
+            audio = AudioSegment.from_mp3(temp_file)
+            # 速度を上げる（frame_rateを変更）
+            faster_audio = audio._spawn(audio.raw_data, overrides={
+                "frame_rate": int(audio.frame_rate * speed_factor)
+            })
+            # 元のサンプルレートに戻す
+            faster_audio = faster_audio.set_frame_rate(audio.frame_rate)
+            faster_audio.export(output_file, format="mp3")
+
+            # 一時ファイルを削除
+            os.remove(temp_file)
+
             return  # 成功したら終了
         except Exception as e:
             wait_time = (attempt + 1) * 5

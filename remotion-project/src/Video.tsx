@@ -1,4 +1,4 @@
-import { useCurrentFrame, Img, Audio, useVideoConfig, staticFile, Sequence } from "remotion";
+import { useCurrentFrame, Img, Audio, useVideoConfig, staticFile, Sequence, spring, interpolate } from "remotion";
 import "./fonts.css";
 
 const idleImages = [
@@ -84,6 +84,22 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     ? staticFile(`slides/slide_${String(currentSlide.index).padStart(2, '0')}.png`)
     : null;
 
+  // スライドアニメーション用の計算
+  const framesIntoSlide = frame - (currentSlide?.startFrame || 0);
+  const slideProgress = spring({
+    frame: framesIntoSlide,
+    fps,
+    config: {
+      damping: 100,
+      stiffness: 200,
+      mass: 0.5,
+    },
+  });
+
+  // フェードインとスライドインのアニメーション
+  const opacity = interpolate(slideProgress, [0, 1], [0, 1]);
+  const translateY = interpolate(slideProgress, [0, 1], [20, 0]);
+
   return (
     <div
       style={{
@@ -105,6 +121,8 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            opacity,
+            transform: `translateY(${translateY}px)`,
           }}
         >
           <Img

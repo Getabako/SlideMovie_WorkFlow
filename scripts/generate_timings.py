@@ -22,9 +22,9 @@ def get_audio_duration(audio_file):
     audio = AudioSegment.from_file(audio_file)
     return len(audio) / 1000.0  # ミリ秒から秒に変換
 
-def split_text_into_segments(text, max_chars_per_line=25, max_lines=2):
+def split_text_into_segments(text, max_chars_per_line=31, max_lines=2):
     """
-    テキストを字幕用のセグメントに分割（最大2行まで）
+    テキストを字幕用のセグメントに分割（最大2行、31文字/行まで）
 
     Args:
         text: 原稿テキスト
@@ -32,10 +32,8 @@ def split_text_into_segments(text, max_chars_per_line=25, max_lines=2):
         max_lines: 1セグメントあたりの最大行数
 
     Returns:
-        分割されたテキストのリスト
+        分割されたテキストのリスト（改行を含む）
     """
-    max_segment_chars = max_chars_per_line * max_lines
-
     # 句読点で分割
     sentences = []
     current = ""
@@ -50,25 +48,63 @@ def split_text_into_segments(text, max_chars_per_line=25, max_lines=2):
     if current.strip():
         sentences.append(current.strip())
 
-    # 長い文を分割してセグメントを生成
+    # 各文をセグメント化
     segments = []
     for sentence in sentences:
-        if len(sentence) <= max_segment_chars:
+        # 1行に収まる場合
+        if len(sentence) <= max_chars_per_line:
             segments.append(sentence)
+        # 2行に収まる可能性がある場合
+        elif len(sentence) <= max_chars_per_line * max_lines:
+            # 読点で分割して改行位置を探す
+            parts = sentence.split('、')
+            line1 = ""
+            line2 = ""
+
+            for i, part in enumerate(parts):
+                test_line1 = line1 + part + ('、' if i < len(parts) - 1 else '')
+
+                # 1行目に追加できる場合
+                if len(test_line1) <= max_chars_per_line:
+                    line1 = test_line1
+                # 1行目が一杯なので2行目へ
+                else:
+                    # 残りを2行目に
+                    remaining_parts = parts[i:]
+                    line2 = '、'.join(remaining_parts)
+
+                    # 2行目が長すぎる場合は調整
+                    if len(line2) > max_chars_per_line:
+                        # 2行目も読点で分割
+                        line2_parts = line2.split('、')
+                        line2 = ""
+                        for j, part2 in enumerate(line2_parts):
+                            test_line2 = line2 + part2 + ('、' if j < len(line2_parts) - 1 else '')
+                            if len(test_line2) <= max_chars_per_line:
+                                line2 = test_line2
+                            else:
+                                break
+                    break
+
+            # 改行して結合
+            if line2:
+                segments.append(line1.rstrip('、') + '\n' + line2.rstrip('、'))
+            else:
+                segments.append(line1.rstrip('、'))
+        # 2行でも収まらない場合は強制分割
         else:
-            # 読点で分割を試みる
             parts = sentence.split('、')
             current_segment = ""
+            current_length = 0
+
             for part in parts:
-                # 次のパートを追加しても最大文字数を超えない場合
-                test_segment = current_segment + part + ('、' if part != parts[-1] else '')
-                if len(test_segment) <= max_segment_chars:
+                test_segment = current_segment + part + '、'
+                if len(test_segment) <= max_chars_per_line * max_lines:
                     current_segment = test_segment
                 else:
-                    # 現在のセグメントを保存
                     if current_segment:
                         segments.append(current_segment.rstrip('、'))
-                    current_segment = part + ('、' if part != parts[-1] else '')
+                    current_segment = part + '、'
 
             if current_segment:
                 segments.append(current_segment.rstrip('、'))

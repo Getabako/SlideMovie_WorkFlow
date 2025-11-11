@@ -12,7 +12,7 @@ from pathlib import Path
 import edge_tts
 import time
 
-async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-NanamiNeural', max_retries=5):
+async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-NanamiNeural', max_retries=10):
     """
     1つの原稿から音声を生成（リトライ機能付き）
 
@@ -28,7 +28,8 @@ async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-Nanami
             await communicate.save(output_file)
             return  # 成功したら終了
         except Exception as e:
-            wait_time = (attempt + 1) * 3  # 3秒、6秒、9秒、12秒、15秒
+            # 指数バックオフ: 10秒、20秒、30秒、40秒、50秒、60秒...
+            wait_time = min((attempt + 1) * 10, 60)
             if attempt < max_retries - 1:
                 print(f"    エラー発生（試行 {attempt + 1}/{max_retries}）: {str(e)[:100]}")
                 print(f"    {wait_time}秒待機してリトライします...")
@@ -55,6 +56,10 @@ async def generate_all_audio(script_file, output_dir):
 
     print(f"音声生成中: {len(slides)}スライド")
 
+    # Edge TTS APIの安定化のため、最初に5秒待機
+    print(f"  Edge TTS APIの準備のため5秒待機中...")
+    await asyncio.sleep(5)
+
     # 各スライドの音声を生成
     audio_files = []
     for i, slide in enumerate(slides):
@@ -72,10 +77,10 @@ async def generate_all_audio(script_file, output_dir):
 
         print(f"    保存完了: {output_file}")
 
-        # レート制限対策：各スライド間に2秒待機（最後のスライドを除く）
+        # レート制限対策：各スライド間に5秒待機（最後のスライドを除く）
         if i < len(slides) - 1:
-            print(f"    2秒待機中...")
-            await asyncio.sleep(2)
+            print(f"    5秒待機中...")
+            await asyncio.sleep(5)
 
     # メタデータを保存
     metadata_file = output_dir / 'audio_metadata.json'

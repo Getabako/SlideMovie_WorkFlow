@@ -1,4 +1,5 @@
 import { useCurrentFrame, Img, Audio, useVideoConfig, staticFile, Sequence } from "remotion";
+import "./fonts.css";
 
 const idleImages = [
   staticFile("idle1.png"),
@@ -68,8 +69,8 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     (subtitle) => frame >= subtitle.startFrame && frame < subtitle.endFrame
   );
 
-  // 音声が再生中かどうかを判定（簡易的に、スライドが存在する場合は話している）
-  const isTalking = currentSlide !== undefined;
+  // 音声が再生中かどうかを判定（字幕が表示されている時のみ話している）
+  const isTalking = currentSubtitle !== undefined;
 
   // 使用する画像配列を選択
   const images = isTalking ? talkImages : idleImages;
@@ -150,9 +151,9 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
               color: "white",
               fontSize: 48,
               lineHeight: 1.4,
-              fontWeight: "bold",
+              fontWeight: 800,
               textShadow: "3px 3px 6px rgba(0,0,0,0.95), -1px -1px 3px rgba(0,0,0,0.95), 1px -1px 3px rgba(0,0,0,0.95), -1px 1px 3px rgba(0,0,0,0.95)",
-              fontFamily: "'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif",
+              fontFamily: "'M PLUS 2', 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif",
               maxWidth: "85%",
               margin: "0 auto",
             }}

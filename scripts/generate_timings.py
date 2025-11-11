@@ -107,21 +107,33 @@ def generate_timings(audio_metadata_file, output_file):
         subtitle_segments = split_text_into_segments(script)
         print(f"  字幕セグメント数: {len(subtitle_segments)}")
 
-        # 各セグメントのタイミングを計算
-        segment_duration = duration / len(subtitle_segments) if subtitle_segments else duration
+        # 各セグメントのタイミングを計算（文字数ベース）
         subtitles = []
 
-        for i, segment in enumerate(subtitle_segments):
-            start_time = current_time + (i * segment_duration)
-            end_time = start_time + segment_duration
+        if subtitle_segments:
+            # 各セグメントの文字数を計算
+            segment_lengths = [len(segment) for segment in subtitle_segments]
+            total_chars = sum(segment_lengths)
 
-            subtitles.append({
-                'text': segment,
-                'start': start_time,
-                'end': end_time,
-                'startFrame': int(start_time * fps),
-                'endFrame': int(end_time * fps)
-            })
+            segment_start_time = current_time
+
+            for i, segment in enumerate(subtitle_segments):
+                # 文字数の割合で時間を配分
+                char_ratio = segment_lengths[i] / total_chars if total_chars > 0 else 1.0 / len(subtitle_segments)
+                segment_duration = duration * char_ratio
+
+                start_time = segment_start_time
+                end_time = start_time + segment_duration
+
+                subtitles.append({
+                    'text': segment,
+                    'start': start_time,
+                    'end': end_time,
+                    'startFrame': int(start_time * fps),
+                    'endFrame': int(end_time * fps)
+                })
+
+                segment_start_time = end_time
 
         slides_data.append({
             'index': audio_info['index'],

@@ -10,18 +10,32 @@ import json
 import asyncio
 from pathlib import Path
 import edge_tts
+import time
 
-async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-NanamiNeural'):
+async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-NanamiNeural', max_retries=5):
     """
-    1つの原稿から音声を生成
+    1つの原稿から音声を生成（リトライ機能付き）
 
     Args:
         script_text: 原稿テキスト
         output_file: 出力ファイルパス
         voice: 使用する音声
+        max_retries: 最大リトライ回数
     """
-    communicate = edge_tts.Communicate(script_text, voice)
-    await communicate.save(output_file)
+    for attempt in range(max_retries):
+        try:
+            communicate = edge_tts.Communicate(script_text, voice)
+            await communicate.save(output_file)
+            return  # 成功したら終了
+        except Exception as e:
+            wait_time = (attempt + 1) * 3  # 3秒、6秒、9秒、12秒、15秒
+            if attempt < max_retries - 1:
+                print(f"    エラー発生（試行 {attempt + 1}/{max_retries}）: {str(e)[:100]}")
+                print(f"    {wait_time}秒待機してリトライします...")
+                await asyncio.sleep(wait_time)
+            else:
+                print(f"    最大リトライ回数に達しました。エラー: {e}")
+                raise
 
 async def generate_all_audio(script_file, output_dir):
     """
@@ -43,7 +57,7 @@ async def generate_all_audio(script_file, output_dir):
 
     # 各スライドの音声を生成
     audio_files = []
-    for slide in slides:
+    for i, slide in enumerate(slides):
         output_file = output_dir / f"slide_{slide['index']:02d}.mp3"
         print(f"  スライド {slide['index']}: {slide['title']}")
 
@@ -57,6 +71,11 @@ async def generate_all_audio(script_file, output_dir):
         })
 
         print(f"    保存完了: {output_file}")
+
+        # レート制限対策：各スライド間に2秒待機（最後のスライドを除く）
+        if i < len(slides) - 1:
+            print(f"    2秒待機中...")
+            await asyncio.sleep(2)
 
     # メタデータを保存
     metadata_file = output_dir / 'audio_metadata.json'

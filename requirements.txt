@@ -1,4 +1,4 @@
 pyyaml
 google-generativeai
-edge-tts
+gTTS
 pydub

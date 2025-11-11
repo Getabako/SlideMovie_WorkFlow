@@ -1,44 +1,42 @@
 #!/usr/bin/env python3
 """
 原稿から音声を生成するスクリプト
-Edge TTSを使用して音声を生成します
+gTTS (Google Translate TTS)を使用して音声を生成します
 """
 
 import sys
 import os
 import json
-import asyncio
-from pathlib import Path
-import edge_tts
 import time
+from pathlib import Path
+from gtts import gTTS
 
-async def generate_audio_for_slide(script_text, output_file, voice='ja-JP-NanamiNeural', max_retries=10):
+def generate_audio_for_slide(script_text, output_file, max_retries=3):
     """
     1つの原稿から音声を生成（リトライ機能付き）
 
     Args:
         script_text: 原稿テキスト
         output_file: 出力ファイルパス
-        voice: 使用する音声
         max_retries: 最大リトライ回数
     """
     for attempt in range(max_retries):
         try:
-            communicate = edge_tts.Communicate(script_text, voice)
-            await communicate.save(output_file)
+            # gTTSで日本語音声を生成
+            tts = gTTS(text=script_text, lang='ja', slow=False)
+            tts.save(output_file)
             return  # 成功したら終了
         except Exception as e:
-            # 指数バックオフ: 10秒、20秒、30秒、40秒、50秒、60秒...
-            wait_time = min((attempt + 1) * 10, 60)
+            wait_time = (attempt + 1) * 5
             if attempt < max_retries - 1:
                 print(f"    エラー発生（試行 {attempt + 1}/{max_retries}）: {str(e)[:100]}")
                 print(f"    {wait_time}秒待機してリトライします...")
-                await asyncio.sleep(wait_time)
+                time.sleep(wait_time)
             else:
                 print(f"    最大リトライ回数に達しました。エラー: {e}")
                 raise
 
-async def generate_all_audio(script_file, output_dir):
+def generate_all_audio(script_file, output_dir):
     """
     原稿ファイルから全ての音声を生成
 
@@ -56,17 +54,13 @@ async def generate_all_audio(script_file, output_dir):
 
     print(f"音声生成中: {len(slides)}スライド")
 
-    # Edge TTS APIの安定化のため、最初に5秒待機
-    print(f"  Edge TTS APIの準備のため5秒待機中...")
-    await asyncio.sleep(5)
-
     # 各スライドの音声を生成
     audio_files = []
     for i, slide in enumerate(slides):
         output_file = output_dir / f"slide_{slide['index']:02d}.mp3"
         print(f"  スライド {slide['index']}: {slide['title']}")
 
-        await generate_audio_for_slide(slide['script'], str(output_file))
+        generate_audio_for_slide(slide['script'], str(output_file))
 
         audio_files.append({
             'index': slide['index'],
@@ -77,10 +71,10 @@ async def generate_all_audio(script_file, output_dir):
 
         print(f"    保存完了: {output_file}")
 
-        # レート制限対策：各スライド間に5秒待機（最後のスライドを除く）
+        # レート制限対策：各スライド間に2秒待機（最後のスライドを除く）
         if i < len(slides) - 1:
-            print(f"    5秒待機中...")
-            await asyncio.sleep(5)
+            print(f"    2秒待機中...")
+            time.sleep(2)
 
     # メタデータを保存
     metadata_file = output_dir / 'audio_metadata.json'
@@ -109,7 +103,7 @@ def main():
     output_dir = script_path.parent.parent / "audio_output"
 
     # 音声を生成
-    metadata_file = asyncio.run(generate_all_audio(script_file, output_dir))
+    metadata_file = generate_all_audio(script_file, output_dir)
 
     print(f"\n音声生成完了！")
 

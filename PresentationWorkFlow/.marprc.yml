@@ -1,0 +1,8 @@
+# Marp CLI設定ファイル
+# https://github.com/marp-team/marp-cli
+
+# 画像を許可
+allowLocalFiles: true
+
+# HTMLタグを許可
+html: true

@@ -1,0 +1,195 @@
+name: 5. Create Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      presentation_name:
+        description: 'プレゼンテーション名'
+        required: true
+        type: choice
+        options:
+          - '①すごいぞAI_AI概論'
+          - '②AIを使って画像生成をしてみよう'
+          - '③バナー作り'
+          - '④ディープリサーチ'
+          - '⑤スプレッドシート作成'
+          - '⑥資料作り'
+          - '⑦ホームページ作り'
+          - '⑧プレゼンとは'
+          - '⑨スライド作成'
+          - '⑩AIを活用した資料を使ってプレゼン'
+          - '最新のAI業界の動向2025'
+          - '知能検査ケーススタディ'
+
+jobs:
+  create-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: remotion-project/package-lock.json
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Node dependencies
+        run: npm install
+        working-directory: ./remotion-project
+
+      - name: Verify presentation exists
+        run: |
+          PRESENTATION_DIR="presentations/${{ github.event.inputs.presentation_name }}"
+          if [ ! -d "$PRESENTATION_DIR" ]; then
+            echo "Error: Presentation not found: $PRESENTATION_DIR"
+            echo "Available presentations:"
+            ls -la presentations/ || echo "No presentations directory found"
+            exit 1
+          fi
+          echo "PRESENTATION_DIR=$PRESENTATION_DIR" >> $GITHUB_ENV
+
+      - name: Prepare slide images
+        run: |
+          python3 scripts/prepare_slides_for_video.py ${{ env.PRESENTATION_DIR }}
+
+      - name: Generate script from slides
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          # スライドのMarkdownファイルを使用
+          # 優先順位: _slide_with_images.md > _slide.md > .md
+          SLIDE_FILE="${{ env.PRESENTATION_DIR }}/${{ github.event.inputs.presentation_name }}_slide_with_images.md"
+          if [ ! -f "$SLIDE_FILE" ]; then
+            SLIDE_FILE="${{ env.PRESENTATION_DIR }}/${{ github.event.inputs.presentation_name }}_slide.md"
+          fi
+          if [ ! -f "$SLIDE_FILE" ]; then
+            SLIDE_FILE="${{ env.PRESENTATION_DIR }}/${{ github.event.inputs.presentation_name }}.md"
+          fi
+          python3 scripts/generate_script.py "$SLIDE_FILE"
+
+      - name: Generate audio
+        run: |
+          python3 scripts/generate_audio.py "$SCRIPT_FILE"
+
+      - name: Generate timings
+        run: |
+          python3 scripts/generate_timings.py "$AUDIO_METADATA"
+
+      - name: Prepare Remotion project
+        run: |
+          # タイミングデータをコピー
+          cp $AUDIO_DIR/video_timings.json remotion-project/timings.json
+
+          # 音声ファイルをコピー（Remotionが期待するパスに配置）
+          mkdir -p remotion-project/public/presentations/audio_output
+          cp $AUDIO_DIR/*.mp3 remotion-project/public/presentations/audio_output/
+
+          # スライド画像をコピー
+          mkdir -p remotion-project/public/slides
+          cp slide_images/*.png remotion-project/public/slides/
+
+          # スライドメタデータをコピー
+          cp slide_images/slides_metadata.json remotion-project/
+
+      - name: Render video
+        run: npm run build
+        working-directory: ./remotion-project
+
+      - name: Create video output directory
+        run: |
+          mkdir -p videos/${{ github.event.inputs.presentation_name }}
+
+      - name: Copy video and related files
+        run: |
+          cp remotion-project/out/video.mp4 videos/${{ github.event.inputs.presentation_name }}/
+          cp $AUDIO_DIR/video_timings.json videos/${{ github.event.inputs.presentation_name }}/
+          cp -r presentations/scripts_output videos/${{ github.event.inputs.presentation_name }}/scripts_output
+          cp -r $AUDIO_DIR videos/${{ github.event.inputs.presentation_name }}/audio_output
+
+      - name: Create safe artifact name
+        id: artifact_name
+        run: |
+          # 日本語を含むプレゼンテーション名をASCII安全な名前に変換
+          SAFE_NAME=$(echo "${{ github.event.inputs.presentation_name }}" | iconv -t ascii//TRANSLIT 2>/dev/null || echo "video")
+          SAFE_NAME=$(echo "$SAFE_NAME" | sed 's/[^a-zA-Z0-9_-]/_/g')
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          ARTIFACT_NAME="video_${SAFE_NAME}_${TIMESTAMP}"
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
+
+      - name: Upload video MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}_MP4
+          path: videos/${{ github.event.inputs.presentation_name }}/video.mp4
+
+      - name: Upload all video files
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}_ALL
+          path: videos/${{ github.event.inputs.presentation_name }}/
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit video files
+        run: |
+          git add -f videos/${{ github.event.inputs.presentation_name }}/
+          git add -f presentations/scripts_output/ || true
+          git add -f presentations/audio_output/ || true
+          git commit -m "feat: Add video - ${{ github.event.inputs.presentation_name }}
+
+          Generated video with character animations and subtitles
+
+          🤖 Generated by GitHub Actions" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+
+      - name: Summary
+        run: |
+          echo "## Video Creation Complete! 🎬" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Presentation:** ${{ github.event.inputs.presentation_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Download Artifacts:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.ARTIFACT_NAME }}_MP4\` - Final video (ready to use)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.ARTIFACT_NAME }}_ALL\` - All files including scripts and audio" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Files saved to repository:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`videos/${{ github.event.inputs.presentation_name }}/\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Generated Files:**" >> $GITHUB_STEP_SUMMARY
+          echo "- Video with character animations" >> $GITHUB_STEP_SUMMARY
+          echo "- Subtitles and timing data" >> $GITHUB_STEP_SUMMARY
+          echo "- Audio files" >> $GITHUB_STEP_SUMMARY
+          echo "- Script data" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Features:**" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Slide images as background" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Talk animation when speaking (talk1-6)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Idle animation when not speaking (idle1-6)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Auto-generated subtitles" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ AI-generated script" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Text-to-speech audio" >> $GITHUB_STEP_SUMMARY

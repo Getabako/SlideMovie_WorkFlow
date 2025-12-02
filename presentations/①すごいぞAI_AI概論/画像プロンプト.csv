@@ -1,0 +1,64 @@
+slide_number,title,prompt,character,aspect_ratio
+001,すごいぞAI！AI概論,"[プロンプト内容]
+Enthusiastic Japanese instructor ""Shota Takasaki"" (30s) stands in front of a large screen displaying abstract neural network visualizations and glowing data streams. He's gesturing excitedly with one hand, while the other holds a stylized, slightly futuristic pointer. He wears a casual but professional outfit (e.g., a button-down shirt with rolled-up sleeves and jeans). The scene is lit with bright, inviting light, creating a positive and encouraging atmosphere. The background is blurred to focus on the instructor and the visuals. The composition should be dynamic and engaging, suggesting the exciting possibilities of AI. Aspect ratio 3:4.",塾頭高崎翔太,3:4
+002,本日の目標,"[プロンプト内容]
+笑顔の塾頭高崎翔太が、未来都市の風景を背景にタブレット端末を指し示し、未来都市の生活を便利にする様々なAI技術のイメージがホログラムのように浮かび上がっている。子供たちが興味津々といった表情でそれを見ている。",塾頭高崎翔太,3:4
+003,講師紹介,"[プロンプト内容]
+a dynamic and engaging portrait of Shota Takasaki, the head of if(塾). He is a Japanese man in his early 30s, radiating energy and approachability. He stands confidently in front of a digital whiteboard filled with equations, game design sketches, and mind maps. The whiteboard symbolizes his diverse expertise in engineering, consulting, and psychology. The background features a modern, bright co-working space with students collaborating on projects. The overall atmosphere is inspiring and collaborative. The image is styled for educational purposes, with a 3:4 aspect ratio. No text or labels should be included in the image.",塾頭高崎翔太,3:4
+004,第1部：AIって何？,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太が、小学校の教室で小学生に囲まれ、ホワイトボードを指しながら笑顔で話している様子。ホワイトボードには、簡単な回路図と「？」マークが描かれている。教室は明るく、子供たちは興味津々といった表情で高崎を見ている。",塾頭高崎翔太,3:4
+005,AIとは？,"[プロンプト内容]
+エネルギッシュな塾頭高崎翔太（30代前半、日本人男性）が、未来的なインターフェースが浮かび上がる透明なディスプレイの前で、小学生くらいの子供たち数名に笑顔で身振り手振りを交えてAIについて説明している様子。子供たちは興味津々でディスプレイを見つめている。ディスプレイには、脳の神経回路を模したカラフルな光のパターンが映し出されており、「学習」「理解」「判断」「創造」といった概念が抽象的なアイコンで表現されている。背景は明るく、教育的な雰囲気の未来的な教室。縦長（3:4）構図。",塾頭高崎翔太,3:4
+006,AIの種類,"[プロンプト内容]
+特化型AI:
+3:4, 塾頭高崎翔太が音声認識AI、画像認識AI、翻訳AIのアイコンを指し示している。音声認識AIはマイクのアイコン、画像認識AIはカメラのアイコン、翻訳AIは異なる言語の吹き出しアイコンで表現。アイコンは光り輝き、現代的なインターフェースで表示。背景は未来的な研究室、多くのモニターとデータストリームが表示されている。高崎翔太はエネルギッシュな表情で、聴衆に説明している様子。
+汎用AI:
+3:4, 人間の脳をモチーフにした抽象的なイメージ。ニューラルネットワークが光り輝き、様々な情報が繋がり合っている様子を表現。背景は宇宙空間で、無限の可能性を示唆している。全体的に青と紫を基調とした、神秘的で知的な雰囲気。",なし,3:4
+007,生成AI（Generative AI）とは？,"[プロンプト内容]
+A friendly and energetic Japanese man in his early thirties,塾頭高崎翔太, is standing in a bright, modern classroom. He is gesturing with his hands towards four distinct visual representations of Generative AI capabilities floating in the air:
+1.  A stylized quill pen writing a flowing text on a parchment.
+2.  A vibrant and colorful abstract painting, representing image creation.
+3.  Musical notes and sound waves arranged in an artistic composition.
+4.  Abstract lines of code forming a simple geometric shape, symbolizing program code generation.
+The elements are arranged in a visually balanced composition suitable for a 3:4 aspect ratio. The overall tone is positive, educational, and inspiring, suitable for a presentation on Generative AI. No text or labels should be present in the image.",塾頭高崎翔太,3:4
+008,代表的な生成AI,"[プロンプト内容]
+教室のホワイトボードの前に立つ塾頭高崎翔太。ホワイトボードにはGemini, ChatGPT, Claude, Copilotのロゴがそれぞれ手書き風のイラストで描かれている。高崎翔太は笑顔で生徒たちに何かを説明している様子。背景には数人の生徒が真剣な表情で高崎翔太を見ている。教室は明るく、学習意欲を掻き立てるような雰囲気。アスペクト比3:4。日本人。",塾頭高崎翔太,3:4
+009,なぜ今AIが注目されているのか？,"**プロンプト1:**
+[プロンプト内容]
+高性能なAI技術（抽象的な光のネットワークやAIチップのイメージ）が、日本のオフィスで働く複数のビジネスパーソン（日本人）の作業効率を劇的に向上させている様子。背景には、DX推進を象徴するデジタルサイネージと、人材不足を解決するロボットアームが配置されている。全体的に明るく、未来的な雰囲気。
+**プロンプト2:**
+[プロンプト内容]
+塾頭高崎翔太が、熱心な表情で、ChatGPTのようなAIインターフェースを操作している様子。周囲には、AIの可能性に期待を膨らませた複数の受講生（日本人）が、真剣な眼差しで高崎を見つめている。背景は、活気のある学習塾の風景。
+**プロンプト3:**
+[プロンプト内容]
+複数のビジネスパーソン（日本人）が、AIを活用したプロジェクトの成果を発表している様子。プレゼンテーション資料には、AIによる業務効率化のデータがグラフで示されている。背景は、現代的なオフィス環境。
+**プロンプト4:**
+[プロンプト内容]
+塾頭高崎翔太が、AI技術の進化のタイムラインを示したグラフを指し示しながら、熱心に解説している様子。受講生（日本人）たちは、メモを取りながら真剣に耳を傾けている。背景は、セミナー会場のような場所。
+**プロンプト5:**
+[プロンプト内容]
+日本のビジネスシーンで、AI技術が活用され、様々な課題を解決している様子をコラージュ風に表現。例えば、AIによる顧客対応、AIによるデータ分析、AIによる自動化された工場ラインなど。全体的にスタイリッシュで、躍動感のあるイメージ。",なし,3:4
+010,第2部：Google Geminiを使ってみよう,"[プロンプト内容]
+A 30s japanese man, ""Shota Takasaki"", energetic and approachable tutor, enthusiastically demonstrating the capabilities of Google Gemini on a large interactive whiteboard. The whiteboard displays a complex network of interconnected ideas and concepts visualized with vibrant colors and shapes, but without any text. Shota is pointing at a particularly interesting section of the network with a marker, smiling and gesturing towards a group of attentive students seated at desks in the foreground. The classroom is bright and modern, with natural light streaming through large windows. Aspect ratio 3:4. No text.",塾頭高崎翔太,3:4
+011,Google Geminiとは？,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太が、ジェスチャーを交えながら、Geminiのインターフェースが投影された巨大なスクリーンを指し示している。背景には、Gmail、Google Docs、スプレッドシートのアイコンが浮かび上がり、それらがシームレスに連携している様子を表現。高崎翔太は明るい笑顔で、教育的な雰囲気と、AIの可能性に対する期待感を演出。アスペクト比3:4。",塾頭高崎翔太,3:4
+012,Geminiにアクセスしよう,Professional abstract background for: Geminiにアクセスしよう,なし,3:4
+013,Geminiの画面構成,Professional abstract background for: Geminiの画面構成,なし,3:4
+014,プロンプトとは？,Professional abstract background for: プロンプトとは？,なし,3:4
+015,プロンプトの例：悪い例,Professional abstract background for: プロンプトの例：悪い例,なし,3:4
+016,プロンプトの例：良い例,Professional abstract background for: プロンプトの例：良い例,なし,3:4
+017,実習：プロンプトを試そう,Professional abstract background for: 実習：プロンプトを試そう,なし,3:4
+018,実習：プロンプトを試そう,Professional abstract background for: 実習：プロンプトを試そう,なし,3:4
+019,Geminiができること,Professional abstract background for: Geminiができること,なし,3:4
+020,休憩（10分）,Professional abstract background for: 休憩（10分）,なし,3:4
+021,第3部：仕事でAIを活用する,Professional abstract background for: 第3部：仕事でAIを活用する,なし,3:4
+022,AIで変わる働き方,Professional abstract background for: AIで変わる働き方,なし,3:4
+023,実際の活用シーン,Professional abstract background for: 実際の活用シーン,なし,3:4
+024,ケーススタディ1：Web制作会社の場合,Professional abstract background for: ケーススタディ1：Web制作会社の場合,なし,3:4
+025,これからの時代に必要なスキル,Professional abstract background for: これからの時代に必要なスキル,なし,3:4
+026,第4部：まとめと次のステップ（10分）,Professional abstract background for: 第4部：まとめと次のステップ（10分）,なし,3:4
+027,今日学んだことと、今日から実践できること,Professional abstract background for: 今日学んだことと、今日から実践できること,なし,3:4
+028,質問タイム,Professional abstract background for: 質問タイム,なし,3:4
+029,参考リンク,Professional abstract background for: 参考リンク,なし,3:4
+030,メッセージ,Professional abstract background for: メッセージ,なし,3:4
+031,お疲れ様でした！,Professional abstract background for: お疲れ様でした！,なし,3:4

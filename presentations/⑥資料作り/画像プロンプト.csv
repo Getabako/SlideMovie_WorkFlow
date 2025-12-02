@@ -1,0 +1,73 @@
+slide_number,title,prompt,character,aspect_ratio
+001,Geminiで資料作り,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太
+A smiling Japanese man in his early 30s, ""Shota Takasaki,"" is enthusiastically gesturing towards a large digital screen displaying a vibrant, futuristic presentation slide template with geometric patterns. He is standing in front of a group of diverse women attending an IT training session in a modern classroom setting. The women are looking attentively at the screen, some taking notes on their laptops. The overall impression is one of energy, collaboration, and technological advancement in education. The composition should be suitable for a vertical (3:4) aspect ratio, focusing on the interaction between the instructor, the audience, and the presentation screen.",なし,3:4
+002,本日の目標,"[プロンプト内容]
+塾頭高崎翔太が、ホワイトボードの前に立って、４つのアイコン（積み上げられた書類、Geminiのロゴ、万年筆と原稿用紙、時計と完成した書類）を指し示しながら、笑顔で参加者を見ている。ホワイトボードには、アイコンと関連するキーワードが矢印で繋がれている（キーワードは描画しない）。参加者はフレーム外にいることを示唆する。背景は明るくモダンなセミナー会場。",塾頭高崎翔太,3:4
+003,アイスブレイク（5分）,"[プロンプト内容]
+資料作りに苦悩する30代ビジネスマンたち。頭を抱え、散乱した書類に囲まれ、締め切りに追われている様子。背景には時計とカレンダー。塾頭高崎翔太が笑顔で彼らを見下ろしている。高崎は自信に満ちた表情でタブレットを持ち、AIが資料作成を助けるイメージを暗示している。",塾頭高崎翔太,3:4
+004,第1部：資料の基本（25分）,"[プロンプト内容]
+高崎翔太が、ホワイトボードの前に立ち、自信に満ちた表情で講義をしている。ホワイトボードには、重要なポイントがいくつかの図形（円、四角、三角形）で整理されて書かれている。参加者は、様々な年齢層の真剣な表情の男女で、メモを取ったり、頷いたりしている。教室は明るく、プロジェクターで資料が投影されている。アスペクト比3:4。",塾頭高崎翔太,3:4
+005,ビジネス資料とは？,"[プロンプト内容]
+A 3:4 portrait photograph depicting Shota Takasaki, a Japanese man in his early thirties, standing in front of a whiteboard filled with various colorful charts, graphs, and diagrams representing different business documents like proposals, reports, and specifications. He is pointing at the whiteboard with a marker in his hand, wearing a friendly and energetic expression. The scene is set in a modern, bright office environment suitable for educational presentations. The style should be realistic and visually appealing, emphasizing clarity and engagement for a presentation slide.",塾頭高崎翔太,3:4
+006,良い資料の3原則,"[プロンプト内容]
+A bright and energetic Japanese man, ""塾頭高崎翔太"" (Jukucho Shota Takasaki), in his early 30s, passionately explaining the principles of good presentation materials to a diverse group of students in a modern classroom setting. He's pointing to a large, blank whiteboard that's divided into three sections representing: 1. Clarity - visualized by interconnected gears fitting perfectly together; 2. Persuasiveness - symbolized by a strong foundation being built with bricks of data; and 3. Readability - shown as a well-organized bookshelf with appropriately sized books and balanced spacing. The students are attentively taking notes, demonstrating engagement and understanding. The composition should be suitable for a 3:4 aspect ratio, emphasizing a dynamic and informative atmosphere.",塾頭高崎翔太,3:4
+007,資料の基本構成（三段論法）,"[プロンプト内容]
+3:4, 縦長, 教育, プレゼンテーション, 塾頭高崎翔太がホワイトボードの前に立ち、ホワイトボードには三段論法を示す図が描かれている。図は、上から「序論：背景・目的、問題提起」、中央に「本論：分析・検討、提案内容」、下部に「結論：結論、アクションプラン」と3つのセクションに分かれており、それぞれのセクションが階段状に繋がっている。高崎翔太は、図を指し示しながら、聴衆に説明している様子。聴衆は、熱心にメモを取っている。背景は、明るく清潔感のある教室。高崎翔太は、エネルギッシュで親しみやすい表情をしている。聴衆は、様々な年齢層の男女。",塾頭高崎翔太,3:4
+008,PREP法（説得力のある文章）,"[プロンプト内容]
+A energetic Japanese male educator (Shota Takasaki, early 30s) passionately explains the PREP method of persuasive writing. He is standing in front of a whiteboard with the letters ""PREP"" clearly displayed in large, bold, colorful letters. Below each letter are smaller visual representations of its meaning: ""P"" has a target with an arrow hitting the bullseye (Point/Claim), ""R"" has stacked blocks representing a solid foundation (Reason/Basis), ""E"" has a magnifying glass over a case study (Example/Case Study), and the final ""P"" has the bullseye target again. He is gesturing towards the whiteboard with enthusiasm. The scene is brightly lit and set in a modern classroom.
+[プロンプト内容]
+A visually compelling diagram illustrating the PREP method for persuasive writing. At the top, the word ""PREP"" is spelled out in large, bold, colorful letters, stacked vertically. Each letter is associated with a visual metaphor: ""P"" - a target with an arrow hitting the bullseye, ""R"" - a stack of building blocks, ""E"" - an open book with a magnifying glass, ""P"" - the same target as the first ""P"". Connectors link each image in a downward flow, suggesting a logical progression. The background is clean and professional, suitable for educational purposes.
+[プロンプト内容]
+Shota Takasaki, a friendly Japanese teacher in his early 30s, is presenting a lesson on persuasive writing using the PREP method. He is standing confidently in a classroom, smiling slightly. He is gesturing towards a stylized graphic representation of the PREP method. This graphic shows four distinct sections: a megaphone icon for Point, a gears icon for Reason, a lightbulb icon for Example, and another megaphone icon for Point (reiteration). Each icon is connected by arrows, visually showing the flow of the method. The classroom setting is clean and modern.",塾頭高崎翔太,3:4
+009,悪い資料の例,"[プロンプト内容]
+A frustrated young businessman, Takasaki Shota (30s, Japanese), stands slumped over a messy desk piled high with crumpled papers and overflowing coffee cups. He holds a single, crumpled document with a despairing expression. The background shows a whiteboard covered in chaotic brainstorming notes, crossed-out ideas, and question marks. The overall scene conveys a sense of overwhelm and lack of direction. The lighting is harsh and unflattering, emphasizing the stress and disorganization.",塾頭高崎翔太,3:4
+010,良い資料の例,"[プロンプト内容]
+A friendly and energetic Japanese man, 30s, resembling Shota Takasaki, stands in front of a bright and modern office space. He is gesturing towards a large whiteboard filled with colorful sketches, Post-it notes, and diagrams representing a new product idea. The sketches showcase a sleek, minimalist, Scandinavian-inspired product design, perhaps a small piece of furniture or a home decor item. A bar graph showing a 15% upward trend is visible on the board. To the side, there are charts showing survey results with a high percentage (around 85%) indicating purchase intent. The overall feeling is positive and innovative, communicating a well-researched and promising product proposal.",塾頭高崎翔太,3:4
+011,第2部：Geminiで資料作成（50分）,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太が、満面の笑みで、Geminiのインターフェースが大きく表示されたノートPCを見ながら、熱心に受講生に資料作成のヒントを教えている。受講生は数名おり、真剣な表情でノートを取っている。背景は明るくモダンな雰囲気のセミナー会場。ノートPCの画面に資料作成に関連するアイコンやグラフが抽象的に表示されている。",塾頭高崎翔太,3:4
+012,Geminiを使った資料作成の流れ,Professional abstract background for: Geminiを使った資料作成の流れ,なし,3:4
+013,ステップ1：構成案を作る,Professional abstract background for: ステップ1：構成案を作る,なし,3:4
+014,実習1：構成案作成（10分）,"[プロンプト内容]
+A 30s Japanese man, Shota Takasaki (塾頭高崎翔太), energetically guiding a group of diverse individuals in a bright, modern office space. They are huddled around a large table covered with brainstorming materials: sticky notes, colorful markers, and printouts displaying workflow diagrams and data charts. Some are actively writing, others are engaged in animated discussion, and Shota is pointing enthusiastically at a whiteboard displaying a simplified mind map with the central node labeled ""Ideas."" The scene conveys a sense of collaborative problem-solving, energy, and forward-thinking, emphasizing the creation and development of proposals. 3:4 aspect ratio, focus on teamwork and dynamic brainstorming.",塾頭高崎翔太,3:4
+015,ステップ2：各セクションを書く,Professional abstract background for: ステップ2：各セクションを書く,なし,3:4
+016,実習2：セクション執筆（15分）,Professional abstract background for: 実習2：セクション執筆（15分）,なし,3:4
+017,データや数字を入れる,Professional abstract background for: データや数字を入れる,なし,3:4
+018,実習3：説得力を強化（10分）,Professional abstract background for: 実習3：説得力を強化（10分）,なし,3:4
+019,ステップ3：ブラッシュアップ,Professional abstract background for: ステップ3：ブラッシュアップ,なし,3:4
+020,長さの調整,Professional abstract background for: 長さの調整,なし,3:4
+021,実習4：企画書作成（20分）,Professional abstract background for: 実習4：企画書作成（20分）,なし,3:4
+022,休憩（10分）,Professional abstract background for: 休憩（10分）,なし,3:4
+023,第3部：文書タイプ別の作成法（25分）,Professional abstract background for: 第3部：文書タイプ別の作成法（25分）,なし,3:4
+024,タイプ1：企画書,Professional abstract background for: タイプ1：企画書,なし,3:4
+025,企画書のプロンプト例,Professional abstract background for: 企画書のプロンプト例,なし,3:4
+026,タイプ2：報告書,Professional abstract background for: タイプ2：報告書,なし,3:4
+027,報告書のプロンプト例,Professional abstract background for: 報告書のプロンプト例,なし,3:4
+028,タイプ3：提案書,Professional abstract background for: タイプ3：提案書,なし,3:4
+029,提案書のプロンプト例,Professional abstract background for: 提案書のプロンプト例,なし,3:4
+030,タイプ4：仕様書,Professional abstract background for: タイプ4：仕様書,なし,3:4
+031,仕様書のプロンプト例,Professional abstract background for: 仕様書のプロンプト例,なし,3:4
+032,実習5：文書タイプ別作成（15分）,Professional abstract background for: 実習5：文書タイプ別作成（15分）,なし,3:4
+033,第4部：実践テクニック（15分）,Professional abstract background for: 第4部：実践テクニック（15分）,なし,3:4
+034,テクニック1：テンプレート活用,Professional abstract background for: テクニック1：テンプレート活用,なし,3:4
+035,テクニック2：トーンの調整,Professional abstract background for: テクニック2：トーンの調整,なし,3:4
+036,テクニック3：箇条書きと表,Professional abstract background for: テクニック3：箇条書きと表,なし,3:4
+037,テクニック4：図表の説明文,Professional abstract background for: テクニック4：図表の説明文,なし,3:4
+038,テクニック5：多言語対応,Professional abstract background for: テクニック5：多言語対応,なし,3:4
+039,実習6：テクニック活用（10分）,Professional abstract background for: 実習6：テクニック活用（10分）,なし,3:4
+040,第5部：品質チェックと仕上げ（10分）,Professional abstract background for: 第5部：品質チェックと仕上げ（10分）,なし,3:4
+041,資料の品質チェックリスト,Professional abstract background for: 資料の品質チェックリスト,なし,3:4
+042,読み手の視点でチェック,Professional abstract background for: 読み手の視点でチェック,なし,3:4
+043,最終調整,Professional abstract background for: 最終調整,なし,3:4
+044,実習7：最終仕上げ（10分）,Professional abstract background for: 実習7：最終仕上げ（10分）,なし,3:4
+045,まとめ（5分）,Professional abstract background for: まとめ（5分）,なし,3:4
+046,今日学んだこと,Professional abstract background for: 今日学んだこと,なし,3:4
+047,資料作成の時短効果,Professional abstract background for: 資料作成の時短効果,なし,3:4
+048,実践課題,Professional abstract background for: 実践課題,なし,3:4
+049,資料作成マスターへの道,Professional abstract background for: 資料作成マスターへの道,なし,3:4
+050,次回予告,Professional abstract background for: 次回予告,なし,3:4
+051,参考リソース,Professional abstract background for: 参考リソース,なし,3:4
+052,ワンポイントアドバイス,Professional abstract background for: ワンポイントアドバイス,なし,3:4
+053,質問タイム,Professional abstract background for: 質問タイム,なし,3:4
+054,メッセージ,Professional abstract background for: メッセージ,なし,3:4
+055,お疲れ様でした！,Professional abstract background for: お疲れ様でした！,なし,3:4

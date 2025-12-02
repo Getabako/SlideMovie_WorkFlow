@@ -1,0 +1,245 @@
+name: 3. Insert Images to Slides
+
+on:
+  workflow_dispatch:
+    inputs:
+      presentation_name:
+        description: 'プレゼンテーション名'
+        required: true
+        type: choice
+        options:
+          - '①すごいぞAI_AI概論'
+          - '②AIを使って画像生成をしてみよう'
+          - '③バナー作り'
+          - '④ディープリサーチ'
+          - '⑤スプレッドシート作成'
+          - '⑥資料作り'
+          - '⑦ホームページ作り'
+          - '⑧プレゼンとは'
+          - '⑨スライド作成'
+          - '⑩AIを活用した資料を使ってプレゼン'
+          - '最新のAI業界の動向2025'
+          - '知能検査ケーススタディ'
+      image_alignment:
+        description: '画像の配置'
+        required: false
+        type: choice
+        options:
+          - 'right'
+          - 'left'
+        default: 'right'
+      image_width:
+        description: '画像の幅（%）'
+        required: false
+        type: string
+        default: '45%'
+
+permissions:
+  contents: write
+
+jobs:
+  insert-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Python dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Find presentation file
+        id: find_presentation
+        run: |
+          # プレゼンテーションディレクトリ
+          PRES_DIR="presentations/${{ github.event.inputs.presentation_name }}"
+
+          if [ ! -d "$PRES_DIR" ]; then
+            echo "Error: Presentation directory not found: $PRES_DIR"
+            exit 1
+          fi
+
+          echo "Found presentation directory: $PRES_DIR"
+
+          # .mdファイルを検索
+          MD_FILE=$(find "$PRES_DIR" -maxdepth 1 -name "*.md" -type f | head -1)
+
+          if [ -z "$MD_FILE" ]; then
+            echo "Error: No markdown file found in $PRES_DIR"
+            exit 1
+          fi
+
+          echo "Found presentation file: $MD_FILE"
+          echo "MD_FILE=$MD_FILE" >> $GITHUB_ENV
+          echo "PRES_DIR=$PRES_DIR" >> $GITHUB_ENV
+
+      - name: Check images directory
+        run: |
+          IMAGES_DIR="${{ env.PRES_DIR }}/images"
+
+          if [ ! -d "$IMAGES_DIR" ]; then
+            echo "Error: Images directory not found: $IMAGES_DIR"
+            exit 1
+          fi
+
+          # 画像数をカウント
+          IMAGE_COUNT=$(ls -1 "$IMAGES_DIR"/*.png 2>/dev/null | wc -l || echo "0")
+          echo "IMAGES_DIR=$IMAGES_DIR" >> $GITHUB_ENV
+          echo "IMAGE_COUNT=$IMAGE_COUNT" >> $GITHUB_ENV
+
+          echo "Found $IMAGE_COUNT images in $IMAGES_DIR"
+
+          if [ "$IMAGE_COUNT" -eq 0 ]; then
+            echo "Warning: No images found in images directory"
+            echo "Please run 'Generate Presentation Images' workflow first"
+            exit 1
+          fi
+
+      - name: Backup original markdown
+        run: |
+          cp "${{ env.MD_FILE }}" "${{ env.MD_FILE }}.backup"
+          echo "Backed up original file to ${{ env.MD_FILE }}.backup"
+
+      - name: Remove old image references
+        run: |
+          python3 -c "
+          import re
+
+          md_file = '${{ env.MD_FILE }}'
+
+          with open(md_file, 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Remove all image references that match the pattern
+          cleaned = re.sub(r'!\[bg (right|left):\d+%\]\(images/[^\)]+\)\n', '', content)
+
+          with open(md_file, 'w', encoding='utf-8') as f:
+              f.write(cleaned)
+
+          print('✓ Removed all old image references')
+          "
+          echo "Old image references removed"
+
+      - name: Insert images into slides
+        run: |
+          # マークダウンに画像を挿入
+          python3 scripts/insert_images_to_slides.py \
+            "${{ env.MD_FILE }}" \
+            --images-dir "${{ env.IMAGES_DIR }}" \
+            --alignment "${{ github.event.inputs.image_alignment }}" \
+            --width "${{ github.event.inputs.image_width }}" \
+            --aspect-ratio "3:4"
+
+          echo "Images inserted successfully"
+
+      - name: Generate preview PDF
+        run: |
+          OUTPUT_PDF="${{ env.PRES_DIR }}/${{ github.event.inputs.presentation_name }}_with_images.pdf"
+
+          marp "${{ env.MD_FILE }}" \
+            -o "$OUTPUT_PDF" \
+            --pdf \
+            --allow-local-files
+
+          echo "OUTPUT_PDF=$OUTPUT_PDF" >> $GITHUB_ENV
+          echo "Generated PDF: $OUTPUT_PDF"
+
+      - name: Generate HTML preview
+        run: |
+          OUTPUT_HTML="${{ env.PRES_DIR }}/${{ github.event.inputs.presentation_name }}_with_images.html"
+
+          marp "${{ env.MD_FILE }}" \
+            -o "$OUTPUT_HTML" \
+            --html \
+            --allow-local-files
+
+          echo "OUTPUT_HTML=$OUTPUT_HTML" >> $GITHUB_ENV
+          echo "Generated HTML: $OUTPUT_HTML"
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-with-images-pdf
+          path: ${{ env.OUTPUT_PDF }}
+
+      - name: Upload HTML as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-with-images-html
+          path: ${{ env.OUTPUT_HTML }}
+
+      - name: Upload updated markdown
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-with-images-md
+          path: ${{ env.MD_FILE }}
+
+      - name: Upload all presentation files
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-complete
+          path: ${{ env.PRES_DIR }}/
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add "${{ env.PRES_DIR }}/"
+
+          git commit -m "feat: Insert images into ${{ github.event.inputs.presentation_name }} slides
+
+          - Inserted ${{ env.IMAGE_COUNT }} images
+          - Alignment: ${{ github.event.inputs.image_alignment }}
+          - Width: ${{ github.event.inputs.image_width }}
+          - Generated PDF and HTML previews
+
+          🤖 Generated by GitHub Actions" || echo "No changes to commit"
+
+          git push || echo "Nothing to push"
+
+      - name: Summary
+        run: |
+          echo "## Images Inserted Successfully! 🎨" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Presentation:** ${{ github.event.inputs.presentation_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Images inserted:** ${{ env.IMAGE_COUNT }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Alignment:** ${{ github.event.inputs.image_alignment }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Width:** ${{ github.event.inputs.image_width }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📥 Download Files" >> $GITHUB_STEP_SUMMARY
+          echo "Check the 'Artifacts' section above to download:" >> $GITHUB_STEP_SUMMARY
+          echo "- **presentation-with-images-pdf** - PDF presentation with images" >> $GITHUB_STEP_SUMMARY
+          echo "- **presentation-with-images-html** - HTML presentation with images" >> $GITHUB_STEP_SUMMARY
+          echo "- **presentation-with-images-md** - Updated markdown file" >> $GITHUB_STEP_SUMMARY
+          echo "- **presentation-complete** - All presentation files" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔍 Preview" >> $GITHUB_STEP_SUMMARY
+          echo "The PDF and HTML files are ready for review!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Files saved to repository:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.PRES_DIR }}/\`" >> $GITHUB_STEP_SUMMARY

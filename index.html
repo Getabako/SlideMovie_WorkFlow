@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレゼンテーション一覧 - SlideMovie WorkFlow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .presentations {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn.secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .btn.tertiary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: white;
+            padding: 3rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 プレゼンテーション一覧</h1>
+            <p class="subtitle">SlideMovie WorkFlow - AI生成プレゼンテーション</p>
+        </header>
+
+        <div class="presentations" id="presentations">
+            <!-- プレゼンテーションカードがここに動的に追加されます -->
+        </div>
+
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <h2>まだプレゼンテーションがありません</h2>
+            <p>GitHub Actionsで「1. Generate Presentation」ワークフローを実行して、プレゼンテーションを作成してください。</p>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <a href="https://github.com/Getabako/SlideMovie_WorkFlow" target="_blank">SlideMovie WorkFlow</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // プレゼンテーション一覧を取得して表示
+        async function loadPresentations() {
+            try {
+                const response = await fetch('presentations.json');
+                const presentations = await response.json();
+
+                const container = document.getElementById('presentations');
+                const emptyState = document.getElementById('empty-state');
+
+                if (presentations.length === 0) {
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                presentations.forEach(pres => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    card.innerHTML = `
+                        <h2>${pres.title}</h2>
+                        <div class="links">
+                            <a href="${pres.html}" class="btn" target="_blank">
+                                📊 HTMLプレゼンテーションを開く
+                            </a>
+                            <a href="${pres.pdf}" class="btn secondary" target="_blank">
+                                📄 PDFをダウンロード
+                            </a>
+                            ${pres.video ? `<a href="${pres.video}" class="btn tertiary" target="_blank">🎬 動画を見る</a>` : ''}
+                        </div>
+                    `;
+
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('プレゼンテーション一覧の読み込みに失敗しました:', error);
+                document.getElementById('empty-state').style.display = 'block';
+            }
+        }
+
+        // ページ読み込み時に実行
+        loadPresentations();
+    </script>
+</body>
+</html>

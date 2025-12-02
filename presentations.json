@@ -1,0 +1,38 @@
+[
+  {
+    "title": "①すごいぞAI_AI概論",
+    "html": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.html",
+    "pdf": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.pdf",
+    "video": "videos/①すごいぞAI_AI概論/video.mp4"
+  },
+  {
+    "title": "②AIを使って画像生成をしてみよう",
+    "html": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう.html",
+    "pdf": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう.pdf",
+    "video": null
+  },
+  {
+    "title": "③バナー作り",
+    "html": "presentations/③バナー作り/③バナー作り_with_images.html",
+    "pdf": "presentations/③バナー作り/③バナー作り_with_images.pdf",
+    "video": null
+  },
+  {
+    "title": "④ディープリサーチ",
+    "html": "presentations/④ディープリサーチ/④ディープリサーチ_with_images.html",
+    "pdf": "presentations/④ディープリサーチ/④ディープリサーチ.pdf",
+    "video": null
+  },
+  {
+    "title": "最新のAI業界の動向2025",
+    "html": "presentations/最新のAI業界の動向2025/最新のAI業界の動向2025.html",
+    "pdf": "presentations/最新のAI業界の動向2025/最新のAI業界の動向2025.pdf",
+    "video": null
+  },
+  {
+    "title": "知能検査ケーススタディ",
+    "html": "presentations/知能検査ケーススタディ/知能検査ケーススタディ_with_images.html",
+    "pdf": "presentations/知能検査ケーススタディ/知能検査ケーススタディ_with_images_fixed.pdf",
+    "video": null
+  }
+]

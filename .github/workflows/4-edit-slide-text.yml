@@ -1,0 +1,184 @@
+name: 4. Edit Slide Text
+
+on:
+  workflow_dispatch:
+    inputs:
+      presentation_name:
+        description: 'プレゼンテーション名'
+        required: true
+        type: choice
+        options:
+          - '①すごいぞAI_AI概論'
+          - '②AIを使って画像生成をしてみよう'
+          - '③バナー作り'
+          - '④ディープリサーチ'
+          - '⑤スプレッドシート作成'
+          - '⑥資料作り'
+          - '⑦ホームページ作り'
+          - '⑧プレゼンとは'
+          - '⑨スライド作成'
+          - '⑩AIを活用した資料を使ってプレゼン'
+          - '最新のAI業界の動向2025'
+          - '知能検査ケーススタディ'
+      edit_instructions:
+        description: '編集指示（例: スライド8の構成要素を大きく、目立つ、短く、簡潔にして）'
+        required: true
+      regenerate_images:
+        description: '画像を再生成する'
+        type: boolean
+        default: false
+      regenerate_all:
+        description: 'スライド全体を再生成する（PDF、個別画像など）'
+        type: boolean
+        default: false
+
+jobs:
+  edit-slide-text:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install pyyaml google-generativeai pillow
+
+      - name: Check and generate input.yml if needed
+        run: |
+          PRESENTATION_DIR="presentations/${{ github.event.inputs.presentation_name }}"
+          INPUT_YML="${PRESENTATION_DIR}/input.yml"
+
+          if [ ! -f "$INPUT_YML" ]; then
+            echo "input.yml not found. Generating from Markdown file..."
+
+            # Find the main markdown file (with or without _slide suffix)
+            MD_FILE="${PRESENTATION_DIR}/${{ github.event.inputs.presentation_name }}.md"
+
+            if [ ! -f "$MD_FILE" ]; then
+              MD_FILE="${PRESENTATION_DIR}/${{ github.event.inputs.presentation_name }}_slide.md"
+            fi
+
+            if [ ! -f "$MD_FILE" ]; then
+              MD_FILE="${PRESENTATION_DIR}/${{ github.event.inputs.presentation_name }}_slide_with_images.md"
+            fi
+
+            if [ ! -f "$MD_FILE" ]; then
+              echo "Error: No markdown file found in $PRESENTATION_DIR"
+              exit 1
+            fi
+
+            echo "Found markdown file: $MD_FILE"
+            python3 scripts/convert_md_to_input_yml.py "$MD_FILE" "$INPUT_YML"
+            echo "✓ Generated input.yml from markdown"
+          else
+            echo "✓ input.yml already exists"
+          fi
+
+      - name: Edit slide text
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          python3 scripts/edit_slide_text_natural.py \
+            "presentations/${{ github.event.inputs.presentation_name }}/input.yml" \
+            "${{ github.event.inputs.edit_instructions }}"
+
+      - name: Regenerate presentation
+        if: github.event.inputs.regenerate_images == 'true' || github.event.inputs.regenerate_all == 'true'
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          # Marp CLIのインストール
+          npm install -g @marp-team/marp-cli
+
+          # ディレクトリの準備
+          mkdir -p slides images output presentations
+
+          # プレゼンテーション名を取得
+          PRESENTATION_NAME="${{ github.event.inputs.presentation_name }}"
+          INPUT_YAML="presentations/${PRESENTATION_NAME}/input.yml"
+
+          # スライド生成
+          python3 scripts/create_slide.py "$INPUT_YAML"
+
+          # 画像生成が必要な場合
+          if [ "${{ github.event.inputs.regenerate_images }}" == "true" ]; then
+            # 画像プロンプト生成
+            python3 PresentationWorkFlow/scripts/generate_image_prompts.py "slides/${PRESENTATION_NAME}_slide.md"
+
+            # 画像生成
+            python3 PresentationWorkFlow/scripts/generate_images.py "slides/${PRESENTATION_NAME}_imageprompt.csv" "$PRESENTATION_NAME"
+          fi
+
+          # 画像埋め込み
+          python3 PresentationWorkFlow/scripts/embed_images.py "slides/${PRESENTATION_NAME}_slide.md" images "$PRESENTATION_NAME"
+
+          # 全体再生成が必要な場合
+          if [ "${{ github.event.inputs.regenerate_all }}" == "true" ]; then
+            # HTML生成
+            marp "slides/${PRESENTATION_NAME}_slide_with_images.md" \
+              -o "output/${PRESENTATION_NAME}_with_images.html" \
+              --html --allow-local-files
+
+            # PDF生成
+            marp "slides/${PRESENTATION_NAME}_slide_with_images.md" \
+              -o "output/${PRESENTATION_NAME}_with_images.pdf" \
+              --pdf --allow-local-files
+
+            # 個別画像出力
+            marp "slides/${PRESENTATION_NAME}_slide_with_images.md" \
+              -o "presentations/${PRESENTATION_NAME}/slide-%d.png" \
+              --images png --allow-local-files
+
+            # ファイルをpresentationsディレクトリにコピー
+            cp "output/${PRESENTATION_NAME}_with_images.html" "presentations/${PRESENTATION_NAME}/${PRESENTATION_NAME}_with_images.html"
+            cp "output/${PRESENTATION_NAME}_with_images.pdf" "presentations/${PRESENTATION_NAME}/${PRESENTATION_NAME}_with_images.pdf"
+            cp "slides/${PRESENTATION_NAME}_slide.md" "presentations/${PRESENTATION_NAME}/${PRESENTATION_NAME}_slide.md"
+            cp "slides/${PRESENTATION_NAME}_slide_with_images.md" "presentations/${PRESENTATION_NAME}/${PRESENTATION_NAME}_slide_with_images.md"
+
+            # 画像ディレクトリをコピー
+            if [ -d "images" ]; then
+              rm -rf "presentations/${PRESENTATION_NAME}/images"
+              cp -r images "presentations/${PRESENTATION_NAME}/images"
+            fi
+          fi
+
+      - name: Commit and push changes
+        env:
+          PRESENTATION_NAME: ${{ github.event.inputs.presentation_name }}
+          EDIT_INSTRUCTIONS: ${{ github.event.inputs.edit_instructions }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add presentations/${{ github.event.inputs.presentation_name }}/
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            # Create commit message file
+            cat > /tmp/commit_msg.txt << EOF
+          Edit slides in ${PRESENTATION_NAME}
+
+          ${EDIT_INSTRUCTIONS}
+
+          🤖 Generated by GitHub Actions
+          EOF
+            git commit -F /tmp/commit_msg.txt
+            git push
+          fi
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: edited-presentation-${{ github.event.inputs.presentation_name }}
+          path: presentations/${{ github.event.inputs.presentation_name }}/

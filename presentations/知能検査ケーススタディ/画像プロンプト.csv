@@ -1,0 +1,38 @@
+slide_number,title,prompt,character,aspect_ratio
+001,知能検査ケーススタディ,"[プロンプト内容]
+A 3:4 portrait of a friendly and energetic Japanese man in his early thirties, ""Shota Takasaki,"" the head teacher, smiling warmly and gesturing towards a WISC-V test result sheet. The sheet displays charts and graphs illustrating cognitive abilities. He stands in a brightly lit, modern classroom setting with blurred figures of children working at desks in the background, suggesting a supportive and educational environment. The overall image conveys the idea of understanding and interpreting a child's learning profile through intelligence testing.",塾頭高崎翔太,3:4
+002,本日のゴール,"[プロンプト内容]
+A bright and energetic Japanese male in his early thirties, resembling Takasaki Shota, stands at the head of a group of people seated around a table, explaining something with enthusiasm. The table is covered with papers and charts depicting WISC-V test results. The environment is a brightly lit and modern study room. The focus is on the interaction and learning taking place. The image is visually engaging and conveys a sense of active participation. The composition is suitable for a vertical (3:4) aspect ratio, emphasizing the verticality of the room and the engaged group. The scene implies education and practical application of knowledge.",塾頭高崎翔太,3:4
+003,WISC-Vの基礎知識,"[プロンプト内容]
+塾頭高崎翔太が、WISC-Vの5つの主要指標（言語理解、視空間、流動性推理、ワーキングメモリー、処理速度）を示す、それぞれ異なるアイコンや図形が浮かび上がる透明なパネルを指し示している。パネルは、高崎の後ろに配置された、明るく現代的なデザインの教室に浮かんでいるように見える。言語理解のパネルには本と会話アイコン、視空間のパネルには立方体と目、流動性推理のパネルには歯車と疑問符、ワーキングメモリーのパネルにはメモ用紙と脳、処理速度のパネルにはストップウォッチと矢印が描かれている。高崎は、親しみやすい笑顔で、生徒たちに説明している様子。背景はぼかし、高崎とパネルに焦点が当たるようにする。アスペクト比は3:4。",塾頭高崎翔太,3:4
+004,指標得点の解釈,"[プロンプト内容]
+塾頭高崎翔太（30代前半の日本人男性、エネルギッシュで親しみやすい印象）が、ホワイトボードの前で、熱心にジェスチャーを交えながら説明している様子。ホワイトボードには、グラフが描かれており、グラフの各範囲に異なる色のマーカーで色分けされている。高崎翔太は、グラフの特定の範囲を指し示しており、生徒たちが理解を深めている様子が伝わる構図。背景には、塾の教室がぼんやりと見える。アスペクト比3:4。教育的で親しみやすい雰囲気。",塾頭高崎翔太,3:4
+005,結果を読む際のポイント,"[プロンプト内容]
+教室の一室で、塾頭高崎翔太が3人の生徒（小学生～中学生）にテスト結果を見せながら説明している。高崎は生徒一人ひとりのテストを指差し、熱心に話を聞いている生徒もいれば、少し不安そうな表情の生徒もいる。背景には、ホワイトボードといくつかの参考書が置かれた棚がある。高崎は生徒に寄り添い、励ましながら、結果の良い点と改善点を伝えている様子を捉える。",塾頭高崎翔太,3:4
+006,ケース1：Aさん（15歳・中学3年生）,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太が、少し困った表情で、目の前のテスト用紙を見ている。テスト用紙には、IQ検査の結果を示すグラフや数値が抽象的に表現されている。背景は、整理整頓された学習塾の一室。暖色系の照明で、安心感を与える雰囲気。縦長構図。テキスト、文字、看板、ラベル、タイトルは一切なし。",塾頭高崎翔太,3:4
+007,Aさんの検査中の様子,"[プロンプト内容]
+A young Japanese boy is carefully solving a puzzle at a desk in a brightly lit classroom. The room is clean and organized, filled with educational materials. The boy is focused and deliberate in his actions, showing attention to detail. A friendly and energetic Japanese man in his early thirties,塾頭高崎翔太, is observing him with a warm and encouraging smile, standing slightly behind and to the side. The overall scene conveys a sense of patient guidance and a supportive learning environment. Aspect ratio 3:4.",塾頭高崎翔太,3:4
+008,ワーク1：Aさんの特性分析（10分）,"[プロンプト内容]
+グループワークの風景。塾頭高崎翔太が、数人の参加者が囲むテーブルのそばに立ち、笑顔で身振り手振りを交えながら説明をしている。テーブルの上には、様々な色の付箋が散らばっている。参加者は真剣な表情で話し合い、メモを取ったり、付箋に書き込んだりしている。背景は、明るく清潔感のある研修室。",塾頭高崎翔太,3:4
+009,Aさんの特性解説,"[プロンプト内容]
+縦長構図(3:4)。塾頭高崎翔太(30代前半の日本人男性、エネルギッシュで親しみやすい印象)が、目の前にいる子供(8歳くらいの男の子)に寄り添い、丁寧に学習指導をしている様子。男の子は複数の課題プリントが散らばった机に向かっており、困った表情をしている。塾頭高崎翔太は、男の子の目線に合わせて身をかがめ、プリントを指しながら優しく話しかけている。背景には、整理整頓された学習塾の様子が伺える。暖色系の照明で、温かく安心感のある雰囲気を演出。",塾頭高崎翔太,3:4
+010,Aさんへの支援提案,"[プロンプト内容]
+教室の一室、塾頭高崎翔太が、一人の生徒（日本人、小学生高学年程度）の隣に座り、教材を見ながら優しく教えている様子。教材はカラフルで、視覚的に整理されている。生徒は少し緊張した表情だが、安心している雰囲気も感じられる。塾頭高崎翔太は笑顔で、生徒の目線に合わせて話している。背景には、整理整頓された棚と、他の生徒たちが集中して勉強している様子がぼんやりと見える。ソフトな自然光が差し込み、温かい雰囲気を演出。アスペクト比3:4。",塾頭高崎翔太,3:4
+011,ケース2：Bさん（8歳・小学2年生）,Professional abstract background for: ケース2：Bさん（8歳・小学2年生）,なし,3:4
+012,Bさんの行動面の様子,Professional abstract background for: Bさんの行動面の様子,なし,3:4
+013,ワーク2：Bさんの特性分析（10分）,Professional abstract background for: ワーク2：Bさんの特性分析（10分）,なし,3:4
+014,Bさんの特性解説,Professional abstract background for: Bさんの特性解説,なし,3:4
+015,Bさんへの支援提案,"[プロンプト内容]
+a 3:4 aspect ratio photograph depicting a young japanese man, in his early thirties, identified as ""Jukutou Takasaki Shouta,"" kneeling beside a young boy who is focused on a brightly colored, visually engaging learning game on a tablet. The boy is clearly enjoying the activity. Shouta is pointing to the screen with a supportive smile. The background is a structured and organized learning environment with clear visual cues and minimal distractions. There are colorful learning materials within reach, but neatly arranged. No text or labels should be visible in the image. The lighting is bright and encouraging.",塾頭高崎翔太,3:4
+016,ケース3：Cさん（10歳・小学5年生）,"[プロンプト内容]
+A worried, friendly-looking 30s Japanese male tutor,塾頭高崎翔太, kneels beside a concerned-looking 10-year-old Japanese boy, Cさん, who is working on a math problem at a desk. The boy looks frustrated. The setting is a brightly lit, modern classroom with simple, minimalist decor. Focus is on the interaction and concern between the tutor and student. Avoid any visible text, labels, or numbers in the image. 3:4 aspect ratio.",塾頭高崎翔太,3:4
+017,Cさんの検査中の様子,Professional abstract background for: Cさんの検査中の様子,なし,3:4
+018,ワーク3：Cさんの特性分析（10分）,Professional abstract background for: ワーク3：Cさんの特性分析（10分）,なし,3:4
+019,Cさんの特性解説,Professional abstract background for: Cさんの特性解説,なし,3:4
+020,Cさんへの支援提案,Professional abstract background for: Cさんへの支援提案,なし,3:4
+021,3ケースの比較,Professional abstract background for: 3ケースの比較,なし,3:4
+022,支援を考える際の視点,Professional abstract background for: 支援を考える際の視点,なし,3:4
+023,保護者・教員への伝え方,Professional abstract background for: 保護者・教員への伝え方,なし,3:4
+024,まとめ,Professional abstract background for: まとめ,なし,3:4
+025,質疑応答,Professional abstract background for: 質疑応答,なし,3:4

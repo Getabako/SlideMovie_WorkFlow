@@ -1,0 +1,29 @@
+{
+  "total_slides": 24,
+  "slides": [
+    {"index": 1, "filename": "slide_01.png"},
+    {"index": 2, "filename": "slide_02.png"},
+    {"index": 3, "filename": "slide_03.png"},
+    {"index": 4, "filename": "slide_04.png"},
+    {"index": 5, "filename": "slide_05.png"},
+    {"index": 6, "filename": "slide_06.png"},
+    {"index": 7, "filename": "slide_07.png"},
+    {"index": 8, "filename": "slide_08.png"},
+    {"index": 9, "filename": "slide_09.png"},
+    {"index": 10, "filename": "slide_10.png"},
+    {"index": 11, "filename": "slide_11.png"},
+    {"index": 12, "filename": "slide_12.png"},
+    {"index": 13, "filename": "slide_13.png"},
+    {"index": 14, "filename": "slide_14.png"},
+    {"index": 15, "filename": "slide_15.png"},
+    {"index": 16, "filename": "slide_16.png"},
+    {"index": 17, "filename": "slide_17.png"},
+    {"index": 18, "filename": "slide_18.png"},
+    {"index": 19, "filename": "slide_19.png"},
+    {"index": 20, "filename": "slide_20.png"},
+    {"index": 21, "filename": "slide_21.png"},
+    {"index": 22, "filename": "slide_22.png"},
+    {"index": 23, "filename": "slide_23.png"},
+    {"index": 24, "filename": "slide_24.png"}
+  ]
+}

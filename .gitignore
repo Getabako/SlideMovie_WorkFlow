@@ -1,0 +1,25 @@
+node_modules/
+.DS_Store
+*.log
+.env
+
+# Build outputs (keep in repo for archival)
+# slides/
+# images/
+# output/
+# presentations/ (keep folder structure but exclude large files)
+videos/
+# scripts_output/
+# audio_output/
+# slide_images/
+
+# Large files - exclude from repository
+presentations/images/
+presentations/audio_output/
+presentations/scripts_output/
+*.mp3
+*.mp4
+
+# Temporary files
+.tmp/
+*.tmp

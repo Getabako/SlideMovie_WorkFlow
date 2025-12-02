@@ -1,0 +1,232 @@
+page_number,image_prompt
+1,"はい、以下に画像生成AIへのプロンプト案をいくつか提案します。
+
+**プロンプト例1（日本語）:**
+
+知能検査の結果を分析し、子どもの成長を支援する専門家のイメージ。背景には、抽象的な図形や脳のイメージがさりげなく配置されている。全体的に落ち着いた色調で、信頼感と知性を感じさせる。
+
+**プロンプト例2（英語）:**
+
+A professional analyzing a WISC-V test report to support a child's development. Subtle abstract shapes and brain imagery in the background. A calm color palette conveys trust and intelligence. 3:4 ratio.
+
+**プロンプト例3（日本語）:**
+
+パズルや積み木など、知的なおもちゃで遊ぶ子どもの様子を観察する専門家。背景には、WISC-V検査のチャートやグラフがぼんやりと見える。明るく、希望に満ちた雰囲気。
+
+**プロンプト例4（英語）:**
+
+An expert observing a child playing with intellectual toys like puzzles and building blocks. Faintly visible in the background are WISC-V test charts and graphs. A bright and hopeful atmosphere. 3:4 ratio.
+
+**プロンプト選択のヒント:**
+
+*   **抽象度:** より具体的なイメージが必要な場合は、子どもが遊んでいるおもちゃの種類や、専門家の表情などを指定すると良いでしょう。
+*   **雰囲気:** ワークショップの対象者（保護者向けか、専門家向けか）によって、明るさや色調を調整してください。
+*   **キーワード:** WISC-V、知能検査、子どもの発達、専門家、分析、パズル、積み木、脳、チャート、グラフ、信頼、知性、希望、成長などを組み合わせることで、よりイメージに近い画像を生成できます。
+
+これらのプロンプトを参考に、ご自身のイメージに合う画像を生成してみてください。"
+2,"**日本語プロンプト:**
+
+勉強会の教室風景。円卓を囲んでWISC-V検査結果の資料を見ながら熱心に話し合う参加者の姿。温かみのある照明と、プロジェクターに映し出されたスライドの一部が写っている。
+
+**英語プロンプト:**
+
+Classroom scene of a workshop. Participants are sitting around a round table, intently discussing WISC-V test results and related materials. Warm lighting and a partial view of a slide projected on a screen are visible."
+3,"はい、以下に画像プロンプト案をいくつか提案します。
+
+**プロンプト案 1 (日本語):**
+
+カラフルな脳のイラストレーション。脳の各部位が言語理解、視空間、流動性推理、ワーキングメモリー、処理速度を象徴するアイコンで表現されている。プロフェッショナルで洗練されたデザイン。
+
+**プロンプト案 2 (英語):**
+
+Vertical illustration of a colorful brain, with sections highlighted using icons representing verbal comprehension, visual-spatial reasoning, fluid reasoning, working memory, and processing speed. Professional and clean design.
+
+**プロンプト案 3 (日本語):**
+
+5つのパズルのピースが組み合わさって脳の形を形成しているイラスト。各ピースには、言語理解、視空間、流動性推理、ワーキングメモリー、処理速度に関連するシンボルが描かれている。背景はシンプルでプロフェッショナルな印象。
+
+**プロンプト案 4 (英語):**
+
+A vertical image depicting five puzzle pieces fitting together to form the shape of a brain. Each puzzle piece features a symbol representing verbal comprehension, visual-spatial, fluid reasoning, working memory, and processing speed. Clean, professional background.
+
+**プロンプトの選択のポイント:**
+
+*   抽象度合い: どれくらい具体的なイメージを求めているかで選択
+*   キーワード: スライドの内容と一致するキーワードが含まれているか
+*   スタイル: 希望するデザインスタイル（カラフル、シンプル、洗練された）
+
+これらのプロンプトを参考に、必要に応じて調整し、画像生成AIに入力してみてください。"
+4,"## 画像プロンプト (日本語)
+
+**プロンプト:** 成績評価グラフと階段状の図。階段は上に行くほど色が濃くなり、対応する成績評価（極めて高い～極めて低い）が示されている。グラフは成績評価の分布を示し、平均値が強調されている。プロフェッショナルで洗練されたデザイン。
+
+## 画像プロンプト (英語)
+
+**Prompt:** A vertical bar chart representing performance scores, combined with a staircase illustration. The stairs ascend with increasingly darker colors, each step labeled with corresponding performance levels (e.g., ""Extremely High"" to ""Extremely Low""). The chart displays a distribution of scores, with the average score highlighted. Professional and sophisticated design."
+5,"**日本語プロンプト:**
+
+様々な大きさのグラフが並ぶダッシュボードを前に、落ち着いた雰囲気の女性医師がカルテを見ながら考え込んでいる様子。指標間の差異、行動観察、日常生活との照合といった分析的な視点を表現。
+
+**英語プロンプト:**
+
+A composed female doctor thoughtfully reviewing a medical chart in front of a dashboard displaying various sized graphs. The image should convey analytical thinking, representing concepts such as discrepancies between metrics, behavioral observation, and correlation with daily life."
+6,"以下に、上記のスライド内容に基づいた画像プロンプトの例をいくつか示します。
+
+**日本語プロンプト例:**
+
+*   **プロンプト1:** 抽象的な脳のイラスト、内部に複雑な迷路が描かれ、一部の道が閉ざされている。暖かい色合いと冷たい色合いを混ぜて、知的機能のばらつきを表現。縦長比率。
+*   **プロンプト2:** 15歳くらいの学生が、本を開こうとしているが、どこか戸惑っている表情。背景には、難解な数式や記号がぼんやりと見える。全体的に落ち着いた色調で、知的な挑戦と困難さを表現。縦長比率。
+*   **プロンプト3:** 木の根が複雑に絡み合っているイラスト。根の一部は他の部分よりも成長が遅れている。背景は落ち着いた色合い。知的能力の発達のばらつきを表現。縦長比率。
+
+**英語プロンプト例:**
+
+*   **Prompt 1:** Abstract illustration of a brain with a complex maze inside, some paths are blocked. Use a mix of warm and cool colors to represent variations in cognitive function. Vertical aspect ratio.
+*   **Prompt 2:** A student around 15 years old looks hesitant to open a book. In the background, faint complex equations and symbols are visible. Overall muted tones, representing intellectual challenges and difficulties. Vertical aspect ratio.
+*   **Prompt 3:** Illustration of complex and intertwined tree roots. Some roots are less developed than others. Muted background colors. Represents the uneven development of cognitive abilities. Vertical aspect ratio.
+
+**推奨:**
+
+これらのプロンプトを参考に、画像生成AIが生成した画像をいくつか比較し、スライドの内容に最も適したものを選んでください。 どのプロンプトが一番良いかは、AIの解釈や生成される画像のスタイルによって異なるため、試行錯誤が必要です。"
+7,"**日本語プロンプト:**
+
+「発達検査を受ける子供。落ち着いた雰囲気の検査室で、検査官と向かい合い、机に向かって課題に取り組む様子。集中している表情で、少し緊張している。」
+
+**英語プロンプト:**
+
+""A child undergoing a developmental assessment. Depict a calm examination room with the child facing an examiner, working on a task at a desk. A focused expression with a slight hint of nervousness."""
+8,"**日本語プロンプト:**
+
+グループで付箋を手に、Aさんの特性分析について話し合っている様子。背景はぼかして、プロフェッショナルなオフィス環境を表現する。
+
+**英語プロンプト:**
+
+A group of people collaborating on a project, holding sticky notes and discussing A's characteristic analysis. Soft focus on the background, depicting a professional office environment. Aspect ratio 3:4."
+9,"以下に、スライドの内容に基づいた画像プロンプトをいくつか提案します。
+
+**プロンプト例1 (日本語):**
+
+縦長構図。脳内で情報が整理される様子を、複雑な配線と光の流れで表現。一部の配線は明るく強調され、活発に情報が伝達されている様子を示す（ワーキングメモリー）。しかし、別の配線は暗く、速度が遅いような表現（処理速度の遅さ）。全体的に落ち着いたトーンで、知的で洗練されたイメージ。
+
+**プロンプト例2 (英語):**
+
+Vertical image. Abstract representation of information processing in the brain with intricate wiring and light flows. Some wiring is brightly highlighted, representing active information transfer (working memory). Other wiring is dark and slow, representing slow processing speed. Overall, a calm tone conveys an intellectual and sophisticated image.
+
+**プロンプト例3 (日本語):**
+
+縦長構図。時計の文字盤が背景にあり、一部の針は高速に回転しているが（ワーキングメモリー）、別の針はほとんど動いていない（処理速度の遅さ）。時計全体は複雑な機械仕掛けで構成されており、脳の複雑さを表現。知的でプロフェッショナルな印象を与えるように。
+
+**プロンプト例4 (英語):**
+
+Vertical image. A clock face in the background, with some hands spinning rapidly (working memory) and others barely moving (slow processing speed). The clock is made of complex machinery, representing the complexity of the brain. Designed to give an intellectual and professional impression.
+
+**プロンプトの選択と調整のヒント:**
+
+*   **好みの表現:** どのプロンプトが、スライドの意図に最も合致するか、個人の好みに近いかを考慮してください。
+*   **AIの得意分野:** 使用するAI画像生成サービスの得意とする画像の種類（抽象的、写実的など）に合わせて、プロンプトを調整すると、より良い結果が得られる可能性があります。
+*   **具体的なキーワード:** 上記の例を参考に、具体的なキーワード（色、質感、構図など）を追加すると、よりイメージに近い画像を生成しやすくなります。
+*   **テストと調整:** プロンプトを入力して生成された画像を参考に、さらにプロンプトを調整して、理想の画像に近づけてください。
+
+これらのプロンプト例を参考に、ぜひ試してみてください。"
+10,"## 画像プロンプト案（日本語）
+
+**プロンプト:**
+「学習環境を調整し、本人の強みを活かす」という支援のコンセプトを表現する、パズルピースが組み合わさって成長する植物のイラスト。背景は落ち着いた色合いで、洗練されたプロフェッショナルな印象に。
+
+## 画像プロンプト案（英語）
+
+**プロンプト:**
+Illustration depicting the concept of tailored support: puzzle pieces fitting together to form a growing plant, representing the adjustment of the learning environment and leveraging individual strengths. Use a calming color palette and a polished, professional aesthetic. Aspect ratio 3:4."
+11,"はい、以下に画像プロンプトを提案します。
+
+**日本語プロンプト:**
+
+8歳の男の子が、積み木のような玩具で遊んでいる様子。積み木の一部は高く積み上げられているが、一部は崩れている。背景にはグラフがぼんやりと見え、知能検査の結果を示唆する。
+
+**英語プロンプト:**
+
+A portrait of an 8-year-old boy playing with building blocks. Some blocks are stacked high, while others are scattered. A blurred graph in the background hints at intelligence test results."
+12,"**日本語プロンプト:**
+
+教室で授業を受けている子供達のシルエット。一人の子供だけ、少し落ち着かない様子で、そわそわと動いている。
+
+**英語プロンプト:**
+
+Silhouette of children in a classroom. One child is visibly restless and fidgety during the lesson."
+13,"**日本語プロンプト:**
+
+集中して議論するビジネスパーソンのグループ。カラフルな付箋が貼られたホワイトボードを囲み、真剣な表情で意見を交わしている様子。縦長。
+
+**英語プロンプト:**
+
+A group of business professionals intensely discussing around a whiteboard covered with colorful sticky notes. They are exchanging opinions with serious expressions. Vertical aspect ratio (3:4)."
+14,"いくつかプロンプトの候補を挙げます。
+
+**候補1 (日本語):**
+
+「脳の断面図、一方（視覚野）は明るく活発、もう一方（前頭前野）は少し暗く、思考回路が途切れているイメージ。全体的に知的で洗練された印象。」
+
+**候補2 (英語):**
+
+""A stylized brain diagram, the visual cortex area is brightly lit and active, while the prefrontal cortex area is slightly dimmed with broken connections. Overall, a sophisticated and intellectual impression. Aspect ratio 3:4.""
+
+**候補3 (日本語):**
+
+「パズルのピースがいくつか欠けている人の顔のシルエット。視覚的な部分は完成されているが、額の部分に欠落が多い。全体的に落ち着いた色調で、知的な雰囲気。」
+
+**候補4 (英語):**
+
+""A silhouette of a human face with several missing puzzle pieces. The visual areas are complete, but there are many missing pieces in the forehead area. A calm color palette and an intellectual atmosphere. Aspect ratio 3:4.""
+
+**プロンプト選択のポイント:**
+
+*   **抽象度:** 候補1,2は脳の機能にフォーカスしており、より抽象的です。候補3,4は人の顔のシルエットを使用しており、より具体的なイメージを持ちやすいでしょう。
+*   **強み・弱みの表現:** いずれの候補も、強みと弱みを対比させるような表現を試みています。
+*   **スタイル:** ""知的で洗練された""、""落ち着いた色調で知的な雰囲気"" などのキーワードで、プロフェッショナルな印象になるように工夫しています。
+*   **縦長比率:** 英語プロンプトには、念のためアスペクト比 (Aspect ratio 3:4) を明記しました。
+
+これらのプロンプトを参考に、生成される画像のイメージに合わせて調整してみてください。例えば、特定の色の指定、より具体的な脳の部位の強調、あるいは、パズルのピースの種類などを指定することで、より意図した画像が得られる可能性があります。"
+15,"**日本語プロンプト:**
+
+学習スペースで、視覚的な教材（カラフルな図やイラスト）を使って勉強するBさん（中学生くらい）。先生がそばで、ホワイトボードを使って短い指示を出している。奥には構造化されたスケジュール表が見える。
+
+**英語プロンプト:**
+
+A middle school student (""B-san"") learning in a study space with visual aids (colorful diagrams and illustrations). A teacher is nearby, giving short instructions using a whiteboard. In the background, a structured schedule is visible.
+
+**プロンプトの意図:**
+
+*   **学習面の支援:** 視覚教材、短い指示
+*   **行動面の支援:** 構造化された環境（スケジュール表）
+*   **人物:** Bさんと先生を描写することで、支援関係を表現
+*   **背景:** 学習スペースを示すことで、状況を具体的に
+*   **抽象度:** 具体的な場面を描写しつつ、抽象的な支援内容を包括的に表現"
+16,"**日本語プロンプト:**
+
+教室で困惑した表情を浮かべる、少し年齢よりも幼く見える10歳の男の子。テスト用紙を手に持ち、周囲の子どもたちが楽しそうに勉強している様子をぼんやりと見ている。
+
+**英語プロンプト:**
+
+A slightly younger-looking 10-year-old boy in a classroom, looking confused. He's holding a test paper and vaguely watching other children studying happily around him."
+17,"はい、以下に画像プロンプトを提案します。
+
+**日本語:**
+
+幼い男の子が、積み木を前にして困惑した表情を浮かべ、そのうちいくつかを手で払いのけている様子。背景は整理された検査室で、母親らしき人物が少し離れた場所から心配そうに見守っている。
+
+**英語:**
+
+A young boy looks frustrated in front of building blocks, sweeping some of them off the table with his hand. The background is a tidy examination room, with a woman who appears to be his mother watching him anxiously from a short distance."
+18,"**プロンプト (日本語):**
+
+グループで付箋を使って話し合い、分析を行っている風景。グラフと人物のシルエットを重ね、思考を巡らせる様子を表現する。
+
+**プロンプト (英語):**
+
+A scene of a group discussion using sticky notes for analysis. Overlap a graph with silhouettes of people, conveying the process of thinking and analysis."
+19,Illustration for: Cさんの特性解説
+20,Illustration for: Cさんへの支援提案
+21,Illustration for: 3ケースの比較
+22,Illustration for: 支援を考える際の視点
+23,Illustration for: 保護者・教員への伝え方
+24,Illustration for: まとめ
+25,Illustration for: 質疑応答

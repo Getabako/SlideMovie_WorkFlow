@@ -1,0 +1,81 @@
+slide_number,title,prompt,character,aspect_ratio
+001,AIとCanvaでバナー作り,"[プロンプト内容]
+30代前半の日本人男性、塾頭高崎翔太が、Canvaの画面に向かって笑顔でジェスチャーをしている。Canvaの画面には、紅葉の画像と「秋田」という文字をあしらったバナーデザインが表示されている。背景には、ノートパソコン、タブレット、文房具などが置かれた明るく清潔感のあるデスク。周囲には、熱心にバナーデザインに取り組む女性たちの姿がぼんやりと見える。縦長(3:4)。教育的な雰囲気。テキスト、文字、看板、ラベル、タイトルはなし。",塾頭高崎翔太,3:4
+002,本日の目標,"[プロンプト内容]
+教室で、塾頭高崎翔太がCanvaの画面を見ながら、熱心にバナーデザインを指導している様子。生徒たちが真剣な表情で彼の説明を聞き、パソコンに向かっている。背景には、様々なデザインツールやバナーのサンプルが表示されたモニターが複数ある。エネルギッシュで活気のある学習風景。縦長構図。",塾頭高崎翔太,3:4
+003,アイスブレイク（5分）,"[プロンプト内容]
+A 30s Japanese male instructor, ""Shota Takasaki"", standing in front of a whiteboard filled with messy sketches of web layouts, mobile app interfaces, and various graphic elements. He is pointing at the whiteboard with a slightly frustrated expression. In the corner of the whiteboard, a faint lightbulb icon is visible, suggesting an idea. The overall atmosphere is of struggling with design challenges. The scene is set in a bright, modern classroom. The image is a vertical format (3:4 ratio), emphasizing the whiteboard and the instructor. No text or labels should be present in the image.",塾頭高崎翔太,3:4
+004,第1部：バナーデザインの基本（25分）,"[プロンプト内容]
+30代前半の日本人男性、塾頭高崎翔太が、様々な大きさや形、色のバナーデザインが並んだモニターを指し示しながら、笑顔で説明している。バナーデザインは、様々な業界の広告を模しており、それぞれ異なるフォント、レイアウト、画像を使用している。背景は、モダンなデザインのセミナールーム。縦長(3:4)のアスペクト比。",塾頭高崎翔太,3:4
+005,バナーとは？,"[プロンプト内容]
+A dynamic, vertical (3:4 aspect ratio) image depicting Shota Takasaki, a friendly and energetic Japanese man in his early 30s, surrounded by multiple visual representations of different banner uses. He is gesturing enthusiastically towards these representations. These representations should include: a stylized laptop screen showing a website with a prominent web banner advertisement, a smartphone displaying a vibrant social media post with an image banner, a physical event poster displayed on an easel (without any text), a creatively designed campaign poster, and a blog post thumbnail with a captivating image. The overall composition should feel educational and presentational. The background should not be abstract but rather a slightly blurred, modern office or co-working space.",塾頭高崎翔太,3:4
+006,バナーの種類とサイズ,"[プロンプト内容]
+塾頭高崎翔太が、様々な大きさのフレーム（それぞれ300x250, 728x90, 160x600, 1080x1080, 820x312, 1500x500, 1280x720, 1200x630の比率）を指し示している。フレームの中は、それぞれWeb広告、SNS、その他様々なオンラインプラットフォームを象徴するアイコンやイメージで満たされている。高崎翔太は笑顔で、聴衆にバナー広告の種類とサイズを説明している様子。背景は明るく、清潔感のあるオフィス環境。教育的で分かりやすい構図。アスペクト比3:4。",塾頭高崎翔太,3:4
+007,良いバナーの3原則,"[プロンプト内容]
+A 3:4 aspect ratio image for an educational presentation slide titled ""The 3 Principles of a Good Banner"". The image should visually represent these principles in a single scene. In the center, create a visually appealing banner design (without any text). To the left, depict Shota Takasaki, a 30s energetic and friendly Japanese man (塾頭高崎翔太), gesturing enthusiastically towards the banner. Behind him, subtly incorporate elements suggesting the ""3-second rule"" such as a faint timer or a clock motif. Use impactful colors and appealing visuals in the banner design to highlight its eye-catching nature. To the right of the banner, show a stylized call to action button (visually suggested, no text) with arrows subtly pointing towards it, indicating the promotion of action. The overall scene should be bright, engaging, and clearly communicate the three principles of a good banner through visual storytelling, suitable for educational use.",塾頭高崎翔太,3:4
+008,悪いバナーの例,"[プロンプト内容]
+塾頭高崎翔太が、大量の文字が詰め込まれた、蛍光色の背景でチカチカ点滅する、ごちゃごちゃしたデザインの縦長バナー広告を指差して、困惑した表情を浮かべている。バナー広告の内容は全く理解できない様子。塾頭高崎翔太は首をかしげ、うんざりした顔をしている。背景には、情報過多で混乱している様子の人々（シルエット）が描かれている。アスペクト比3:4。",塾頭高崎翔太,3:4
+009,良いバナーの例,"[プロンプト内容]
+A Japanese man in his early 30s, energetic and friendly, is standing in front of a brightly lit coffee shop. He is pointing with excitement at a large, vibrant banner displayed on the storefront. The banner features a delicious-looking cup of coffee with steam rising from it. Below the coffee image, the banner implies a sale with bold colors. The coffee shop has a modern and inviting atmosphere. The man's expression clearly conveys enthusiasm and recommendation. The lighting highlights the coffee and the man's positive expression.",塾頭高崎翔太,3:4
+010,バナーデザインの構成要素,"[プロンプト内容]
+A 3:4 aspect ratio image depicting energetic Shota Takasaki, a Japanese man in his early 30s, enthusiastically gesturing towards a whiteboard covered with sketches and visual representations of banner design elements. The sketches include a large, eye-catching headline with simplified geometric shapes suggesting text, a vibrant product image with clean lines and bold colors, easily readable supplemental information represented by neatly arranged shapes and icons, and a prominent call-to-action button symbolized by a hand cursor pointing to a clearly defined rectangular shape. The overall image should convey a sense of clarity, dynamism, and educational purpose, highlighting the four key components of effective banner design without including actual text or labels. The background is a modern, brightly lit classroom setting.",塾頭高崎翔太,3:4
+011,デザインの基本ルール,"[プロンプト内容]
+A 3:4 portrait illustration for an educational presentation on design principles. The central focus is on ""塾頭高崎翔太,"" a friendly and energetic Japanese man in his early 30s. He is gesturing towards three distinct panels, each visually representing a key design rule.
+Panel 1: Color Palette. Shows three colored squares representing the base, main, and accent colors. High contrast text (light on dark, dark on light) is demonstrated visually. The colors subtly evoke feelings: red (passion), blue (trust), and green (calmness) through accompanying imagery (e.g., a tiny flame for red, a water droplet for blue, a leaf for green). No actual text labels are present.
+Panel 2: Font Choices. Displays two sets of text, one bold sans-serif font for headings and a simpler sans-serif font for body text. Different font sizes and weights are clearly demonstrated to show visual hierarchy. Focus on readability, showing clean and clear fonts.
+Panel 3: Layout Principles. Illustrates good use of white space (negative space), clearly aligned elements in a grid layout, and a subtle Z-pattern visual flow. The composition should show visual balance and clear visual guidance.
+The overall tone should be bright, welcoming, and informative, emphasizing the key design rules without explicitly labeling them with text. The background should be clean and uncluttered, allowing the illustrated panels and 塾頭高崎翔太 to stand out. Japanese appearance.",塾頭高崎翔太,3:4
+012,第2部：Canvaの基本（30分）,"**プロンプト例1:**
+[プロンプト内容]
+塾頭高崎翔太がCanvaの編集画面を指し示しながら、受講者（数名、日本人）にCanvaの使い方を説明している。背景は明るく清潔感のある研修室。受講者は真剣な表情でPCを見ている。
+**プロンプト例2:**
+[プロンプト内容]
+様々なデザインテンプレートが並んだCanvaの画面を、塾頭高崎翔太が笑顔で指し示している。画面の周りには、デザインのアイデアを思いついたような受講者のイラストが浮かんでいる。背景は、明るくクリエイティブな雰囲気のワークスペース。
+**プロンプト例3:**
+[プロンプト内容]
+Canvaのツールバー（アイコンが並んでいる部分）を拡大したイメージ。塾頭高崎翔太の手が、その中の「テキスト」アイコンに触れようとしている。背景は、グラデーションでシンプルに。
+**プロンプト例4:**
+[プロンプト内容]
+複数のCanvaの画面が並んで表示されているイメージ。それぞれの画面には、異なるデザイン（プレゼンテーション資料、SNS投稿、ポスターなど）が表示されている。背景は、さまざまな色を使った抽象的なデザイン。
+**プロンプト例5:**
+[プロンプト内容]
+Canvaを使ってデザインされた様々な作品が、ギャラリーのように展示されているイメージ。塾頭高崎翔太が、その中で一番優れた作品を指し示しながら、受講者に説明している。背景は、モダンでスタイリッシュなギャラリー。",塾頭高崎翔太,3:4
+013,Canvaとは？,Professional abstract background for: Canvaとは？,なし,3:4
+014,Canvaでできること,Professional abstract background for: Canvaでできること,なし,3:4
+015,Canvaの登録（5分）,Professional abstract background for: Canvaの登録（5分）,なし,3:4
+016,Canvaの画面構成,Professional abstract background for: Canvaの画面構成,なし,3:4
+017,実習1：テンプレートから作成（15分）,Professional abstract background for: 実習1：テンプレートから作成（15分）,なし,3:4
+018,テキストの編集,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太
+30代前半の日本人男性、塾頭高崎翔太が、笑顔で、大きなモニターに向かって、パソコンのキーボードを操作している。モニターには、スプレッドシートのような画面が表示されており、テキストが入力・編集されている様子がわかる。高崎の指がキーボードに触れている様子を強調。高崎はカジュアルな服装で、背景は明るく、モダンなオフィスまたは塾の一室。モニター、キーボード、高崎の顔にピントを合わせ、それ以外の背景はぼかす。縦長（3:4）のアスペクト比。教育・プレゼンテーション用途に適した、わかりやすい構図。",塾頭高崎翔太,3:4
+019,画像の追加と編集,Professional abstract background for: 画像の追加と編集,なし,3:4
+020,実習2：ゼロから作成（10分）,Professional abstract background for: 実習2：ゼロから作成（10分）,なし,3:4
+021,休憩（10分）,Professional abstract background for: 休憩（10分）,なし,3:4
+022,第3部：AIを活用したデザイン（35分）,Professional abstract background for: 第3部：AIを活用したデザイン（35分）,なし,3:4
+023,CanvaのAI機能,Professional abstract background for: CanvaのAI機能,なし,3:4
+024,GeminiでCanvaを支援,Professional abstract background for: GeminiでCanvaを支援,なし,3:4
+025,実習3：Gemini + Canva（20分）,Professional abstract background for: 実習3：Gemini + Canva（20分）,なし,3:4
+026,キャッチコピーをGeminiに依頼,Professional abstract background for: キャッチコピーをGeminiに依頼,なし,3:4
+027,配色をGeminiに相談,Professional abstract background for: 配色をGeminiに相談,なし,3:4
+028,レイアウトの相談,Professional abstract background for: レイアウトの相談,なし,3:4
+029,実習4：完全オリジナルバナー（15分）,Professional abstract background for: 実習4：完全オリジナルバナー（15分）,なし,3:4
+030,第4部：実践テクニック（15分）,Professional abstract background for: 第4部：実践テクニック（15分）,なし,3:4
+031,テクニック1：背景をAI画像で,Professional abstract background for: テクニック1：背景をAI画像で,なし,3:4
+032,テクニック2：ブランドキット,Professional abstract background for: テクニック2：ブランドキット,なし,3:4
+033,テクニック3：複数サイズを一括作成,Professional abstract background for: テクニック3：複数サイズを一括作成,なし,3:4
+034,テクニック4：A/Bテスト用バリエーション,Professional abstract background for: テクニック4：A/Bテスト用バリエーション,なし,3:4
+035,実習5：テクニック活用（10分）,Professional abstract background for: 実習5：テクニック活用（10分）,なし,3:4
+036,第5部：実務での活用（10分）,Professional abstract background for: 第5部：実務での活用（10分）,なし,3:4
+037,活用シーン1：SNS運用,Professional abstract background for: 活用シーン1：SNS運用,なし,3:4
+038,活用シーン2：イベント告知,Professional abstract background for: 活用シーン2：イベント告知,なし,3:4
+039,活用シーン3：Webサイト,Professional abstract background for: 活用シーン3：Webサイト,なし,3:4
+040,活用シーン4：営業・提案資料,Professional abstract background for: 活用シーン4：営業・提案資料,なし,3:4
+041,実習6：実務用バナー作成（10分）,Professional abstract background for: 実習6：実務用バナー作成（10分）,なし,3:4
+042,まとめ（5分）,Professional abstract background for: まとめ（5分）,なし,3:4
+043,今日学んだこと,Professional abstract background for: 今日学んだこと,なし,3:4
+044,実践課題,Professional abstract background for: 実践課題,なし,3:4
+045,バナーデザインマスターへの道,Professional abstract background for: バナーデザインマスターへの道,なし,3:4
+046,ワンポイントアドバイス,Professional abstract background for: ワンポイントアドバイス,なし,3:4
+047,質問タイム,Professional abstract background for: 質問タイム,なし,3:4
+048,メッセージ,Professional abstract background for: メッセージ,なし,3:4
+049,お疲れ様でした！,Professional abstract background for: お疲れ様でした！,なし,3:4

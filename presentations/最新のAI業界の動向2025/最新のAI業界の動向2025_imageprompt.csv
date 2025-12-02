@@ -1,0 +1,162 @@
+page_number,image_prompt
+1,"**日本語プロンプト:**
+
+未来都市の夜景。高層ビル群がデータストリームで繋がり、空にはAIを象徴する光のネットワークが広がっている。AI技術の進化とネットワーク化を表現。
+
+**英語プロンプト:**
+
+A vertical (3:4) cityscape at night, depicting a futuristic city with skyscrapers connected by data streams. A network of light symbolizing AI spreads across the sky, representing the evolution and networking of AI technology."
+2,"**日本語プロンプト:**
+
+近未来的な都市の景観、AI技術が様々な産業に組み込まれている様子を縦長の構図で描く。生成AIによるデザイン、マルチモーダルAIによるインタラクション、エンタープライズAIによるデータ分析を象徴的に表現し、全体的にプロフェッショナルで洗練された印象を与えるように。
+
+**英語プロンプト:**
+
+Vertical image (3:4 aspect ratio) depicting a futuristic cityscape where AI technology is integrated into various industries. Symbolically represent generative AI design, multimodal AI interaction, and enterprise AI data analysis, with an overall professional and sophisticated feel."
+3,"**日本語プロンプト:**
+
+知的な未来都市の風景。高層ビルが立ち並び、空にはホログラムのような情報が飛び交い、人々がAIアシスタントとコミュニケーションを取っている様子を描写し、技術革新の最前線を表現する。
+
+**英語プロンプト:**
+
+A futuristic cityscape with towering buildings and holographic data streams in the sky, depicting people interacting with AI assistants. Emphasize the forefront of technological innovation in this scene."
+4,"## 日本語プロンプト
+
+**「未来的な研究室。中央にホログラムのような球体があり、その中に様々なアイコン（カメラ、マイク、テキストボックス、3Dモデル）が浮かび上がっている。研究員がVRゴーグルを装着し、その球体を見つめている。背景には、ARグラスをかけた人が街を歩く様子がぼんやりと見える。」**
+
+## 英語プロンプト
+
+**""A futuristic research lab. In the center is a holographic sphere with various icons (camera, microphone, text box, 3D model) floating within. A researcher wearing VR goggles is looking at the sphere. In the blurred background, a person wearing AR glasses is walking through a city.""**
+
+**理由:**
+
+*   **縦長 (3:4):** 生成される画像の比率を考慮しています。
+*   **スライドの内容の視覚的補完:** スライドに記載された画像・音声・テキストの統合処理、動画理解、3Dモデル、AR/VRとの統合をアイコンや人物を通じて表現しています。
+*   **プロフェッショナルで洗練されたスタイル:** 未来的な研究室という設定で、技術の先進性と専門性を表現しています。
+*   **抽象的すぎず、具体的すぎない:** 特定の企業や技術に依存せず、一般的なイメージを生成できるようにしています。
+*   **簡潔な説明:** AIが解釈しやすいように、具体的な要素を盛り込みつつ、簡潔にまとめています。"
+5,"はい、承知いたしました。以下に画像プロンプトを提案します。
+
+**日本語プロンプト:**
+
+「高層ビルが立ち並ぶ未来都市の中心で、AIの光のネットワークが様々な企業活動（カスタマーサポートのアイコン、ロボットアーム、データグラフ、コンテンツ作成画面など）を繋いでいるイメージ。プロフェッショナルで洗練されたスタイルのイラスト。」
+
+**英語プロンプト:**
+
+""In the center of a futuristic cityscape with skyscrapers, a glowing network of AI connects various business activities (customer support icon, robotic arm, data graph, content creation screen). Professional and sophisticated style illustration, 3:4 aspect ratio."""
+6,"以下に、スライドの内容に基づいた画像生成AIへのプロンプト例をいくつか提案します。
+
+**プロンプト例1（日本語）:**
+
+AIエージェントが、複数のアイコン（タスク管理、データ分析、コミュニケーションなど）が浮かぶインターフェースを操作し、未来都市を背景に、人間のアバターと協力してプロジェクトを進めているイメージ。3:4、プロフェッショナル、洗練されたスタイル。
+
+**プロンプト例2（英語）:**
+
+An AI agent interacting with a virtual interface showcasing various icons (task management, data analysis, communication) collaborating with a human avatar in a futuristic cityscape. 3:4 aspect ratio, professional and sophisticated style.
+
+**プロンプト例3（日本語）:**
+
+複数の歯車が連動して動く様子を背景に、AIエージェントを象徴するアイコンが、様々なツール（グラフ、リスト、チャットウィンドウなど）を統合し、長期的な目標に向かって進んでいるイメージ。3:4、洗練されたデザイン。
+
+**プロンプト例4（英語）:**
+
+An icon representing an AI agent integrating various tools (graphs, lists, chat windows) towards a long-term goal, with interconnected gears in the background, symbolizing coordinated action. 3:4 aspect ratio, sophisticated design.
+
+**これらのプロンプトのポイント:**
+
+*   **縦長比率(3:4)を指定:** 画像の縦横比を維持するため。
+*   **キーワードの包含:** スライドのキーワード（AIエージェント、タスク、ツール連携、長期目標、人間との協働）を可能な限り含める。
+*   **視覚的な要素:** 抽象的な概念を視覚化するために、アイコン、インターフェース、未来都市、歯車などの具体的な要素を使用。
+*   **スタイル:** プロフェッショナルで洗練された雰囲気を出すための指示。
+*   **簡潔さ:** 長文にならないように、1-2文でまとめる。
+
+**補足:**
+
+*   これらのプロンプトはあくまで例です。使用する画像生成AIの特性や、理想とするイメージに合わせて調整してください。
+*   画像生成AIによっては、具体的なアーティスト名やスタイル（例： ""by Greg Rutkowski"", ""in the style of Art Deco"") を追加すると、より希望に近い結果が得られることがあります。
+*   ネガティブプロンプト（例： ""blurry"", ""noisy"") を使用して、望ましくない要素を排除することも有効です。
+
+これらのプロンプトを参考に、AIに生成させたいイメージを具体的に伝えるように工夫してみてください。"
+7,"**プロンプト例1 (日本語):**
+
+「世界の主要都市のランドマーク（例：エッフェル塔、自由の女神、東京タワー）が、それぞれ光の線で繋がれた脳の形を模した構造物を取り囲んでいる抽象的なイメージ。各ランドマークには、小さなモニター画面のようなものが埋め込まれており、AIに関するデータやコードが流れている。全体的に未来的な雰囲気で、グローバルなAI規制のネットワークを象徴する。」
+
+**プロンプト例2 (英語):**
+
+""Abstract image of world landmarks (e.g., Eiffel Tower, Statue of Liberty, Tokyo Tower) surrounded by a brain-shaped structure composed of interconnected light lines. Each landmark features embedded small monitor screens displaying AI data and code. A futuristic atmosphere symbolizing a global network of AI regulations. Aspect ratio 3:4.""
+
+**プロンプト例3 (日本語):**
+
+「地球儀の周りを、法律の象徴である天秤と、AIの象徴であるニューラルネットワークのアイコンが回転している。背景には、各国の国旗がぼんやりと見える。全体的に青と白を基調とした、クリーンでプロフェッショナルな印象。」"
+8,"はい、以下に画像生成AIへのプロンプトを提案します。
+
+**プロンプト (日本語):**
+
+明るい未来都市を背景に、AIのニューラルネットワークが輝きながら成長していく様子を表現した縦長画像。中央には、複数の手が集まり、AIモデルのアイコンを共同で作り上げている様子を描き、コミュニティ主導の開発を象徴する。
+
+**プロンプト (英語):**
+
+A vertical image (3:4 ratio) depicting a bright, futuristic cityscape with a glowing neural network of AI growing in the foreground. In the center, multiple hands are collaboratively building an AI model icon, symbolizing community-driven development."
+9,"以下にいくつかの画像プロンプトの例を提示します。用途や好みに合わせて調整してください。
+
+**プロンプト例1（日本語）:**
+
+AI開発の課題を象徴する、複雑な配線が絡み合う回路基板のイメージ。中央には光の筋が走り、その光が様々な方向に拡散していく様子を描写する。
+
+**プロンプト例2（英語）:**
+
+A vertical image (3:4 aspect ratio) depicting a complex network of interconnected circuits, symbolizing the challenges of AI development. Highlight key areas representing computational cost, hallucinations, bias, and data privacy. A central glowing point emits light that diffuses in various directions.
+
+**プロンプト例3（日本語）:**
+
+AIの脳をイメージした抽象的なアート。データの流れが可視化されており、その流れの中にエラーやバイアスを示すノイズが混じっている。中央部分には暗号化されたデータを示すアイコンを配置。
+
+**プロンプト例4（英語）:**
+
+Abstract art representing the ""brain"" of an AI. Visualize data flow with elements indicating errors and biases within the flow. Include an encrypted data icon in the central area. Vertical image (3:4 aspect ratio).
+
+**プロンプト例5（日本語）:**
+
+積み重なった計算機とデータセンターの風景。過熱による熱、エラーを示す赤いライト、不正アクセスを防ぐ壁を表現することで、AI開発における計算コスト、ハルシネーション、バイアス、データプライバシーの課題を視覚化する。
+
+**プロンプトを選ぶ際のヒント:**
+
+*   **具体性:** プロンプトが具体的であるほど、期待に近い画像が生成されやすくなります。
+*   **抽象度:** 抽象的な表現は、見る人に解釈の余地を与えます。
+*   **キーワード:** スライドの主要なキーワード（計算コスト、ハルシネーション、バイアス、データプライバシー）を含めることで、関連性の高い画像が生成されます。
+*   **スタイル:** ""プロフェッショナル""、""洗練された""といったキーワードで、ビジネスシーンにふさわしい画像が生成されるように意識しましょう。
+
+これらのプロンプトを参考に、生成AIで試行錯誤しながら、最適な画像を見つけてください。"
+10,"はい、承知いたしました。以下に、スライドの内容に基づいて画像生成AIへのプロンプトをいくつか提案します。
+
+**プロンプト例1 (日本語):**
+
+「未来都市の風景、高層ビル群が立ち並び、空には量子コンピュータのような複雑な構造体が浮かんでいる。街にはAI制御の自動運転車が走り、人々の頭上には脳波を解析するインターフェースが表示されている。縦長、3:4、洗練されたプロフェッショナルなスタイル。」
+
+**プロンプト例2 (英語):**
+
+""A futuristic cityscape with towering buildings and complex quantum computer structures floating in the sky. AI-controlled autonomous vehicles drive through the streets, and brain-computer interfaces are displayed above people's heads. Vertical format, 3:4 aspect ratio, sophisticated and professional style.""
+
+**プロンプト例3 (日本語):**
+
+「人間の脳と量子コンピュータが融合したイメージ。カラフルなニューラルネットワークと幾何学的な量子構造が、光の線で繋がっている。背景には、未来的な都市のシルエット。縦長、3:4、プロフェッショナルなデジタルアート。」
+
+**プロンプト例4 (英語):**
+
+""An image merging the human brain and a quantum computer. Colorful neural networks and geometric quantum structures are connected by lines of light. A futuristic city skyline in the background. Vertical format, 3:4, professional digital art.""
+
+**ポイント:**
+
+*   **キーワード:** ""AGI"", ""Quantum AI"", ""Brain-Computer Interface"", ""Futuristic"", ""AI Integration"" などを含めることで、スライドの内容と関連性を高めます。
+*   **スタイル:** ""Sophisticated"", ""Professional"", ""Digital Art"" などの言葉で、洗練されたイメージを指示します。
+*   **具体性:** 都市、構造体、インターフェースなど、具体的な要素を入れることで、抽象的すぎるのを防ぎます。
+*   **構図:** ""Vertical"", ""3:4"" で縦長を指定します。
+
+これらのプロンプトを参考に、AIの得意なスタイルや、求めているイメージに合わせて調整してください。例えば、より写実的なものが良ければ ""photorealistic"" を加えたり、特定の色味を指定することもできます。"
+11,"**日本語プロンプト:**
+
+未来都市の風景。高層ビル群が立ち並び、空にはドローンが飛び交う。中心には、AIを象徴する輝く球体が浮かび、そこから光線が四方八方に伸びている。ビジネスシーンにも合う、洗練された未来的なイメージ。
+
+**英語プロンプト:**
+
+A futuristic cityscape with skyscrapers and drones flying in the sky. A glowing sphere symbolizing AI is at the center, radiating light beams in all directions. Professional and sophisticated image suitable for a business presentation. Aspect ratio 3:4."

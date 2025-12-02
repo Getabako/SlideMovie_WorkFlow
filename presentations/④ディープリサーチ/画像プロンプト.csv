@@ -1,0 +1,65 @@
+slide_number,title,prompt,character,aspect_ratio
+001,AIでビジネスリサーチ&戦略立案,"[プロンプト内容]
+A young, energetic Japanese man in his early thirties, ""塾頭高崎翔太"", wearing a casual blazer and jeans, standing in front of a large screen displaying a complex network graph. The graph visualizes connections between different industries, markets, and technological trends. 高崎 is pointing at a specific node on the graph with a marker, explaining the strategic implications. The setting is a modern, bright training room. The composition is dynamic and engaging, conveying the idea of AI-powered business research and strategic planning. Vertical format (3:4). No text or labels should be included in the image.",塾頭高崎翔太,3:4
+002,本日の目標,"[プロンプト内容]
+A dynamic and inspiring scene: 塾頭高崎翔太, a energetic Japanese man in his early 30s, stands at the center of a modern, brightly lit co-working space, gesturing enthusiastically towards a large interactive whiteboard. The whiteboard displays a visually engaging mind map with interconnected nodes representing ""Market Analysis,"" ""Public Relations Strategy,"" ""Business Plan,"" ""Research Report,"" ""NotebookLM Integration,"" and ""AI Skills."" A diverse group of students are actively engaged in collaborative discussions around small tables, laptops open, some taking notes. The overall atmosphere is collaborative, innovative, and focused on learning and achieving goals. The scene conveys a sense of energy, progress, and practical skill development. Composition should fit a 3:4 aspect ratio, focusing on a dynamic and engaging composition that showcases the connection between 塾頭高崎翔太, the whiteboard, and the students. The image should feel like a still from a motivational and educational presentation. No text or labels are to be included on the whiteboard or anywhere in the image.",塾頭高崎翔太,3:4
+003,こんな悩みありませんか？,"[プロンプト内容]
+ビジネスマン数人が会議室で頭を抱え、困惑した表情をしている。資料が散乱し、ホワイトボードには未完成のグラフや図が描かれている。塾頭高崎翔太は、腕組みをして彼らを見守っている。全体的に暗い雰囲気で、疲労感と閉塞感を表現する。",塾頭高崎翔太,3:4
+004,第1部：ビジネスリサーチ基礎（20分）,"[プロンプト内容]
+a young, energetic Japanese business coach, Shota Takasaki, in his early 30s, standing confidently in front of a whiteboard covered in charts, graphs, and keywords like ""Market Analysis,"" ""Competitor Research,"" and ""SWOT Analysis."" He is gesturing towards the board with a marker in his hand, explaining a concept to an unseen audience. The scene takes place in a modern, bright seminar room. 3:4 aspect ratio. no text.",塾頭高崎翔太,3:4
+005,ディープリサーチとは,"[プロンプト内容]
+A 30-year-old Japanese man,塾頭高崎翔太, energetically explaining a complex data analysis chart on a large screen to a small group of attentive business professionals in a modern office. The chart visually represents deep research and strategic information gathering, highlighting key business insights. The scene is well-lit, fostering a sense of collaboration and discovery. The setting emphasizes a professional yet approachable learning environment. Aspect ratio 3:4. No text, labels, or titles in the image.",塾頭高崎翔太,3:4
+006,リサーチの3つのレベル,"[プロンプト内容]
+Level 1: Google検索の画面を食い入るように見ている30代前半の男性。背景は雑然としたオフィスデスクで、検索結果の画面が明るく光っている。
+[プロンプト内容]
+Level 2: 複数のモニターを見ながら、真剣な表情でノートに書き込んでいる30代前半の日本人男性 (塾頭高崎翔太)。モニターにはグラフや図解、異なるウェブサイトが表示されている。
+[プロンプト内容]
+Level 3: 大きなホワイトボードの前で、難しい数式や図解を見ながら腕組みをして深く考えている30代前半の日本人男性 (塾頭高崎翔太)。背景には、さらに多くの資料や書籍が積まれている。",塾頭高崎翔太,3:4
+007,第2部：競合分析実践（30分）,"[プロンプト内容]
+An energetic Japanese man in his early 30s, smiling and pointing at a large whiteboard covered in competitive analysis charts and diagrams. He's standing in front of a diverse group of students (also Japanese) who are actively engaged in discussion, taking notes, and analyzing the data. The scene should convey a sense of collaboration and insightful discovery, with the whiteboard being the focal point. Aspect ratio: 3:4. No text or labels should be present on the whiteboard.",塾頭高崎翔太,3:4
+008,競合分析フレームワーク,"[プロンプト内容]
+A dynamic, vertical composition showing塾頭高崎翔太, a friendly and energetic Japanese man in his early 30s, standing in front of a digital whiteboard. The whiteboard is visually divided into four quadrants representing SWOT analysis: Strengths (a muscular arm flexing), Weaknesses (a cracked shield), Opportunities (a sprouting seed reaching for sunlight), and Threats (a stormy cloud). The scene is brightly lit, suggesting a positive and proactive learning environment. Style: Vector illustration, clean lines, educational presentation style. No text or labels.",塾頭高崎翔太,3:4
+009,実習1：競合3社比較（15分）,"[プロンプト内容]
+30代前半の日本人男性、塾頭高崎翔太が、秋田市内のカフェを模したセットの前で、ホワイトボードに「スターバックス」「ドトール」「地元カフェ」と書き出し、真剣な表情で分析している様子。参加者（顔はぼかす）が数名、熱心にメモを取っている。カフェの内装は控えめで、ホワイトボードに焦点が当たるようにする。ホワイトボードには、価格帯、ターゲット層、強み・弱み、差別化ポイントの項目が罫線で区切られている。全体的に教育的な雰囲気で、明るく清潔感のあるライティング。アスペクト比3:4。テキスト、文字、看板、ラベル、タイトルは一切含めない。",塾頭高崎翔太,3:4
+010,競合分析から戦略へ,"**プロンプト 1:**
+[プロンプト内容]
+広々とした市場の地図を背景に、塾頭高崎翔太が虫眼鏡で競合他社のアイコンが少ない、または全くない地域を探している様子。高崎は地図を真剣に見つめ、希望に満ちた表情を浮かべている。地図は戦略ボードのように見える。
+**プロンプト 2:**
+[プロンプト内容]
+塾頭高崎翔太が、複数の異なる形をした積み木を前に、どの積み木が最も高く、安定して積み重ねられるかを試行錯誤している様子。積み木はそれぞれ異なる価値提案を表しており、高崎は真剣な表情で最高の組み合わせを模索している。背景は、新しいアイデアが生まれるような創造的な雰囲気の部屋。
+**プロンプト 3:**
+[プロンプト内容]
+塾頭高崎翔太が、シーソーのバランスを取ろうとしている。片側には複数の人物（競合）、もう片側には一つの重り（価格）が置かれている。高崎は腕組みをして、シーソー全体のバランスを注意深く観察している。背景はグラフやチャートが描かれた戦略会議室。",塾頭高崎翔太,3:4
+011,第3部：広報戦略立案（30分）,"[プロンプト内容]
+A young, energetic Japanese male educator, ""Shota Takasaki,"" in his early thirties, passionately gesturing towards a whiteboard filled with interconnected lines and nodes representing a network diagram. He is wearing a casual but professional outfit (e.g., open-collar shirt and khakis) in a modern, brightly lit office setting. The whiteboard diagram visually represents a strategic communication plan with various stakeholders and channels. The atmosphere is dynamic and engaging. Vertical (3:4) aspect ratio. No text or labels on the image.",塾頭高崎翔太,3:4
+012,広報戦略の基本要素,Professional abstract background for: 広報戦略の基本要素,なし,3:4
+013,実習2：SNS戦略立案（15分）,Professional abstract background for: 実習2：SNS戦略立案（15分）,なし,3:4
+014,プレスリリース作成,Professional abstract background for: プレスリリース作成,なし,3:4
+015,第4部：ビジネスプラン作成（20分）,Professional abstract background for: 第4部：ビジネスプラン作成（20分）,なし,3:4
+016,ビジネスプランの構成,Professional abstract background for: ビジネスプランの構成,なし,3:4
+017,実習3：簡易事業計画（10分）,Professional abstract background for: 実習3：簡易事業計画（10分）,なし,3:4
+018,収支シミュレーション,Professional abstract background for: 収支シミュレーション,なし,3:4
+019,第5部：レポート作成術（20分）,Professional abstract background for: 第5部：レポート作成術（20分）,なし,3:4
+020,効果的なレポート構成,Professional abstract background for: 効果的なレポート構成,なし,3:4
+021,実習4：1ページレポート作成,Professional abstract background for: 実習4：1ページレポート作成,なし,3:4
+022,ビジュアル化のコツ,Professional abstract background for: ビジュアル化のコツ,なし,3:4
+023,第6部：NotebookLMで情報管理（20分）,Professional abstract background for: 第6部：NotebookLMで情報管理（20分）,なし,3:4
+024,NotebookLMとは,Professional abstract background for: NotebookLMとは,なし,3:4
+025,NotebookLMの活用手順,Professional abstract background for: NotebookLMの活用手順,なし,3:4
+026,実習5：NotebookLM活用（10分）,Professional abstract background for: 実習5：NotebookLM活用（10分）,なし,3:4
+027,情報の体系化,Professional abstract background for: 情報の体系化,なし,3:4
+028,オーディオ要約の活用,Professional abstract background for: オーディオ要約の活用,なし,3:4
+029,第7部：実践演習（10分）,Professional abstract background for: 第7部：実践演習（10分）,なし,3:4
+030,総合演習：新規事業立案,Professional abstract background for: 総合演習：新規事業立案,なし,3:4
+031,プロンプトチェーン,Professional abstract background for: プロンプトチェーン,なし,3:4
+032,成果物チェックリスト,Professional abstract background for: 成果物チェックリスト,なし,3:4
+033,実践課題,Professional abstract background for: 実践課題,なし,3:4
+034,便利なテンプレート集,Professional abstract background for: 便利なテンプレート集,なし,3:4
+035,リサーチツール紹介,Professional abstract background for: リサーチツール紹介,なし,3:4
+036,まとめ,Professional abstract background for: まとめ,なし,3:4
+037,ビジネススキルの向上,Professional abstract background for: ビジネススキルの向上,なし,3:4
+038,次回予告,Professional abstract background for: 次回予告,なし,3:4
+039,参考リンク,Professional abstract background for: 参考リンク,なし,3:4
+040,質疑応答,Professional abstract background for: 質疑応答,なし,3:4
+041,最後のメッセージ,Professional abstract background for: 最後のメッセージ,なし,3:4
+042,ありがとうございました！,Professional abstract background for: ありがとうございました！,なし,3:4

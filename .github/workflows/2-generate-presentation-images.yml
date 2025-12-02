@@ -1,0 +1,212 @@
+name: 2. Generate Presentation Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      presentation_name:
+        description: 'プレゼンテーション名'
+        required: true
+        type: choice
+        options:
+          - '①すごいぞAI_AI概論'
+          - '②AIを使って画像生成をしてみよう'
+          - '③バナー作り'
+          - '④ディープリサーチ'
+          - '⑤スプレッドシート作成'
+          - '⑥資料作り'
+          - '⑦ホームページ作り'
+          - '⑧プレゼンとは'
+          - '⑨スライド作成'
+          - '⑩AIを活用した資料を使ってプレゼン'
+          - '最新のAI業界の動向2025'
+          - '知能検査ケーススタディ'
+      image_aspect_ratio:
+        description: '画像のアスペクト比'
+        required: false
+        type: choice
+        options:
+          - '3:4'
+          - '16:9'
+          - '4:3'
+        default: '3:4'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Python dependencies
+        run: |
+          pip install google-genai google-generativeai pillow pyyaml
+
+      - name: Install Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Find presentation file
+        id: find_presentation
+        run: |
+          # プレゼンテーションディレクトリ
+          PRES_DIR="presentations/${{ github.event.inputs.presentation_name }}"
+
+          if [ ! -d "$PRES_DIR" ]; then
+            echo "Error: Presentation directory not found: $PRES_DIR"
+            exit 1
+          fi
+
+          echo "Found presentation directory: $PRES_DIR"
+
+          # .mdファイルを検索
+          MD_FILE=$(find "$PRES_DIR" -maxdepth 1 -name "*.md" -type f | head -1)
+
+          if [ -z "$MD_FILE" ]; then
+            echo "Error: No markdown file found in $PRES_DIR"
+            exit 1
+          fi
+
+          echo "Found presentation file: $MD_FILE"
+          echo "MD_FILE=$MD_FILE" >> $GITHUB_ENV
+          echo "PRES_DIR=$PRES_DIR" >> $GITHUB_ENV
+
+      - name: Check or create images directory
+        run: |
+          IMAGES_DIR="${{ env.PRES_DIR }}/images"
+          mkdir -p "$IMAGES_DIR"
+          echo "IMAGES_DIR=$IMAGES_DIR" >> $GITHUB_ENV
+
+      - name: Clean existing images
+        run: |
+          IMAGES_DIR="${{ env.IMAGES_DIR }}"
+
+          # 既存の画像ファイルをすべて削除（.gitkeepは除く）
+          echo "Cleaning images directory: $IMAGES_DIR"
+
+          # 既存の画像ファイル数を確認
+          IMAGE_COUNT=$(find "$IMAGES_DIR" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "[0-9][0-9][0-9].png" \) | wc -l)
+          echo "Found $IMAGE_COUNT existing images to delete"
+
+          # すべての画像形式と番号付きファイルを削除
+          find "$IMAGES_DIR" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) ! -name ".gitkeep" -delete 2>/dev/null || true
+
+          # 番号付きファイル（001.png, 002.png等）も削除
+          find "$IMAGES_DIR" -type f -regex ".*/[0-9]+\.\(png\|jpg\|jpeg\|gif\|webp\)" -delete 2>/dev/null || true
+
+          # 削除後の確認
+          REMAINING=$(find "$IMAGES_DIR" -type f ! -name ".gitkeep" | wc -l)
+          echo "✓ Cleaned images directory. Remaining files (excluding .gitkeep): $REMAINING"
+
+      - name: Generate image prompts with character support
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          # スライド内容を分析して詳細な画像プロンプトを生成
+          python3 scripts/generate_image_prompts_with_characters.py \
+            "${{ env.MD_FILE }}" \
+            --character-dir "presentations/character"
+
+          echo "Generated image prompts CSV: ${{ env.PRES_DIR }}/画像プロンプト.csv"
+
+      - name: Generate images from prompts
+        env:
+          GOOGLE_AI_API_KEY: ${{ secrets.GOOGLE_AI_API_KEY }}
+        run: |
+          # 画像プロンプトCSVから画像を生成（キャラクター対応）
+          python3 scripts/generate_images_from_prompts.py \
+            "${{ env.PRES_DIR }}/画像プロンプト.csv" \
+            --output-dir "${{ env.IMAGES_DIR }}" \
+            --character-dir "presentations/character"
+
+      - name: Upload generated images as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-images
+          path: ${{ env.IMAGES_DIR }}/*.png
+          if-no-files-found: warn
+
+      - name: Remove old image references
+        run: |
+          python3 -c "
+          import re
+
+          md_file = '${{ env.MD_FILE }}'
+
+          with open(md_file, 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Remove all image references that match the pattern
+          cleaned = re.sub(r'!\[bg (right|left):\d+%\]\(images/[^\)]+\)\n?', '', content)
+
+          with open(md_file, 'w', encoding='utf-8') as f:
+              f.write(cleaned)
+
+          print('✓ Removed all old image references')
+          "
+          echo "Old image references removed"
+
+      - name: Update markdown with image references
+        run: |
+          # マークダウンに画像を挿入
+          python3 scripts/insert_images_to_slides.py \
+            "${{ env.MD_FILE }}" \
+            --images-dir "${{ env.IMAGES_DIR }}" \
+            --alignment "right" \
+            --width "45%" \
+            --aspect-ratio "${{ github.event.inputs.image_aspect_ratio }}"
+
+      - name: Generate preview PDF
+        run: |
+          marp "${{ env.MD_FILE }}" \
+            -o "${{ env.PRES_DIR }}/preview.pdf" \
+            --pdf \
+            --allow-local-files
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add "${{ env.PRES_DIR }}/"
+
+          git commit -m "feat: Generate and insert images for ${{ github.event.inputs.presentation_name }}
+
+          - Generated detailed prompts with character support
+          - Used image-to-image for character scenes
+          - Aspect ratio: ${{ github.event.inputs.image_aspect_ratio }}
+          - Images directory: ${{ env.IMAGES_DIR }}
+          - Preview PDF: ${{ env.PRES_DIR }}/preview.pdf
+
+          🤖 Generated by GitHub Actions" || echo "No changes to commit"
+
+          git push || echo "Nothing to push"
+
+      - name: Upload preview as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-preview
+          path: ${{ env.PRES_DIR }}/preview.pdf

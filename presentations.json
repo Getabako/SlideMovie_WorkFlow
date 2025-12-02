@@ -3,7 +3,7 @@
     "title": "①すごいぞAI_AI概論",
     "html": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.html",
     "pdf": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.pdf",
-    "video": "videos/①すごいぞAI_AI概論/video.mp4"
+    "video": null
   },
   {
     "title": "②AIを使って画像生成をしてみよう",
@@ -21,6 +21,12 @@
     "title": "④ディープリサーチ",
     "html": "presentations/④ディープリサーチ/④ディープリサーチ_with_images.html",
     "pdf": "presentations/④ディープリサーチ/④ディープリサーチ.pdf",
+    "video": null
+  },
+  {
+    "title": "⑥資料作り",
+    "html": "presentations/⑥資料作り/⑥資料作り_with_images.html",
+    "pdf": "presentations/⑥資料作り/preview.pdf",
     "video": null
   },
   {

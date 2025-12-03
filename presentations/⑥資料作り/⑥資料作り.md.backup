@@ -138,7 +138,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/012.png)
+![bg right:45%](images/011.png)
 ## 実際に試してみましょう
 
 ### Geminiを使った資料作成
@@ -148,7 +148,7 @@ paginate: true
 ステップ4：最終チェック
 ---
 
-![bg right:45%](images/013.png)
+![bg right:45%](images/012.png)
 ## ステップ1：構成案を作る
 
 ### Geminiへのプロンプト
@@ -169,7 +169,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/014.png)
+![bg right:45%](images/013.png)
 ## 実習1：構成案作成（10分）
 
 ### 課題
@@ -184,7 +184,7 @@ paginate: true
 **Geminiで構成案を作ってみましょう**
 ---
 
-![bg right:45%](images/015.png)
+![bg right:45%](images/014.png)
 ## ステップ2：各セクションを書く
 
 ### セクションごとに依頼
@@ -200,7 +200,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/017.png)
+![bg right:45%](images/015.png)
 ## データや数字を入れる
 
 ### より説得力を持たせる
@@ -216,7 +216,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/018.png)
+![bg right:45%](images/016.png)
 ## 実習3：説得力を強化（10分）
 
 ### あなたの資料に説得力を
@@ -230,7 +230,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/019.png)
+![bg right:45%](images/017.png)
 ## ステップ3：ブラッシュアップ
 
 ### 文章を洗練させる
@@ -246,7 +246,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/020.png)
+![bg right:45%](images/018.png)
 ## 長さの調整
 
 ### 短くする
@@ -262,7 +262,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/021.png)
+![bg right:45%](images/019.png)
 ## 実習4：企画書作成（20分）
 
 ### 実践課題
@@ -281,15 +281,15 @@ paginate: true
 **Geminiを使って完成させましょう**
 ---
 
-![bg right:45%](images/022.png)
+![bg right:45%](images/020.png)
 ## 休憩（10分）
 ---
 
-![bg right:45%](images/023.png)
+![bg right:45%](images/021.png)
 # 第3部：文書タイプ別の作成法（25分）
 ---
 
-![bg right:45%](images/024.png)
+![bg right:45%](images/022.png)
 ## タイプ1：企画書
 
 ### 特徴
@@ -303,7 +303,7 @@ paginate: true
 4. スケジュール
 ---
 
-![bg right:45%](images/025.png)
+![bg right:45%](images/023.png)
 ## 企画書のプロンプト例
 
 ```
@@ -321,7 +321,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/026.png)
+![bg right:45%](images/024.png)
 ## タイプ2：報告書
 
 ### 特徴
@@ -335,7 +335,7 @@ paginate: true
 4. 時系列
 ---
 
-![bg right:45%](images/027.png)
+![bg right:45%](images/025.png)
 ## 報告書のプロンプト例
 
 ```
@@ -354,7 +354,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/028.png)
+![bg right:45%](images/026.png)
 ## タイプ3：提案書
 
 ### 特徴
@@ -368,7 +368,7 @@ paginate: true
 4. 見積もり
 ---
 
-![bg right:45%](images/029.png)
+![bg right:45%](images/027.png)
 ## 提案書のプロンプト例
 
 ```
@@ -389,7 +389,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/030.png)
+![bg right:45%](images/028.png)
 ## タイプ4：仕様書
 
 ### 特徴
@@ -403,7 +403,7 @@ paginate: true
 4. 図表の活用
 ---
 
-![bg right:45%](images/031.png)
+![bg right:45%](images/029.png)
 ## 仕様書のプロンプト例
 
 ```
@@ -423,7 +423,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/032.png)
+![bg right:45%](images/030.png)
 ## 実習5：文書タイプ別作成（15分）
 
 ### 課題
@@ -437,11 +437,11 @@ paginate: true
 **Geminiを使って実際に作ってみましょう**
 ---
 
-![bg right:45%](images/033.png)
+![bg right:45%](images/031.png)
 # 第4部：実践テクニック（15分）
 ---
 
-![bg right:45%](images/034.png)
+![bg right:45%](images/032.png)
 ## テクニック1：テンプレート活用
 
 ### Geminiでテンプレート作成
@@ -456,7 +456,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/035.png)
+![bg right:45%](images/033.png)
 ## テクニック2：トーンの調整
 
 ### カジュアル⇔フォーマル
@@ -475,7 +475,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/036.png)
+![bg right:45%](images/034.png)
 ## テクニック3：箇条書きと表
 
 ### 情報を整理
@@ -493,7 +493,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/038.png)
+![bg right:45%](images/035.png)
 ## テクニック5：多言語対応
 
 ### 英語資料も簡単に
@@ -506,7 +506,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/041.png)
+![bg right:45%](images/036.png)
 ## 資料の品質チェックリスト
 
 ### Geminiにレビュー依頼
@@ -526,7 +526,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/042.png)
+![bg right:45%](images/037.png)
 ## 読み手の視点でチェック
 
 ### ペルソナ設定
@@ -542,7 +542,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/043.png)
+![bg right:45%](images/038.png)
 ## 最終調整
 
 ### 細部の仕上げ
@@ -557,7 +557,7 @@ paginate: true
 ```
 ---
 
-![bg right:45%](images/044.png)
+![bg right:45%](images/039.png)
 ## 実習7：最終仕上げ（10分）
 
 ### 今日作った資料を完成させる
@@ -569,11 +569,11 @@ paginate: true
 **完成度の高い資料に仕上げましょう**
 ---
 
-![bg right:45%](images/045.png)
+![bg right:45%](images/040.png)
 # まとめ（5分）
 ---
 
-![bg right:45%](images/046.png)
+![bg right:45%](images/041.png)
 ## 今日学んだこと
 
 ✅ 効果的な資料の構成
@@ -583,7 +583,7 @@ paginate: true
 ✅ 品質チェックの方法
 ---
 
-![bg right:45%](images/047.png)
+![bg right:45%](images/042.png)
 ## 資料作成の時短効果
 
 ### Before AI
@@ -601,7 +601,7 @@ paginate: true
 **100分（1.7時間）の時短！**
 ---
 
-![bg right:45%](images/048.png)
+![bg right:45%](images/043.png)
 ## 実践課題
 
 ### 今週のチャレンジ
@@ -616,7 +616,7 @@ paginate: true
    - 再利用できる形で保存
 ---
 
-![bg right:45%](images/049.png)
+![bg right:45%](images/044.png)
 ## 資料作成マスターへの道
 
 ### レベル1：構成案が作れる
@@ -626,7 +626,7 @@ paginate: true
 ### レベル5：テンプレート化して効率化
 ---
 
-![bg right:45%](images/050.png)
+![bg right:45%](images/045.png)
 ## 次回予告
 
 ### 「スプレッドシート作成」講座
@@ -637,7 +637,7 @@ paginate: true
 - 自動化のテクニック
 ---
 
-![bg right:45%](images/051.png)
+![bg right:45%](images/046.png)
 ## 参考リソース
 
 ### ツール
@@ -651,7 +651,7 @@ paginate: true
 - ロジックツリー
 ---
 
-![bg right:45%](images/052.png)
+![bg right:45%](images/047.png)
 ## ワンポイントアドバイス
 
 ### 資料作成のコツ
@@ -666,13 +666,13 @@ paginate: true
    - 下書きはAI、判断は人間
 ---
 
-![bg right:45%](images/053.png)
+![bg right:45%](images/048.png)
 ## 質問タイム
 
 **わからないこと、もっと知りたいことはありますか？**
 ---
 
-![bg right:45%](images/054.png)
+![bg right:45%](images/049.png)
 ## メッセージ
 
 ### 資料作成は戦略的思考
@@ -684,7 +684,7 @@ paginate: true
 **AIを味方につけて、説得力のある資料を効率的に！**
 ---
 
-![bg right:45%](images/055.png)
+![bg right:45%](images/050.png)
 ## お疲れ様でした！
 
 次回の講座でお会いしましょう

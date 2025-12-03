@@ -1,0 +1,88 @@
+slide_number,title,prompt,character,aspect_ratio
+001,Geminiでスプレッドシート作成,"[プロンプト内容]
+A smiling Japanese man in his early 30s, identified as ""Jukucho Shota Takasaki"" (塾頭高崎翔太) is enthusiastically gesturing towards a vibrant, colorful spreadsheet displayed on a large monitor. The spreadsheet is filled with various charts, graphs, and data visualizations representing agricultural statistics of Akita Prefecture, Japan: rice production, apple harvests, and tourism numbers. He is standing in front of a group of attentive female students of varying ages in a modern classroom setting. The atmosphere is collaborative and positive, with the students actively engaged with laptops displaying similar spreadsheets. The monitor showing the spreadsheet is positioned so that it is the primary focus of the image. 3:4 aspect ratio. No text or labels should be included.",塾頭高崎翔太,3:4
+002,本日の目標,"[プロンプト内容]
+30代前半の日本人男性、塾頭高崎翔太が、大きなGoogleスプレッドシートの画面を指し示しながら、受講者に向けて熱心に説明している様子。受講者は様々な年齢層の男女で、真剣な表情でメモを取ったり、画面を見つめたりしている。画面にはグラフや数字が並び、データ分析のイメージを表現。背景は明るく清潔感のある研修室。縦長（3:4）のアスペクト比。エネルギッシュで親しみやすい印象を与えるように。",塾頭高崎翔太,3:4
+003,アイスブレイク（5分）,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太（30代前半、エネルギッシュな日本人男性）が、困った顔で頭を抱える女性の隣で、自信ありげな笑顔でジェスチャーをしている。女性はExcelの画面を見つめており、画面には複雑な数式やエラーメッセージのようなものが表示されている。背景には、明るいオフィス環境がぼんやりと見える。",塾頭高崎翔太,3:4
+004,第1部：スプレッドシートの基本（20分）,"[プロンプト内容]
+A smiling and energetic Japanese man in his early 30s, ""塾頭高崎翔太"" (Jukutou Takasaki Shota), is standing in front of a whiteboard filled with brightly colored spreadsheet examples, formulas, and charts. He's pointing to a particular cell on a large, projected spreadsheet on the whiteboard with a marker. Several students are seated at desks in the foreground, looking attentively at the whiteboard. The atmosphere is warm and encouraging, representing a basic spreadsheet learning environment. The composition is vertical (3:4 aspect ratio).",塾頭高崎翔太,3:4
+005,Googleスプレッドシートとは？,"[プロンプト内容]
+A cheerful Japanese man in his early 30s, named Jukucho Shota Takasaki, enthusiastically points to a large computer screen displaying a Google Sheet. The sheet is filled with colorful charts, graphs, and data, showcasing its capabilities. Several other diverse people are sitting around a table, smiling and collaborating on the same Google Sheet displayed on the screen. The scene is bright and modern, emphasizing collaboration and accessibility. Vertical (3:4) aspect ratio. Avoid text, labels, or titles in the image.",塾頭高崎翔太,3:4
+006,スプレッドシートでできること,"**画像生成プロンプト1:**
+[プロンプト内容]
+説明: 塾頭高崎翔太が、顧客リストと思われるスプレッドシートが映し出されたモニターを見ながら、笑顔でジェスチャーをしている。彼の背後には、整理整頓されたオフィスデスクと、ホワイトボードに書かれたタスクリストの一部が見える。モニターには顧客名、連絡先、購入履歴などが表示されている。全体的に明るく、活気のあるオフィス環境。
+アスペクト比: 3:4
+キーワード: データ管理, 顧客リスト, オフィス, 笑顔, モニター, スプレッドシート
+**画像生成プロンプト2:**
+[プロンプト内容]
+説明: 在庫管理の様子を俯瞰で捉えたイメージ。スプレッドシートの画面が大きく表示され、背景には倉庫の商品棚がぼやけて見える。商品棚には様々な種類の商品が整然と並べられ、バーコードリーダーを持った手がスプレッドシートに入力しようとしている様子が一部分だけ見える。スプレッドシートには商品名、在庫数、ロケーションなどが表示されている。
+アスペクト比: 3:4
+キーワード: 在庫管理, 倉庫, スプレッドシート, 商品棚, ロジスティクス
+**画像生成プロンプト3:**
+[プロンプト内容]
+説明: 塾頭高崎翔太が、売上集計のグラフが表示されたスプレッドシートを見ながら、真剣な表情で電卓を叩いている。彼の前には、売上データが印刷された書類が積み重ねられている。グラフは棒グラフや折れ線グラフで、売上の推移を示している。背景はシンプルなオフィス環境。
+アスペクト比: 3:4
+キーワード: 売上集計, グラフ, スプレッドシート, データ分析, 電卓, オフィス
+**画像生成プロンプト4:**
+[プロンプト内容]
+説明: 経費計算のスプレッドシートが大きく表示されたイメージ。背景には、領収書や請求書が散らばっている。スプレッドシートには、日付、項目、金額などが入力されている。電卓とペンがスプレッドシートの横に置かれている。
+アスペクト比: 3:4
+キーワード: 経費計算, スプレッドシート, 領収書, 請求書, 電卓
+**画像生成プロンプト5:**
+[プロンプト内容]
+説明: 塾頭高崎翔太が、統計処理の結果が表示されたスプレッドシートを見ながら、聴衆に説明している様子。彼は指差し棒を持ち、スライドに映し出されたグラフを指している。聴衆は真剣な表情で彼の話を聞いている。背景はセミナー会場。
+アスペクト比: 3:4
+キーワード: 統計処理, スプレッドシート, セミナー, プレゼンテーション, グラフ",塾頭高崎翔太,3:4
+007,スプレッドシートでできること（続き）,"[プロンプト内容]
+A brightly lit classroom setting. In the foreground, 塾頭高崎翔太, a Japanese man in his early 30s with an energetic and approachable demeanor, is enthusiastically gesturing towards a large screen displaying various types of charts and graphs: a line graph showing an upward trend, a colorful pie chart illustrating proportions, and a dynamic pivot table summarizing data. Behind him, students are intently focused on their laptops, some nodding in understanding. The overall scene conveys a sense of engaging and informative learning about data visualization and analysis using spreadsheets. The composition should be suitable for a vertical (3:4) aspect ratio. The image must not contain any text or labels.",塾頭高崎翔太,3:4
+008,基本用語,"[プロンプト内容]
+塾頭高崎翔太: 塾頭高崎翔太
+30代前半の日本人男性、塾頭高崎翔太が、ホワイトボードに向かって熱心に説明している様子。ホワイトボードには、Excelの画面の一部が大きく描かれており、「A1」「B3」と書かれたセルがハイライトされている。また、別の範囲として「A1:B10」が強調表示されている。その下に、関数「=SUM(A1:A10)」が示されている。塾頭高崎翔太は、笑顔で指を指し、生徒にわかりやすく説明している。教室は明るく、活気に満ちている。縦長（3:4）のアスペクト比。教育的で親しみやすい雰囲気。背景には生徒の姿がぼやけて見える程度で、焦点は塾頭高崎翔太とホワイトボードに当てられている。",なし,3:4
+009,よく使う基本関数,"[プロンプト内容]
+A cheerful and energetic Japanese tutor in his early 30s, ""塾頭高崎翔太"", enthusiastically pointing to a dynamically growing bar graph that visualizes the SUM function (total amount increasing). To his right, a similar bar graph shows the AVERAGE function (bars fluctuating around an average line). Below them, small groups of objects are being counted, illustrating the COUNT function. To the left, a pair of mountains, one tall and one short, representing MAX and MIN. At the bottom, a forking path splits into ""合格"" (Pass) and ""不合格"" (Fail), symbolizing the IF function's conditional branching, but **without the actual text** on the signs. The scene is bright and engaging, suitable for an educational presentation, with a 3:4 aspect ratio. No text or labels should be included in the image itself.",塾頭高崎翔太,3:4
+010,第2部：Geminiでシート作成（50分）,"[プロンプト内容]
+人物: 塾頭高崎翔太
+プロンプト:
+塾頭高崎翔太（30代前半、エネルギッシュ、親しみやすい）が、笑顔でホワイトボードの前に立っている。ホワイトボードには、Googleスプレッドシートのインターフェースが大きく描かれている。高崎はペンを手に持ち、スプレッドシートのセルを指し示しながら、熱心に何かを説明しているジェスチャーをしている。背景には、明るく清潔感のあるオフィスのような空間が広がり、数人の生徒がパソコンに向かってスプレッドシートを操作しているのが見える。全体的に、活気に満ちた学習の雰囲気を醸し出す。アスペクト比3:4。教育用途に適したクリーンなイメージ。テキスト、文字、看板、ラベル、タイトルは一切含めない。",なし,3:4
+011,Geminiの活用方法,"[プロンプト内容]
+塾頭高崎翔太 (30代前半, 日本人男性) が、明るい表情で大型モニターを見ながら、数人の生徒たちにエクセルシートの構成について説明している。モニターには、カラフルな表形式のデータとグラフが映し出されている。生徒たちは熱心にメモを取っている。教室は明るく、現代的な雰囲気。背景にはホワイトボードがあり、数式や図が書かれている。アスペクト比 3:4。",塾頭高崎翔太,3:4
+012,実習1：シートのテンプレート作成（15分),Professional abstract background for: 実習1：シートのテンプレート作成（15分),なし,3:4
+013,Geminiの回答を活用,Professional abstract background for: Geminiの回答を活用,なし,3:4
+014,実習2：関数の作成（15分）,Professional abstract background for: 実習2：関数の作成（15分）,なし,3:4
+015,実習4：データ整理（10分）,Professional abstract background for: 実習4：データ整理（10分）,なし,3:4
+016,休憩（10分）,Professional abstract background for: 休憩（10分）,なし,3:4
+017,第3部：実践的な活用例（30分）,Professional abstract background for: 第3部：実践的な活用例（30分）,なし,3:4
+018,活用例1：顧客管理シート,Professional abstract background for: 活用例1：顧客管理シート,なし,3:4
+019,顧客管理シートの作成,Professional abstract background for: 顧客管理シートの作成,なし,3:4
+020,活用例2：経費管理シート,Professional abstract background for: 活用例2：経費管理シート,なし,3:4
+021,経費管理シートの作成,Professional abstract background for: 経費管理シートの作成,なし,3:4
+022,実習5：実践シート作成（20分）,Professional abstract background for: 実習5：実践シート作成（20分）,なし,3:4
+023,第4部：データ分析とグラフ（20分）,Professional abstract background for: 第4部：データ分析とグラフ（20分）,なし,3:4
+024,データからグラフを作る,Professional abstract background for: データからグラフを作る,なし,3:4
+025,グラフの種類,Professional abstract background for: グラフの種類,なし,3:4
+026,実習6：グラフ作成（10分）,Professional abstract background for: 実習6：グラフ作成（10分）,なし,3:4
+027,データ分析のヒントを得る,Professional abstract background for: データ分析のヒントを得る,なし,3:4
+028,ピボットテーブルの活用,Professional abstract background for: ピボットテーブルの活用,なし,3:4
+029,第5部：応用テクニック（15分）,Professional abstract background for: 第5部：応用テクニック（15分）,なし,3:4
+030,テクニック1：データの入力規則,Professional abstract background for: テクニック1：データの入力規則,なし,3:4
+031,テクニック2：VLOOKUP関数,Professional abstract background for: テクニック2：VLOOKUP関数,なし,3:4
+032,テクニック3：QUERY関数,Professional abstract background for: テクニック3：QUERY関数,なし,3:4
+033,テクニック4：関数の組み合わせ,Professional abstract background for: テクニック4：関数の組み合わせ,なし,3:4
+034,実習7：応用テクニック（10分）,Professional abstract background for: 実習7：応用テクニック（10分）,なし,3:4
+035,第6部：便利な機能（10分）,Professional abstract background for: 第6部：便利な機能（10分）,なし,3:4
+036,共同編集機能,Professional abstract background for: 共同編集機能,なし,3:4
+037,フィルタとソート,Professional abstract background for: フィルタとソート,なし,3:4
+038,データの検証,Professional abstract background for: データの検証,なし,3:4
+039,テンプレートの保存と再利用,Professional abstract background for: テンプレートの保存と再利用,なし,3:4
+040,まとめ（5分）,Professional abstract background for: まとめ（5分）,なし,3:4
+041,今日学んだこと,Professional abstract background for: 今日学んだこと,なし,3:4
+042,スプレッドシート活用のレベル,Professional abstract background for: スプレッドシート活用のレベル,なし,3:4
+043,実践課題,Professional abstract background for: 実践課題,なし,3:4
+044,時短効果,Professional abstract background for: 時短効果,なし,3:4
+045,次回予告,Professional abstract background for: 次回予告,なし,3:4
+046,参考リソース,Professional abstract background for: 参考リソース,なし,3:4
+047,ワンポイントアドバイス,Professional abstract background for: ワンポイントアドバイス,なし,3:4
+048,質問タイム,Professional abstract background for: 質問タイム,なし,3:4
+049,メッセージ,Professional abstract background for: メッセージ,なし,3:4
+050,お疲れ様でした！,Professional abstract background for: お疲れ様でした！,なし,3:4

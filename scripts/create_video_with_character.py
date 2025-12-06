@@ -531,7 +531,7 @@ class VideoWithCharacterCreator:
                     check=True,
                     capture_output=True,
                     text=True,
-                    timeout=600  # 10分タイムアウト
+                    timeout=1800  # 30分タイムアウト
                 )
                 chunk_videos.append(chunk_video)
                 print(f"    完了")
@@ -540,7 +540,10 @@ class VideoWithCharacterCreator:
                 print(f"    タイムアウト - スキップ")
             except subprocess.CalledProcessError as e:
                 print(f"    エラー: {e.stderr[:200] if e.stderr else 'Unknown error'}")
-                # エラーでも続行を試みる
+                # エラーでもファイルが生成されていたらリストに追加
+                if chunk_video.exists():
+                    chunk_videos.append(chunk_video)
+                    print(f"    ファイルは生成されました")
 
         if not chunk_videos:
             raise RuntimeError("チャンクのレンダリングに失敗しました")

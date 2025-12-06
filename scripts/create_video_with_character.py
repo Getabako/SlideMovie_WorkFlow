@@ -512,11 +512,11 @@ class VideoWithCharacterCreator:
             print(f"  チャンク {chunk_num}/{total_chunks}: "
                   f"スライド {chunk_idx+1}-{chunk_end} (フレーム {start_frame}-{end_frame})")
 
-            # Remotionでこのチャンクをレンダリング
+            # Remotionでこのチャンクをレンダリング（絶対パスを使用）
             cmd = [
                 'npx', 'remotion', 'render',
                 'Video',
-                str(chunk_video),
+                str(chunk_video.absolute()),
                 '--codec', 'h264',
                 '--frames', f'{start_frame}-{end_frame}',
                 '--timeout', '180000',

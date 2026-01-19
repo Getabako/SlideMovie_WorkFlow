@@ -1,29 +1,368 @@
 {
-  "total_slides": 24,
   "slides": [
-    {"index": 1, "filename": "slide_01.png"},
-    {"index": 2, "filename": "slide_02.png"},
-    {"index": 3, "filename": "slide_03.png"},
-    {"index": 4, "filename": "slide_04.png"},
-    {"index": 5, "filename": "slide_05.png"},
-    {"index": 6, "filename": "slide_06.png"},
-    {"index": 7, "filename": "slide_07.png"},
-    {"index": 8, "filename": "slide_08.png"},
-    {"index": 9, "filename": "slide_09.png"},
-    {"index": 10, "filename": "slide_10.png"},
-    {"index": 11, "filename": "slide_11.png"},
-    {"index": 12, "filename": "slide_12.png"},
-    {"index": 13, "filename": "slide_13.png"},
-    {"index": 14, "filename": "slide_14.png"},
-    {"index": 15, "filename": "slide_15.png"},
-    {"index": 16, "filename": "slide_16.png"},
-    {"index": 17, "filename": "slide_17.png"},
-    {"index": 18, "filename": "slide_18.png"},
-    {"index": 19, "filename": "slide_19.png"},
-    {"index": 20, "filename": "slide_20.png"},
-    {"index": 21, "filename": "slide_21.png"},
-    {"index": 22, "filename": "slide_22.png"},
-    {"index": 23, "filename": "slide_23.png"},
-    {"index": 24, "filename": "slide_24.png"}
+    {
+      "slideNumber": 1,
+      "image": "slide-01.png",
+      "subtitles": [
+        {
+          "text": "IF塾の高崎翔太です。",
+          "duration": 2.149333
+        },
+        {
+          "text": "僕は今日、皆さんに一つの問いを投げかけたいと思います。",
+          "duration": 4.053333
+        },
+        {
+          "text": "支援級で3年間を過ごした子どもが、なぜ国立大学に合格できたのか？",
+          "duration": 5.194667
+        },
+        {
+          "text": "その答えが、僕が人生をかけて取り組む「才能爆発教育」です。",
+          "duration": 5.074667
+        }
+      ],
+      "audioFiles": [
+        "slide_01_01.wav",
+        "slide_01_02.wav",
+        "slide_01_03.wav",
+        "slide_01_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 2,
+      "image": "slide-02.png",
+      "subtitles": [
+        {
+          "text": "実は僕自身、学校に馴染めない子どもでした。",
+          "duration": 3.528
+        },
+        {
+          "text": "臨床心理士として働き始めてからも、カウンセリングだけでは子どもたちを救えない現実に、何度も打ちのめされました。",
+          "duration": 7.613333
+        },
+        {
+          "text": "ある日、不登校の子にプログラミングを教えた時、目の色が変わったんです。",
+          "duration": 5.434667
+        },
+        {
+          "text": "「やりたいことで成長できる」。この発見が、すべての始まりでした。",
+          "duration": 5.144
+        }
+      ],
+      "audioFiles": [
+        "slide_02_01.wav",
+        "slide_02_02.wav",
+        "slide_02_03.wav",
+        "slide_02_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 3,
+      "image": "slide-03.png",
+      "subtitles": [
+        {
+          "text": "秋田に来て、環境に恵まれない子どもたちに出会いました。",
+          "duration": 3.789333
+        },
+        {
+          "text": "都会なら選択肢がある。でもここには、好きなことを伸ばせる場所がなかった。",
+          "duration": 5.48
+        },
+        {
+          "text": "「どうにかしたい」。そう思った時、彼らの方から声をかけてくれたんです。",
+          "duration": 5.402667
+        },
+        {
+          "text": "「一緒にやろう」と。支援される側だった子どもたちが、僕の共同創業者になりました。",
+          "duration": 5.973333
+        }
+      ],
+      "audioFiles": [
+        "slide_03_01.wav",
+        "slide_03_02.wav",
+        "slide_03_03.wav",
+        "slide_03_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 4,
+      "image": "slide-04.png",
+      "subtitles": [
+        {
+          "text": "こうして生まれたのがIF塾です。",
+          "duration": 2.104
+        },
+        {
+          "text": "好きなことをやりながら、自分の「得意」を見つける。",
+          "duration": 3.522667
+        },
+        {
+          "text": "苦手なことはAIワークフローがカバーして、得意に全集中。",
+          "duration": 4.474667
+        },
+        {
+          "text": "少しずつ実案件に取り組みながら、スキルアップしていく。オンラインで、全国どこからでも参加できる居場所です。",
+          "duration": 7.869333
+        }
+      ],
+      "audioFiles": [
+        "slide_04_01.wav",
+        "slide_04_02.wav",
+        "slide_04_03.wav",
+        "slide_04_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 5,
+      "image": "slide-05.png",
+      "subtitles": [
+        {
+          "text": "まず僕たちは、マインクラフトをメタバース化しました。",
+          "duration": 3.589333
+        },
+        {
+          "text": "子どもたちが好きなゲームの中に、学習空間を作ったんです。",
+          "duration": 4.173333
+        },
+        {
+          "text": "AI先生が常駐し、発達特性に合わせた個別最適化を実現。",
+          "duration": 5.104
+        },
+        {
+          "text": "臨床心理士の専門知識とテクノロジーを掛け合わせた、僕たちにしかできないアプローチです。",
+          "duration": 5.869333
+        }
+      ],
+      "audioFiles": [
+        "slide_05_01.wav",
+        "slide_05_02.wav",
+        "slide_05_03.wav",
+        "slide_05_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 6,
+      "image": "slide-06.png",
+      "subtitles": [
+        {
+          "text": "次に、自律型AIワークフローを開発しました。",
+          "duration": 3.642667
+        },
+        {
+          "text": "「集客しておいて」と言えば、AIが自動でSNS発信やYouTube動画を作成。",
+          "duration": 6.149333
+        },
+        {
+          "text": "LINEアプリなら10分で開発できます。",
+          "duration": 2.624
+        },
+        {
+          "text": "この仕組みは、子どもたちの学びだけでなく、企業の業務効率化にも活用できます。",
+          "duration": 5.853333
+        }
+      ],
+      "audioFiles": [
+        "slide_06_01.wav",
+        "slide_06_02.wav",
+        "slide_06_03.wav",
+        "slide_06_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 7,
+      "image": "slide-07.png",
+      "subtitles": [
+        {
+          "text": "そして何より大切なのは、子どもたちへの雇用創出です。",
+          "duration": 4.2
+        },
+        {
+          "text": "「お小遣い」じゃない、「本物の仕事」。",
+          "duration": 2.8
+        },
+        {
+          "text": "AIワークフローの開発参加、データ調整、品質チェック。",
+          "duration": 4.709333
+        },
+        {
+          "text": "実際に報酬を得る経験を通じて、幼い頃から「稼ぐ力」を身につけています。",
+          "duration": 5.749333
+        }
+      ],
+      "audioFiles": [
+        "slide_07_01.wav",
+        "slide_07_02.wav",
+        "slide_07_03.wav",
+        "slide_07_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 8,
+      "image": "slide-08.png",
+      "subtitles": [
+        {
+          "text": "彼らは、行き場のないエネルギーを抱え、「壁に穴を開ける側」の人間でした。",
+          "duration": 5.418667
+        },
+        {
+          "text": "でも、その力を正しい方向に向けたら。",
+          "duration": 3.184
+        },
+        {
+          "text": "支援級3年間から、国立大学合格。AI甲子園全国5位。eスポーツ大会優勝。",
+          "duration": 7.909333
+        },
+        {
+          "text": "やりたくないことはAIに任せ、やりたいことに全力。だから「辛い」と感じない。これが僕たちの強さです。",
+          "duration": 8.248
+        }
+      ],
+      "audioFiles": [
+        "slide_08_01.wav",
+        "slide_08_02.wav",
+        "slide_08_03.wav",
+        "slide_08_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 9,
+      "image": "slide-09.png",
+      "subtitles": [
+        {
+          "text": "この「才能爆発」は、塾生にも起きています。",
+          "duration": 3.458667
+        },
+        {
+          "text": "入塾前は学校に全く行けず、毎日VR三昧だった子が、今、不登校の子どもたちの居場所を作るため、カフェ開業を準備中です。",
+          "duration": 10.194667
+        },
+        {
+          "text": "自分の好きなVRでマネタイズを模索し、事業計画はAIワークフローでサポート。",
+          "duration": 5.762667
+        },
+        {
+          "text": "彼らは確実に、自分の人生を切り拓いています。",
+          "duration": 3.68
+        }
+      ],
+      "audioFiles": [
+        "slide_09_01.wav",
+        "slide_09_02.wav",
+        "slide_09_03.wav",
+        "slide_09_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 10,
+      "image": "slide-10.png",
+      "subtitles": [
+        {
+          "text": "僕たちのビジネスモデルは「学びながら稼ぐエコシステム」です。",
+          "duration": 4.069333
+        },
+        {
+          "text": "保護者からの月謝と、企業からのAIワークフロー構築費用。",
+          "duration": 4.32
+        },
+        {
+          "text": "生徒は学びながら実案件に参加し、報酬を得て、実務経験を積む。",
+          "duration": 5.514667
+        },
+        {
+          "text": "全員がWin-Winになる、持続可能な仕組みを作りました。",
+          "duration": 4.218667
+        }
+      ],
+      "audioFiles": [
+        "slide_10_01.wav",
+        "slide_10_02.wav",
+        "slide_10_03.wav",
+        "slide_10_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 11,
+      "image": "slide-11.png",
+      "subtitles": [
+        {
+          "text": "プログラミング教室は全国に1万以上あります。",
+          "duration": 3.229333
+        },
+        {
+          "text": "でも、それだけでは救えない子どもたちがいる。",
+          "duration": 3.138667
+        },
+        {
+          "text": "自分の特性を理解できていない。苦手に潰されて、得意を発揮できない。",
+          "duration": 5.6
+        },
+        {
+          "text": "「特性理解×AI×起業家教育」。この組み合わせが必要な子どもたちが、全国にいます。僕たちには、届ける責任がある。",
+          "duration": 10.133333
+        }
+      ],
+      "audioFiles": [
+        "slide_11_01.wav",
+        "slide_11_02.wav",
+        "slide_11_03.wav",
+        "slide_11_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 12,
+      "image": "slide-12.png",
+      "subtitles": [
+        {
+          "text": "2026年、生徒30名、AIワークフロー導入企業10社。",
+          "duration": 5.584
+        },
+        {
+          "text": "2027年、東北6県展開、生徒200名。",
+          "duration": 4.6
+        },
+        {
+          "text": "2029年、全国オンライン展開、生徒1,000名。",
+          "duration": 4.629333
+        },
+        {
+          "text": "そして2031年、売上3億円。僕たちのカリキュラムを公教育に届けることを目指します。",
+          "duration": 7.354667
+        }
+      ],
+      "audioFiles": [
+        "slide_12_01.wav",
+        "slide_12_02.wav",
+        "slide_12_03.wav",
+        "slide_12_04.wav"
+      ]
+    },
+    {
+      "slideNumber": 13,
+      "image": "slide-13.png",
+      "subtitles": [
+        {
+          "text": "全ての子どもたちが、自分らしく輝ける社会を目指して。",
+          "duration": 4.082667
+        },
+        {
+          "text": "実は、このプレゼン中にバックグラウンドでLINEミニアプリを作っていました。",
+          "duration": 4.738667
+        },
+        {
+          "text": "先ほどお話したAIワークフローで、たった今完成。このQRを読み込むと、今作った予約アプリが起動します。",
+          "duration": 8.48
+        },
+        {
+          "text": "企業様も、ぜひAIワークフロー導入をご検討ください。ご清聴ありがとうございました。",
+          "duration": 6.288
+        }
+      ],
+      "audioFiles": [
+        "slide_13_01.wav",
+        "slide_13_02.wav",
+        "slide_13_03.wav",
+        "slide_13_04.wav"
+      ]
+    }
   ]
 }

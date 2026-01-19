@@ -34,13 +34,30 @@ except ImportError:
 class VideoWithCharacterCreator:
     """キャラクター付き動画作成クラス"""
 
+    # VOICEPEAKのパス（macOS）
+    VOICEPEAK_PATH = "/Applications/voicepeak.app/Contents/MacOS/voicepeak"
+
+    # 利用可能なナレーター（VOICEPEAK 6ナレーターセット）
+    VOICEPEAK_NARRATORS = [
+        "Japanese Female 1",
+        "Japanese Female 2",
+        "Japanese Female 3",
+        "Japanese Male 1",
+        "Japanese Male 2",
+        "Japanese Male 3",
+    ]
+
     def __init__(
         self,
         md_file: str,
         output_dir: str = None,
         fps: int = 30,
         skip_script: bool = False,
-        skip_audio: bool = False
+        skip_audio: bool = False,
+        voice_engine: str = "voicepeak",
+        narrator: str = "Japanese Female 1",
+        speed: int = 120,
+        pitch: int = 0
     ):
         """
         初期化
@@ -51,11 +68,19 @@ class VideoWithCharacterCreator:
             fps: フレームレート
             skip_script: 原稿生成をスキップ
             skip_audio: 音声生成をスキップ
+            voice_engine: 音声エンジン（voicepeak, gtts, edge_tts）
+            narrator: VOICEPEAKのナレーター名
+            speed: 話速（50-200、デフォルト120でハキハキ）
+            pitch: 声の高さ（-300〜300）
         """
         self.md_file = Path(md_file)
         self.fps = fps
         self.skip_script = skip_script
         self.skip_audio = skip_audio
+        self.voice_engine = voice_engine
+        self.narrator = narrator
+        self.speed = speed
+        self.pitch = pitch
 
         # ディレクトリ設定
         self.presentation_dir = self.md_file.parent
@@ -195,8 +220,152 @@ class VideoWithCharacterCreator:
         print(f"  原稿を保存: {self.script_json}")
         return script_data
 
+    def _split_text_for_voicepeak(self, text: str, max_chars: int = 130) -> List[str]:
+        """テキストを140文字以下のチャンクに分割（句読点で区切る）"""
+        # 改行をスペースに、全角スペースを半角に
+        clean_text = text.replace('\n', ' ').replace('　', ' ')
+        clean_text = ' '.join(clean_text.split())
+
+        if len(clean_text) <= max_chars:
+            return [clean_text]
+
+        chunks = []
+        current_chunk = ""
+
+        # 句点で分割
+        sentences = []
+        temp = ""
+        for char in clean_text:
+            temp += char
+            if char in '。！？':
+                sentences.append(temp)
+                temp = ""
+        if temp:
+            sentences.append(temp)
+
+        for sentence in sentences:
+            if len(current_chunk) + len(sentence) <= max_chars:
+                current_chunk += sentence
+            else:
+                if current_chunk:
+                    chunks.append(current_chunk)
+                # 文が長すぎる場合は読点で分割
+                if len(sentence) > max_chars:
+                    sub_parts = sentence.split('、')
+                    sub_chunk = ""
+                    for part in sub_parts:
+                        if len(sub_chunk) + len(part) + 1 <= max_chars:
+                            sub_chunk += part + '、' if part != sub_parts[-1] else part
+                        else:
+                            if sub_chunk:
+                                chunks.append(sub_chunk)
+                            sub_chunk = part + '、' if part != sub_parts[-1] else part
+                    if sub_chunk:
+                        current_chunk = sub_chunk
+                else:
+                    current_chunk = sentence
+
+        if current_chunk:
+            chunks.append(current_chunk)
+
+        return chunks
+
+    def _generate_audio_voicepeak(self, text: str, output_file: Path) -> bool:
+        """VOICEPEAKで音声を生成（140文字制限対応）"""
+        # テキストを分割
+        chunks = self._split_text_for_voicepeak(text)
+
+        if len(chunks) == 1:
+            # 1チャンクの場合は直接生成
+            return self._generate_single_voicepeak(chunks[0], output_file)
+        else:
+            # 複数チャンクの場合は個別に生成して結合
+            print(f"        ({len(chunks)}チャンクに分割)")
+            temp_files = []
+            temp_dir = output_file.parent / "temp_chunks"
+            temp_dir.mkdir(exist_ok=True)
+
+            try:
+                for i, chunk in enumerate(chunks):
+                    temp_file = temp_dir / f"chunk_{i:03d}.mp3"
+                    if not self._generate_single_voicepeak(chunk, temp_file):
+                        return False
+                    temp_files.append(temp_file)
+
+                # 音声ファイルを結合
+                concat_list = temp_dir / "concat.txt"
+                with open(concat_list, 'w') as f:
+                    for tf in temp_files:
+                        f.write(f"file '{tf.name}'\n")
+
+                concat_cmd = [
+                    'ffmpeg', '-y', '-f', 'concat', '-safe', '0',
+                    '-i', str(concat_list), '-codec:a', 'libmp3lame', '-qscale:a', '2',
+                    str(output_file)
+                ]
+                subprocess.run(concat_cmd, capture_output=True, check=True)
+
+                return output_file.exists()
+
+            finally:
+                # 一時ファイルをクリーンアップ
+                for tf in temp_files:
+                    if tf.exists():
+                        tf.unlink()
+                if temp_dir.exists():
+                    for f in temp_dir.glob("*"):
+                        f.unlink()
+                    temp_dir.rmdir()
+
+    def _generate_single_voicepeak(self, text: str, output_file: Path) -> bool:
+        """VOICEPEAKで単一のテキストから音声を生成"""
+        wav_file = output_file.with_suffix('.wav')
+
+        cmd = [
+            self.VOICEPEAK_PATH,
+            '-s', text,
+            '-o', str(wav_file),
+            '-n', self.narrator,
+            '--speed', str(self.speed),
+            '--pitch', str(self.pitch)
+        ]
+
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+
+            if not wav_file.exists():
+                print(f"      VOICEPEAKエラー: 音声ファイルが生成されませんでした")
+                if result.stderr:
+                    print(f"      {result.stderr[:200]}")
+                return False
+
+            # wavをmp3に変換
+            convert_cmd = [
+                'ffmpeg', '-y', '-i', str(wav_file),
+                '-codec:a', 'libmp3lame', '-qscale:a', '2',
+                str(output_file)
+            ]
+            subprocess.run(convert_cmd, capture_output=True, check=True)
+
+            # 一時wavファイルを削除
+            wav_file.unlink()
+
+            return True
+
+        except subprocess.TimeoutExpired:
+            print(f"      VOICEPEAKタイムアウト")
+            return False
+        except Exception as e:
+            print(f"      VOICEPEAKエラー: {e}")
+            return False
+
     async def generate_audio(self, script_data: Dict) -> List[Dict]:
-        """音声を生成（gTTS使用、Edge TTSはフォールバック）"""
+        """音声を生成（VOICEPEAK優先、フォールバックでgTTS/Edge TTS）"""
         print("\n=== ステップ2: 音声生成 ===")
 
         self.audio_dir.mkdir(parents=True, exist_ok=True)
@@ -208,18 +377,35 @@ class VideoWithCharacterCreator:
                 print(f"既存の音声ファイルを使用: {len(existing_files)}件")
                 return self._get_audio_metadata()
 
-        # gTTSを優先的に使用
-        try:
-            from gtts import gTTS
-            use_gtts = True
-            print("  音声エンジン: gTTS")
-        except ImportError:
-            use_gtts = False
+        # 音声エンジンの選択
+        use_voicepeak = False
+        use_gtts = False
+
+        if self.voice_engine == "voicepeak":
+            # VOICEPEAKの存在確認
+            if os.path.exists(self.VOICEPEAK_PATH):
+                use_voicepeak = True
+                print(f"  音声エンジン: VOICEPEAK")
+                print(f"  ナレーター: {self.narrator}")
+                print(f"  話速: {self.speed} / 声の高さ: {self.pitch}")
+            else:
+                print(f"  警告: VOICEPEAKが見つかりません。フォールバックを使用します。")
+                self.voice_engine = "gtts"
+
+        if self.voice_engine == "gtts":
+            try:
+                from gtts import gTTS
+                use_gtts = True
+                print("  音声エンジン: gTTS")
+            except ImportError:
+                self.voice_engine = "edge_tts"
+
+        if self.voice_engine == "edge_tts":
             try:
                 import edge_tts
                 print("  音声エンジン: Edge TTS")
             except ImportError:
-                raise ImportError("gTTS または edge-tts パッケージをインストールしてください")
+                raise ImportError("音声エンジンが利用できません。VOICEPEAKをインストールするか、gTTS/edge-ttsをpipでインストールしてください")
 
         audio_files = []
 
@@ -231,28 +417,39 @@ class VideoWithCharacterCreator:
             print(f"  スライド {idx}: 音声生成中...")
 
             if text and text.strip():
+                success = False
+
                 try:
-                    if use_gtts:
+                    if use_voicepeak:
+                        # VOICEPEAKで音声生成
+                        success = self._generate_audio_voicepeak(text, output_file)
+                    elif use_gtts:
                         # gTTSで音声生成
+                        from gtts import gTTS
                         tts = gTTS(text, lang='ja')
                         tts.save(str(output_file))
+                        success = True
                     else:
                         # Edge TTSで音声生成
                         import edge_tts
                         communicate = edge_tts.Communicate(text, "ja-JP-NanamiNeural")
                         await communicate.save(str(output_file))
+                        success = True
 
-                    # 音声の長さを取得
-                    duration = self._get_audio_duration(output_file)
+                    if success and output_file.exists():
+                        # 音声の長さを取得
+                        duration = self._get_audio_duration(output_file)
 
-                    audio_files.append({
-                        'index': idx,
-                        'file': f"audio/slide_{idx:03d}.mp3",
-                        'duration': duration,
-                        'text': text
-                    })
+                        audio_files.append({
+                            'index': idx,
+                            'file': f"audio/slide_{idx:03d}.mp3",
+                            'duration': duration,
+                            'text': text
+                        })
 
-                    print(f"    完了: {duration:.2f}秒")
+                        print(f"    完了: {duration:.2f}秒")
+                    else:
+                        print(f"    失敗: 音声ファイルが生成されませんでした")
 
                 except Exception as e:
                     print(f"    エラー: {e}")
@@ -394,11 +591,11 @@ class VideoWithCharacterCreator:
         self, text: str, start_time: float, end_time: float,
         start_frame: int, end_frame: int
     ) -> List[Dict]:
-        """テキストから字幕を生成"""
+        """テキストから字幕を生成（音声と字幕を同期させるため文字数に比例して配分）"""
         if not text:
             return []
 
-        # 文単位で分割
+        # 文単位で分割（句読点で区切る）
         sentences = re.split(r'[。！？\n]+', text)
         sentences = [s.strip() for s in sentences if s.strip()]
 
@@ -417,22 +614,33 @@ class VideoWithCharacterCreator:
         current_time = start_time
         current_frame = start_frame
 
-        for sentence in sentences:
-            # 文字数に応じた時間配分
+        for i, sentence in enumerate(sentences):
+            # 文字数に比例した時間配分（音声と字幕を同期させるため）
             ratio = len(sentence) / total_chars
             sent_duration = duration * ratio
-            sent_frames = int(frame_duration * ratio)
+            sent_frames = round(frame_duration * ratio)
+
+            # 最後の文は確実に終了時間まで
+            if i == len(sentences) - 1:
+                sent_end_time = end_time
+                sent_end_frame = end_frame
+            else:
+                sent_end_time = current_time + sent_duration
+                sent_end_frame = current_frame + sent_frames
+
+            # 字幕テキストが長すぎる場合は切り詰め
+            display_text = sentence if len(sentence) <= 50 else sentence[:50] + '...'
 
             subtitles.append({
-                'text': sentence,
+                'text': display_text,
                 'start': current_time,
-                'end': current_time + sent_duration,
+                'end': sent_end_time,
                 'startFrame': current_frame,
-                'endFrame': current_frame + sent_frames
+                'endFrame': sent_end_frame
             })
 
-            current_time += sent_duration
-            current_frame += sent_frames
+            current_time = sent_end_time
+            current_frame = sent_end_frame
 
         return subtitles
 
@@ -546,14 +754,20 @@ class VideoWithCharacterCreator:
                     print(f"    ファイルは生成されました")
 
         if not chunk_videos:
-            raise RuntimeError("チャンクのレンダリングに失敗しました")
+            # 既存のチャンクファイルを探す
+            existing_chunks = sorted(chunks_dir.glob("chunk_*.mp4"))
+            if existing_chunks:
+                print(f"  既存のチャンクファイルを使用: {len(existing_chunks)}件")
+                chunk_videos = existing_chunks
+            else:
+                raise RuntimeError("チャンクのレンダリングに失敗しました")
 
         # ffmpegでチャンクを結合
-        print(f"\n  チャンク結合中...")
+        print(f"\n  チャンク結合中... ({len(chunk_videos)}ファイル)")
 
         concat_list = chunks_dir / "concat_list.txt"
         with open(concat_list, 'w', encoding='utf-8') as f:
-            for chunk_video in chunk_videos:
+            for chunk_video in sorted(chunk_videos):  # ソートして順番を保証
                 f.write(f"file '{chunk_video.name}'\n")
 
         concat_cmd = [
@@ -571,20 +785,39 @@ class VideoWithCharacterCreator:
                 cwd=str(chunks_dir),
                 check=True,
                 capture_output=True,
-                text=True
+                text=True,
+                timeout=300  # 5分タイムアウト
             )
-            print(f"  完了: {output_video}")
+            print(f"  結合完了: {output_video}")
 
             # ファイルサイズを表示
             if output_video.exists():
                 size_mb = output_video.stat().st_size / (1024 * 1024)
                 print(f"  サイズ: {size_mb:.1f}MB")
 
+                # 動画の長さを取得
+                try:
+                    probe_result = subprocess.run(
+                        ['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+                         '-of', 'default=noprint_wrappers=1:nokey=1', str(output_video)],
+                        capture_output=True, text=True
+                    )
+                    duration = float(probe_result.stdout.strip())
+                    minutes = int(duration // 60)
+                    seconds = int(duration % 60)
+                    print(f"  長さ: {minutes}分{seconds}秒")
+                except Exception:
+                    pass
+
             return output_video
 
+        except subprocess.TimeoutExpired:
+            print(f"エラー: チャンク結合がタイムアウトしました")
+            raise RuntimeError("チャンク結合タイムアウト")
         except subprocess.CalledProcessError as e:
             print(f"エラー: チャンク結合に失敗しました")
-            print(e.stderr)
+            if e.stderr:
+                print(e.stderr[:500])
             raise
 
     def process(self):
@@ -650,6 +883,29 @@ def main():
         action='store_true',
         help='音声生成をスキップ（既存の音声ファイルを使用）'
     )
+    parser.add_argument(
+        '--voice-engine',
+        choices=['voicepeak', 'gtts', 'edge_tts'],
+        default='voicepeak',
+        help='音声エンジン (デフォルト: voicepeak)'
+    )
+    parser.add_argument(
+        '--narrator',
+        default='Japanese Female 1',
+        help='VOICEPEAKナレーター名 (デフォルト: Japanese Female 1)'
+    )
+    parser.add_argument(
+        '--speed',
+        type=int,
+        default=120,
+        help='話速 50-200 (デフォルト: 120、ハキハキ話す)'
+    )
+    parser.add_argument(
+        '--pitch',
+        type=int,
+        default=0,
+        help='声の高さ -300〜300 (デフォルト: 0)'
+    )
 
     args = parser.parse_args()
 
@@ -662,7 +918,11 @@ def main():
         output_dir=args.output_dir,
         fps=args.fps,
         skip_script=args.skip_script,
-        skip_audio=args.skip_audio
+        skip_audio=args.skip_audio,
+        voice_engine=args.voice_engine,
+        narrator=args.narrator,
+        speed=args.speed,
+        pitch=args.pitch
     )
 
     creator.process()

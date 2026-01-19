@@ -1,0 +1,487 @@
+{
+  "fps": 30,
+  "totalFrames": 6790,
+  "totalDuration": 226.33333333333334,
+  "slides": [
+    {
+      "index": 1,
+      "slideIndex": 1,
+      "audioFile": "audio/slide_01_combined.wav",
+      "startFrame": 0,
+      "endFrame": 492,
+      "durationFrames": 492,
+      "subtitles": [
+        {
+          "text": "IF塾の高崎翔太です。",
+          "startFrame": 0,
+          "endFrame": 64,
+          "start": 0,
+          "end": 2.149333
+        },
+        {
+          "text": "僕は今日、皆さんに一つの問いを投げかけたいと思います。",
+          "startFrame": 64,
+          "endFrame": 185,
+          "start": 2.149333,
+          "end": 6.202666000000001
+        },
+        {
+          "text": "支援級で3年間を過ごした子どもが、なぜ国立大学に合格できたのか？",
+          "startFrame": 185,
+          "endFrame": 340,
+          "start": 6.202666000000001,
+          "end": 11.397333
+        },
+        {
+          "text": "その答えが、僕が人生をかけて取り組む「才能爆発教育」です。",
+          "startFrame": 340,
+          "endFrame": 492,
+          "start": 11.397333,
+          "end": 16.472
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "slideIndex": 2,
+      "audioFile": "audio/slide_02_combined.wav",
+      "startFrame": 492,
+      "endFrame": 1142,
+      "durationFrames": 650,
+      "subtitles": [
+        {
+          "text": "実は僕自身、学校に馴染めない子どもでした。",
+          "startFrame": 492,
+          "endFrame": 597,
+          "start": 0,
+          "end": 3.528
+        },
+        {
+          "text": "臨床心理士として働き始めてからも、カウンセリングだけでは子どもたちを救えない現実に、何度も打ちのめされました。",
+          "startFrame": 597,
+          "endFrame": 825,
+          "start": 3.528,
+          "end": 11.141333
+        },
+        {
+          "text": "ある日、不登校の子にプログラミングを教えた時、目の色が変わったんです。",
+          "startFrame": 825,
+          "endFrame": 988,
+          "start": 11.141333,
+          "end": 16.576
+        },
+        {
+          "text": "「やりたいことで成長できる」。この発見が、すべての始まりでした。",
+          "startFrame": 988,
+          "endFrame": 1142,
+          "start": 16.576,
+          "end": 21.72
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "slideIndex": 3,
+      "audioFile": "audio/slide_03_combined.wav",
+      "startFrame": 1142,
+      "endFrame": 1760,
+      "durationFrames": 618,
+      "subtitles": [
+        {
+          "text": "秋田に来て、環境に恵まれない子どもたちに出会いました。",
+          "startFrame": 1142,
+          "endFrame": 1255,
+          "start": 0,
+          "end": 3.789333
+        },
+        {
+          "text": "都会なら選択肢がある。でもここには、好きなことを伸ばせる場所がなかった。",
+          "startFrame": 1255,
+          "endFrame": 1419,
+          "start": 3.789333,
+          "end": 9.269333
+        },
+        {
+          "text": "「どうにかしたい」。そう思った時、彼らの方から声をかけてくれたんです。",
+          "startFrame": 1419,
+          "endFrame": 1581,
+          "start": 9.269333,
+          "end": 14.672
+        },
+        {
+          "text": "「一緒にやろう」と。支援される側だった子どもたちが、僕の共同創業者になりました。",
+          "startFrame": 1581,
+          "endFrame": 1760,
+          "start": 14.672,
+          "end": 20.645333
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "slideIndex": 4,
+      "audioFile": "audio/slide_04_combined.wav",
+      "startFrame": 1760,
+      "endFrame": 2169,
+      "durationFrames": 409,
+      "subtitles": [
+        {
+          "text": "こうして生まれたのがIF塾です。",
+          "startFrame": 1760,
+          "endFrame": 1823,
+          "start": 0,
+          "end": 2.104
+        },
+        {
+          "text": "マインクラフトの世界で「何がしたい？」と問いかけ、子どもたちの可能性を引き出す。",
+          "startFrame": 1823,
+          "endFrame": 1997,
+          "start": 2.104,
+          "end": 7.904
+        },
+        {
+          "text": "好きなことで稼ぎながら成長する場所。",
+          "startFrame": 1997,
+          "endFrame": 2077,
+          "start": 7.904,
+          "end": 10.597332999999999
+        },
+        {
+          "text": "これが僕たちが生徒と一緒に創った居場所です。",
+          "startFrame": 2077,
+          "endFrame": 2169,
+          "start": 10.597332999999999,
+          "end": 13.690665999999998
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "slideIndex": 5,
+      "audioFile": "audio/slide_05_combined.wav",
+      "startFrame": 2169,
+      "endFrame": 2764,
+      "durationFrames": 595,
+      "subtitles": [
+        {
+          "text": "実績の1つ目は、マインクラフトをメタバース化した学習空間の開発です。",
+          "startFrame": 2169,
+          "endFrame": 2321,
+          "start": 0,
+          "end": 5.098667
+        },
+        {
+          "text": "子どもたちが好きなことに集中できる仮想空間を作りました。",
+          "startFrame": 2321,
+          "endFrame": 2435,
+          "start": 5.098667,
+          "end": 8.917334
+        },
+        {
+          "text": "AI先生が常駐し、発達特性に合わせた個別最適化を実現。",
+          "startFrame": 2435,
+          "endFrame": 2588,
+          "start": 8.917334,
+          "end": 14.021334
+        },
+        {
+          "text": "臨床心理士の専門知識とテクノロジーを掛け合わせた、僕たちにしかできないアプローチです。",
+          "startFrame": 2588,
+          "endFrame": 2764,
+          "start": 14.021334,
+          "end": 19.890667
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "slideIndex": 6,
+      "audioFile": "audio/slide_06_combined.wav",
+      "startFrame": 2764,
+      "endFrame": 3399,
+      "durationFrames": 635,
+      "subtitles": [
+        {
+          "text": "実績の2つ目は、自律型AIワークフローの開発です。",
+          "startFrame": 2764,
+          "endFrame": 2888,
+          "start": 0,
+          "end": 4.144
+        },
+        {
+          "text": "「集客しておいて」と言えば、AIが自動でSNS発信やYouTube動画を作成。",
+          "startFrame": 2888,
+          "endFrame": 3072,
+          "start": 4.144,
+          "end": 10.293333
+        },
+        {
+          "text": "LINEアプリなら10分で開発できます。",
+          "startFrame": 3072,
+          "endFrame": 3150,
+          "start": 10.293333,
+          "end": 12.917333000000001
+        },
+        {
+          "text": "子どもたちは苦手な作業から解放され、好きなことに集中できる。この仕組みは企業の業務効率化にも活用できます。",
+          "startFrame": 3150,
+          "endFrame": 3399,
+          "start": 12.917333000000001,
+          "end": 21.232
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "slideIndex": 7,
+      "audioFile": "audio/slide_07_combined.wav",
+      "startFrame": 3399,
+      "endFrame": 3930,
+      "durationFrames": 531,
+      "subtitles": [
+        {
+          "text": "実績の3つ目は、子供達への雇用創出です。",
+          "startFrame": 3399,
+          "endFrame": 3511,
+          "start": 0,
+          "end": 3.749333
+        },
+        {
+          "text": "「お小遣い」じゃない、「本物の仕事」を用意しました。",
+          "startFrame": 3511,
+          "endFrame": 3617,
+          "start": 3.749333,
+          "end": 7.304
+        },
+        {
+          "text": "AIワークフローの開発参加、データ調整、品質チェック。",
+          "startFrame": 3617,
+          "endFrame": 3758,
+          "start": 7.304,
+          "end": 12.013333
+        },
+        {
+          "text": "実際に報酬を得る経験を通じて、幼い頃から「稼ぐ力」を身につけています。",
+          "startFrame": 3758,
+          "endFrame": 3930,
+          "start": 12.013333,
+          "end": 17.762666
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "slideIndex": 8,
+      "audioFile": "audio/slide_08_combined.wav",
+      "startFrame": 3930,
+      "endFrame": 4321,
+      "durationFrames": 391,
+      "subtitles": [
+        {
+          "text": "特性を理解すれば、才能は爆発する。",
+          "startFrame": 3930,
+          "endFrame": 4027,
+          "start": 0,
+          "end": 3.264
+        },
+        {
+          "text": "支援級3年間から、国立大学合格。AI甲子園全国5位。eスポーツ大会優勝。",
+          "startFrame": 4027,
+          "endFrame": 4264,
+          "start": 3.264,
+          "end": 11.173333
+        },
+        {
+          "text": "これが僕たちの強さです。",
+          "startFrame": 4264,
+          "endFrame": 4321,
+          "start": 11.173333,
+          "end": 13.077333
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "slideIndex": 9,
+      "audioFile": "audio/slide_09_combined.wav",
+      "startFrame": 4321,
+      "endFrame": 4844,
+      "durationFrames": 523,
+      "subtitles": [
+        {
+          "text": "この「才能爆発」は、塾生にも起きています。",
+          "startFrame": 4321,
+          "endFrame": 4424,
+          "start": 0,
+          "end": 3.458667
+        },
+        {
+          "text": "入塾前は学校に全く行っていなかった子が、今VRカフェの開業準備中です。",
+          "startFrame": 4424,
+          "endFrame": 4590,
+          "start": 3.458667,
+          "end": 8.997334
+        },
+        {
+          "text": "毎日VR三昧だったエネルギーを、「好き」を「価値」に変えようとしている。",
+          "startFrame": 4590,
+          "endFrame": 4734,
+          "start": 8.997334,
+          "end": 13.797334
+        },
+        {
+          "text": "彼らは確実に、自分の人生を切り拓いています。",
+          "startFrame": 4734,
+          "endFrame": 4844,
+          "start": 13.797334,
+          "end": 17.477334
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "slideIndex": 10,
+      "audioFile": "audio/slide_10_combined.wav",
+      "startFrame": 4844,
+      "endFrame": 5386,
+      "durationFrames": 542,
+      "subtitles": [
+        {
+          "text": "僕たちのビジネスモデルは「学びながら稼ぐエコシステム」です。",
+          "startFrame": 4844,
+          "endFrame": 4966,
+          "start": 0,
+          "end": 4.069333
+        },
+        {
+          "text": "保護者からの月謝と、企業からのAIワークフロー構築費用。",
+          "startFrame": 4966,
+          "endFrame": 5095,
+          "start": 4.069333,
+          "end": 8.389333
+        },
+        {
+          "text": "生徒は学びながら実案件に参加し、報酬を得て、実務経験を積む。",
+          "startFrame": 5095,
+          "endFrame": 5260,
+          "start": 8.389333,
+          "end": 13.904
+        },
+        {
+          "text": "全員がWin-Winになる、持続可能な仕組みを作りました。",
+          "startFrame": 5260,
+          "endFrame": 5386,
+          "start": 13.904,
+          "end": 18.122667
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "slideIndex": 11,
+      "audioFile": "audio/slide_11_combined.wav",
+      "startFrame": 5386,
+      "endFrame": 5733,
+      "durationFrames": 347,
+      "subtitles": [
+        {
+          "text": "この教育を、届けなければならない。",
+          "startFrame": 5386,
+          "endFrame": 5469,
+          "start": 0,
+          "end": 2.784
+        },
+        {
+          "text": "「特性理解×AI×起業家教育」。この組み合わせが必要な子どもたちが、全国にいる。",
+          "startFrame": 5469,
+          "endFrame": 5677,
+          "start": 2.784,
+          "end": 9.722667
+        },
+        {
+          "text": "だから、僕がやる。",
+          "startFrame": 5677,
+          "endFrame": 5733,
+          "start": 9.722667,
+          "end": 11.610667
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "slideIndex": 12,
+      "audioFile": "audio/slide_12_combined.wav",
+      "startFrame": 5733,
+      "endFrame": 6381,
+      "durationFrames": 648,
+      "subtitles": [
+        {
+          "text": "2026年、生徒30名、AIワークフロー導入企業10社。",
+          "startFrame": 5733,
+          "endFrame": 5900,
+          "start": 0,
+          "end": 5.584
+        },
+        {
+          "text": "2027年、東北6県展開、生徒200名。",
+          "startFrame": 5900,
+          "endFrame": 6038,
+          "start": 5.584,
+          "end": 10.184
+        },
+        {
+          "text": "2029年、全国展開、生徒1,000名。",
+          "startFrame": 6038,
+          "endFrame": 6161,
+          "start": 10.184,
+          "end": 14.306667
+        },
+        {
+          "text": "そして2031年、売上3億円。僕たちのカリキュラムを公教育に届けることを目指します。",
+          "startFrame": 6161,
+          "endFrame": 6381,
+          "start": 14.306667,
+          "end": 21.661334
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "slideIndex": 13,
+      "audioFile": "audio/slide_13_combined.wav",
+      "startFrame": 6381,
+      "endFrame": 6790,
+      "durationFrames": 409,
+      "subtitles": [
+        {
+          "text": "全ての子どもたちが、自分らしく輝ける社会を目指して。",
+          "startFrame": 6381,
+          "endFrame": 6503,
+          "start": 0,
+          "end": 4.082667
+        },
+        {
+          "text": "このアプリ、今作りました。",
+          "startFrame": 6503,
+          "endFrame": 6575,
+          "start": 4.082667,
+          "end": 6.501334
+        },
+        {
+          "text": "AIワークフロー、御社にも導入しませんか？ぜひお声がけください。",
+          "startFrame": 6575,
+          "endFrame": 6729,
+          "start": 6.501334,
+          "end": 11.650667
+        },
+        {
+          "text": "ご清聴ありがとうございました。",
+          "startFrame": 6729,
+          "endFrame": 6790,
+          "start": 11.650667,
+          "end": 13.685334000000001
+        }
+      ]
+    }
+  ]
+}

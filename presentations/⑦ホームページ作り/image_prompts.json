@@ -1,0 +1,893 @@
+{
+  "source_file": "presentations/⑦ホームページ作り/⑦ホームページ作り.md",
+  "total_slides": 69,
+  "prompts": [
+    {
+      "slide_number": 1,
+      "title": "AIで作る！自分だけのポートフォリオサイト",
+      "slide_type": "title",
+      "keywords": [
+        "AIで作る！自分だけのポートフォリオサイト",
+        "これまでの学びを形にしよう"
+      ],
+      "prompt": "Create a professional illustration: website mockup on devices. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 2,
+      "title": "講座の全体像",
+      "slide_type": "title",
+      "keywords": [
+        "講座の全体像",
+        "今までの成果を全部載せる！"
+      ],
+      "prompt": "Create a professional illustration: online learning classroom, educational setting. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 3,
+      "title": "この講座で作るもの",
+      "slide_type": "title",
+      "keywords": [
+        "この講座で作るもの",
+        "**AI画像生成**で作った作品",
+        "**資料作成**で作ったスライド",
+        "**チラシ作成**で作ったデザイン",
+        "AI画像生成",
+        "資料作成",
+        "チラシ作成",
+        "スプレッドシート",
+        "1つのサイトに集約してアピール！"
+      ],
+      "prompt": "Create a professional illustration: online learning classroom, educational setting. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 4,
+      "title": "完成イメージ",
+      "slide_type": "code",
+      "keywords": [
+        "完成イメージ"
+      ],
+      "prompt": "Create a professional illustration: completion celebration, finished project. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 5,
+      "title": "1コマ目：構成を考える・HTMLの基礎（60分）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "1コマ目：構成を考える・HTMLの基礎（60分）"
+      ],
+      "prompt": "Create a professional illustration: HTML code structure with brackets and tags on a dark screen, programming concept. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 6,
+      "title": "今日のゴール（1コマ目）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "今日のゴール（1コマ目）",
+        "ポートフォリオの構成を決める",
+        "HTMLの基本構造を理解する",
+        "index.htmlファイルを作成する"
+      ],
+      "prompt": "Create a professional illustration: professional portfolio showcase, creative work display. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 7,
+      "title": "ポートフォリオとは？",
+      "slide_type": "concept",
+      "keywords": [
+        "ポートフォリオとは？",
+        "書類だけでは伝わらないスキルを証明",
+        "「実際に作れる」ことをアピール",
+        "仕事を獲得するための営業ツール",
+        "就職・転職に",
+        "副業・フリーランスに",
+        "自己成長の記録に"
+      ],
+      "prompt": "Create a professional illustration: professional portfolio showcase, creative work display. Style: abstract conceptual visualization, idea representation. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 8,
+      "title": "載せるもの確認",
+      "slide_type": "tutorial",
+      "keywords": [
+        "載せるもの確認",
+        "Geminiで生成した画像",
+        "プロンプトの工夫",
+        "ビジネス文書",
+        "AI画像生成",
+        "資料作成",
+        "チラシ作成",
+        "スプレッドシート"
+      ],
+      "prompt": "Create a professional illustration: Gemini AI logo, Google AI. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 9,
+      "title": "サイトの構成を決めよう",
+      "slide_type": "tutorial",
+      "keywords": [
+        "サイトの構成を決めよう",
+        "ヘッダー",
+        "ヒーロー",
+        "About",
+        "Skills",
+        "Works",
+        "Contact",
+        "フッター"
+      ],
+      "prompt": "Create a professional illustration: website mockup on devices. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 10,
+      "title": "HTMLとは？",
+      "slide_type": "code",
+      "keywords": [
+        "HTMLとは？",
+        "H",
+        "T",
+        "M",
+        "L",
+        "html"
+      ],
+      "prompt": "Create a professional illustration: HTML code structure with brackets and tags on a dark screen, programming concept. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 11,
+      "title": "HTMLタグの基本",
+      "slide_type": "tutorial",
+      "keywords": [
+        "HTMLタグの基本"
+      ],
+      "prompt": "Create a professional illustration: HTML code structure with brackets and tags on a dark screen, programming concept. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 12,
+      "title": "実習：Geminiに依頼しよう",
+      "slide_type": "code",
+      "keywords": [
+        "実習：Geminiに依頼しよう",
+        "ヘッダー（サイト名：私のポートフォリオ）",
+        "ヒーローセクション（自己紹介）",
+        "Aboutセクション"
+      ],
+      "prompt": "Create a professional illustration: Gemini AI logo, Google AI. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 13,
+      "title": "Geminiの回答を確認",
+      "slide_type": "tutorial",
+      "keywords": [
+        "Geminiの回答を確認",
+        "わからない部分はGeminiに質問！"
+      ],
+      "prompt": "Create a professional illustration: Gemini AI logo, Google AI. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 14,
+      "title": "ファイルの保存",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ファイルの保存",
+        "Windows",
+        "Mac"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: ファイルの保存. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 15,
+      "title": "ブラウザで確認",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ブラウザで確認",
+        "まだデザインはない状態"
+      ],
+      "prompt": "Create a professional illustration: web browser interface, Chrome Firefox Safari. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 16,
+      "title": "1コマ目のまとめ",
+      "slide_type": "summary",
+      "keywords": [
+        "1コマ目のまとめ",
+        "次回：CSSでデザインを整える"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: key points recap, bullet point visualization. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 17,
+      "title": "2コマ目：CSSでデザイン・レイアウト（60分）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "2コマ目：CSSでデザイン・レイアウト（60分）"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 18,
+      "title": "今日のゴール（2コマ目）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "今日のゴール（2コマ目）",
+        "CSSの基本を理解する",
+        "色・フォント・余白を設定する",
+        "レイアウトを整える"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 19,
+      "title": "CSSとは？",
+      "slide_type": "code",
+      "keywords": [
+        "CSSとは？",
+        "C",
+        "S",
+        "S",
+        "css"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 20,
+      "title": "CSSの書き方",
+      "slide_type": "code",
+      "keywords": [
+        "CSSの書き方",
+        "1. インラインスタイル",
+        "2. styleタグ内",
+        "3. 外部ファイル（推奨）",
+        "html"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 21,
+      "title": "よく使うCSSプロパティ",
+      "slide_type": "tutorial",
+      "keywords": [
+        "よく使うCSSプロパティ"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 22,
+      "title": "実習：GeminiにCSS追加を依頼",
+      "slide_type": "code",
+      "keywords": [
+        "実習：GeminiにCSS追加を依頼",
+        "モダンで清潔感のあるデザイン",
+        "メインカラー：青系（#667eea）",
+        "背景：白または薄いグレー"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 23,
+      "title": "カラーパレット",
+      "slide_type": "tutorial",
+      "keywords": [
+        "カラーパレット",
+        "ブランドを表す色",
+        "例：#667eea（青紫）",
+        "メインを補助する色",
+        "メインカラー",
+        "サブカラー",
+        "ベースカラー"
+      ],
+      "prompt": "Create a professional illustration: vibrant color wheel, design colors. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 24,
+      "title": "Geminiで配色を相談",
+      "slide_type": "code",
+      "keywords": [
+        "Geminiで配色を相談",
+        "プロフェッショナル",
+        "女性向け",
+        "信頼感がある"
+      ],
+      "prompt": "Create a professional illustration: color palette, gradient colors, design spectrum. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 25,
+      "title": "Flexboxでレイアウト",
+      "slide_type": "code",
+      "keywords": [
+        "Flexboxでレイアウト",
+        "`center` : 中央揃え",
+        "`space-between` : 均等配置",
+        "`space-around` : 余白付き均等",
+        "justify-content",
+        "css"
+      ],
+      "prompt": "Create a professional illustration: grid layout visualization, responsive design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 26,
+      "title": "CSS Gridで作品表示",
+      "slide_type": "code",
+      "keywords": [
+        "CSS Gridで作品表示",
+        "css"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 27,
+      "title": "レスポンシブ対応",
+      "slide_type": "code",
+      "keywords": [
+        "レスポンシブ対応",
+        "css"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 28,
+      "title": "ホバーエフェクト",
+      "slide_type": "code",
+      "keywords": [
+        "ホバーエフェクト",
+        "css"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 29,
+      "title": "2コマ目のまとめ",
+      "slide_type": "summary",
+      "keywords": [
+        "2コマ目のまとめ",
+        "次回：JavaScriptで動きをつける"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: key points recap, bullet point visualization. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 30,
+      "title": "3コマ目：JavaScriptで動きをつける（60分）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "3コマ目：JavaScriptで動きをつける（60分）"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 31,
+      "title": "今日のゴール（3コマ目）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "今日のゴール（3コマ目）",
+        "JavaScriptの基本を理解する",
+        "ナビゲーションにスムーススクロール",
+        "スクロールアニメーション"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 32,
+      "title": "JavaScriptとは？",
+      "slide_type": "concept",
+      "keywords": [
+        "JavaScriptとは？",
+        "ボタンクリックで何かする",
+        "スクロールに合わせてアニメーション",
+        "フォームの入力チェック",
+        "HTMLが骨、CSSが見た目、JSが動き"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: abstract conceptual visualization, idea representation. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 33,
+      "title": "JavaScriptの書き方",
+      "slide_type": "code",
+      "keywords": [
+        "JavaScriptの書き方",
+        "html"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 34,
+      "title": "実習：スムーススクロール",
+      "slide_type": "code",
+      "keywords": [
+        "実習：スムーススクロール",
+        "ヘッダーのナビゲーションリンク",
+        "クリックで該当セクションへ移動",
+        "なめらかにスクロール"
+      ],
+      "prompt": "Create a professional illustration: hyperlink chain connecting web pages, internet connectivity. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 35,
+      "title": "スクロールアニメーション",
+      "slide_type": "code",
+      "keywords": [
+        "スクロールアニメーション",
+        "各セクションのタイトル",
+        "作品カード",
+        "スキルアイコン"
+      ],
+      "prompt": "Create a professional illustration: creative works gallery, project showcase. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 36,
+      "title": "Intersection Observer",
+      "slide_type": "code",
+      "keywords": [
+        "Intersection Observer",
+        "javascript"
+      ],
+      "prompt": "Create a professional illustration: JavaScript code on screen, dynamic programming. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 37,
+      "title": "ライトボックス（拡大表示）",
+      "slide_type": "code",
+      "keywords": [
+        "ライトボックス（拡大表示）",
+        "クリックで拡大表示",
+        "背景は暗いオーバーレイ",
+        "画像外クリックで閉じる"
+      ],
+      "prompt": "Create a professional illustration: mouse click interaction, button press. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 38,
+      "title": "タイピングアニメーション",
+      "slide_type": "code",
+      "keywords": [
+        "タイピングアニメーション",
+        "1文字ずつ表示",
+        "カーソルが点滅",
+        "2秒かけて表示完了"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: タイピングアニメーション. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 39,
+      "title": "ハンバーガーメニュー",
+      "slide_type": "code",
+      "keywords": [
+        "ハンバーガーメニュー",
+        "768px以下で表示",
+        "クリックでメニュー展開",
+        "メニュー外クリックで閉じる"
+      ],
+      "prompt": "Create a professional illustration: mouse click interaction, button press. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 40,
+      "title": "機能追加のコツ",
+      "slide_type": "tutorial",
+      "keywords": [
+        "機能追加のコツ",
+        "何をしたいか",
+        "どこに適用するか",
+        "どんな動きか",
+        "具体的に伝える",
+        "段階的に追加"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 機能追加のコツ. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 41,
+      "title": "3コマ目のまとめ",
+      "slide_type": "summary",
+      "keywords": [
+        "3コマ目のまとめ",
+        "次回：GitHub Pagesで世界に公開！"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: key points recap, bullet point visualization. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 42,
+      "title": "4コマ目：GitHub Pagesで公開（60分）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "4コマ目：GitHub Pagesで公開（60分）"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 43,
+      "title": "今日のゴール（4コマ目）",
+      "slide_type": "tutorial",
+      "keywords": [
+        "今日のゴール（4コマ目）",
+        "最終調整を行う",
+        "GitHubアカウントを作成する",
+        "リポジトリを作成する"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 44,
+      "title": "公開前の最終チェック",
+      "slide_type": "tutorial",
+      "keywords": [
+        "公開前の最終チェック",
+        "✅ すべてのセクションが表示される",
+        "✅ リンクが正しく動作する",
+        "✅ 画像が表示される"
+      ],
+      "prompt": "Create a professional illustration: website going live, launch celebration. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 45,
+      "title": "Geminiで画像生成",
+      "slide_type": "code",
+      "keywords": [
+        "Geminiで画像生成",
+        "抽象的なグラデーション",
+        "テクノロジー感",
+        "青と紫のトーン"
+      ],
+      "prompt": "Create a professional illustration: Gemini AI logo, Google AI. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 46,
+      "title": "OGP画像の作成",
+      "slide_type": "code",
+      "keywords": [
+        "OGP画像の作成",
+        "サイズ：1200x630px",
+        "サイト名を入れる",
+        "プロフェッショナルなデザイン"
+      ],
+      "prompt": "Create a professional illustration: website mockup on devices. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 47,
+      "title": "GitHub Pagesとは？",
+      "slide_type": "concept",
+      "keywords": [
+        "GitHub Pagesとは？",
+        "✅ 完全無料",
+        "✅ 独自ドメイン可能",
+        "✅ HTTPSで安全",
+        "メリット",
+        "URL例"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: abstract conceptual visualization, idea representation. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 48,
+      "title": "GitHubアカウント作成",
+      "slide_type": "demo",
+      "keywords": [
+        "GitHubアカウント作成"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: live demonstration, hands-on practical. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 49,
+      "title": "リポジトリの作成",
+      "slide_type": "demo",
+      "keywords": [
+        "リポジトリの作成",
+        "ユーザー名と同じ名前.github.io"
+      ],
+      "prompt": "Create a professional illustration: repository folder structure, code storage. Style: live demonstration, hands-on practical. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 50,
+      "title": "ファイルのアップロード",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ファイルのアップロード"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: ファイルのアップロード. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 51,
+      "title": "アップロードするファイル",
+      "slide_type": "code",
+      "keywords": [
+        "アップロードするファイル"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: アップロードするファイル. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 52,
+      "title": "公開設定の確認",
+      "slide_type": "tutorial",
+      "keywords": [
+        "公開設定の確認"
+      ],
+      "prompt": "Create a professional illustration: website going live, launch celebration. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 53,
+      "title": "公開URLにアクセス",
+      "slide_type": "code",
+      "keywords": [
+        "公開URLにアクセス",
+        "数分かかる場合があります",
+        "世界中からアクセス可能に！"
+      ],
+      "prompt": "Create a professional illustration: website going live, launch celebration. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 54,
+      "title": "ページの更新方法",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ページの更新方法",
+        "方法1：GitHub上で編集",
+        "方法2：再アップロード"
+      ],
+      "prompt": "Create a professional illustration: GitHub octocat logo, version control. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 55,
+      "title": "よくあるトラブル",
+      "slide_type": "tutorial",
+      "keywords": [
+        "よくあるトラブル",
+        "Q: ページが表示されない",
+        "Q: CSSが効かない",
+        "Q: 画像が表示されない"
+      ],
+      "prompt": "Create a professional illustration: CSS stylesheet code with colors and styles, web design. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 56,
+      "title": "完成！",
+      "slide_type": "conclusion",
+      "keywords": [
+        "完成！",
+        "✅ HTML/CSS/JavaScriptで構築",
+        "✅ これまでの作品を掲載",
+        "✅ GitHub Pagesで公開",
+        "URLを名刺やSNSに載せよう！"
+      ],
+      "prompt": "Create a professional illustration: completion celebration, finished project. Style: celebration, achievement, completion. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 57,
+      "title": "講座全体のまとめ",
+      "slide_type": "title",
+      "keywords": [
+        "講座全体のまとめ",
+        "1コマ目",
+        "2コマ目",
+        "3コマ目",
+        "4コマ目",
+        "AIを活用して効率的に作成！"
+      ],
+      "prompt": "Create a professional illustration: online learning classroom, educational setting. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 58,
+      "title": "AIを使うメリット",
+      "slide_type": "tutorial",
+      "keywords": [
+        "AIを使うメリット",
+        "プロンプトを書くだけで実現！"
+      ],
+      "prompt": "Create a professional illustration: artificial intelligence brain, neural network. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 59,
+      "title": "今後のステップアップ",
+      "slide_type": "tutorial",
+      "keywords": [
+        "今後のステップアップ",
+        "基本的なポートフォリオ",
+        "ブログ機能追加",
+        "お問い合わせフォーム",
+        "レベル1",
+        "レベル2",
+        "レベル3"
+      ],
+      "prompt": "Create a professional illustration: step by step progress, staircase advancement. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 60,
+      "title": "活用シーン",
+      "slide_type": "tutorial",
+      "keywords": [
+        "活用シーン",
+        "履歴書にURLを記載",
+        "面接でスマホで見せる",
+        "営業ツールとして",
+        "就職活動で",
+        "副業・フリーランスで",
+        "名刺に"
+      ],
+      "prompt": "Create a professional illustration: URL address bar, web address. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 61,
+      "title": "セキュリティ注意点",
+      "slide_type": "tutorial",
+      "keywords": [
+        "セキュリティ注意点",
+        "自宅住所",
+        "電話番号",
+        "本名（必要なら）",
+        "❌ 載せないもの",
+        "✅ 載せるもの"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: セキュリティ注意点. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 62,
+      "title": "継続的な改善",
+      "slide_type": "tutorial",
+      "keywords": [
+        "継続的な改善",
+        "新しい作品追加",
+        "情報更新",
+        "デザイン見直し",
+        "月1回",
+        "3ヶ月に1回",
+        "常に"
+      ],
+      "prompt": "Create a professional illustration: creative works gallery, project showcase. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 63,
+      "title": "Gemini活用のコツ",
+      "slide_type": "code",
+      "keywords": [
+        "Gemini活用のコツ",
+        "悪い例",
+        "良い例",
+        "具体的に指示すると良い結果！"
+      ],
+      "prompt": "Create a professional illustration: Gemini AI logo, Google AI. Style: code editor screenshot style, dark theme programming. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 64,
+      "title": "参考リソース",
+      "slide_type": "resources",
+      "keywords": [
+        "参考リソース",
+        "Progate：基礎から学べる",
+        "ドットインストール：動画で学習",
+        "Pinterest：アイデア収集",
+        "学習サイト",
+        "デザイン参考",
+        "無料素材"
+      ],
+      "prompt": "Create a professional illustration: studying with books and laptop, learning concept. Style: resource library, tools collection. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 65,
+      "title": "質問タイム",
+      "slide_type": "tutorial",
+      "keywords": [
+        "質問タイム",
+        "HTMLの書き方",
+        "CSSのデザイン",
+        "JavaScriptの動き",
+        "なんでも聞いてください！"
+      ],
+      "prompt": "Create a professional illustration: HTML code structure with brackets and tags on a dark screen, programming concept. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 66,
+      "title": "講座を終えて",
+      "slide_type": "title",
+      "keywords": [
+        "講座を終えて",
+        "ポートフォリオサイト構築",
+        "これらを組み合わせて仕事に活かそう！"
+      ],
+      "prompt": "Create a professional illustration: online learning classroom, educational setting. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 67,
+      "title": "最後のメッセージ",
+      "slide_type": "tutorial",
+      "keywords": [
+        "最後のメッセージ",
+        "今日作ったものが完成形ではない",
+        "学ぶたびに追加していく",
+        "常にアップデートし続ける",
+        "あなたの可能性は無限大！",
+        "これからも一緒に成長していきましょう！"
+      ],
+      "prompt": "Create a professional illustration: completion celebration, finished project. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 68,
+      "title": "お疲れ様でした！",
+      "slide_type": "conclusion",
+      "keywords": [
+        "お疲れ様でした！",
+        "あなたのポートフォリオサイトが完成しました",
+        "次のステップへ進みましょう！"
+      ],
+      "prompt": "Create a professional illustration: website mockup on devices. Style: celebration, achievement, completion. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 69,
+      "title": "おまけ：便利リンク集",
+      "slide_type": "resources",
+      "keywords": [
+        "おまけ：便利リンク集",
+        "**GitHub**: https://github.com",
+        "**Gemini**: https://gemini.google.com",
+        "**Progate**: https://progate.com",
+        "GitHub",
+        "Gemini",
+        "Progate",
+        "MDN",
+        "Canva",
+        "Font Awesome"
+      ],
+      "prompt": "Create a professional illustration: hyperlink chain connecting web pages, internet connectivity. Style: resource library, tools collection. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    }
+  ]
+}

@@ -19,14 +19,6 @@ const talkImages = [
   staticFile("talk6.png"),
 ];
 
-// スライド画像のメタデータをインポート
-let slidesMetadata: any;
-try {
-  slidesMetadata = require("../slides_metadata.json");
-} catch (error) {
-  slidesMetadata = { total_slides: 0, slides: [] };
-}
-
 interface Subtitle {
   text: string;
   start: number;
@@ -37,16 +29,13 @@ interface Subtitle {
 
 interface SlideData {
   index: number;
-  title: string;
+  slideIndex: number;
   audioFile: string;
-  duration: number;
+  audioFiles?: string[];
   durationFrames: number;
-  startTime: number;
-  endTime: number;
   startFrame: number;
   endFrame: number;
   subtitles: Subtitle[];
-  fullScript: string;
 }
 
 interface VideoProps {
@@ -64,37 +53,36 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     (slide) => frame >= slide.startFrame && frame < slide.endFrame
   );
 
-  // 現在の字幕を見つける（セグメント方式）
+  // 現在の字幕を見つける
   const currentSubtitle = currentSlide?.subtitles.find(
     (subtitle) => frame >= subtitle.startFrame && frame < subtitle.endFrame
   );
 
-  // 音声が再生中かどうかを判定（字幕が表示されている時のみ話している）
-  const isTalking = currentSubtitle !== undefined;
+  // 音声が再生中かどうかを判定
+  let isTalking = false;
+  if (currentSubtitle) {
+    const subtitleDurationFrames = currentSubtitle.endFrame - currentSubtitle.startFrame;
+    const frameInSubtitle = frame - currentSubtitle.startFrame;
+    const pauseFrames = 3;
+    if (subtitleDurationFrames <= pauseFrames * 2) {
+      isTalking = true;
+    } else {
+      isTalking = frameInSubtitle >= pauseFrames && frameInSubtitle < subtitleDurationFrames - pauseFrames;
+    }
+  }
 
   // 使用する画像配列を選択
   const images = isTalking ? talkImages : idleImages;
-
-  // 3フレームごとに画像を切り替える（口パクを早く）
-  const imageIndex = Math.floor(frame / 3) % images.length;
+  const animationSpeed = isTalking ? 3 : 5;
+  const imageIndex = Math.floor(frame / animationSpeed) % images.length;
   const imageToShow = images[imageIndex];
 
-  // 現在のスライド画像を取得（存在するスライド数を超えないようにクランプ）
-  const totalAvailableSlides = slidesMetadata.total_slides || 0;
-  const clampedSlideIndex = currentSlide
-    ? Math.min(currentSlide.index, totalAvailableSlides)
-    : 0;
-
-  // スライド数の不整合を警告
-  if (currentSlide && currentSlide.index > totalAvailableSlides && frame === currentSlide.startFrame) {
-    console.warn(`Warning: Script references slide ${currentSlide.index} but only ${totalAvailableSlides} slide images exist. Using slide ${clampedSlideIndex} instead.`);
-  }
-
-  const currentSlideImage = currentSlide && clampedSlideIndex > 0
-    ? staticFile(`slides/slide_${String(clampedSlideIndex).padStart(2, '0')}.png`)
+  // 現在のスライド画像
+  const currentSlideImage = currentSlide
+    ? staticFile(`slides/slide-${String(currentSlide.slideIndex).padStart(2, '0')}.png`)
     : null;
 
-  // スライドアニメーション用の計算
+  // スライドアニメーション
   const framesIntoSlide = frame - (currentSlide?.startFrame || 0);
   const slideProgress = spring({
     frame: framesIntoSlide,
@@ -106,7 +94,6 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
     },
   });
 
-  // フェードインとスライドインのアニメーション
   const opacity = interpolate(slideProgress, [0, 1], [0, 1]);
   const translateY = interpolate(slideProgress, [0, 1], [20, 0]);
 
@@ -119,7 +106,21 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
         backgroundColor: "#2d2d2d",
       }}
     >
-      {/* スライド画像（背景） */}
+      {/* 背景画像 */}
+      <Img
+        src={staticFile("background.png")}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      />
+
+      {/* スライド画像 */}
       {currentSlideImage && (
         <div
           style={{
@@ -133,20 +134,21 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
             alignItems: "center",
             opacity,
             transform: `translateY(${translateY}px)`,
+            zIndex: 1,
           }}
         >
           <Img
             src={currentSlideImage}
             style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
+              maxWidth: "95%",
+              maxHeight: "95%",
               objectFit: "contain",
             }}
           />
         </div>
       )}
 
-      {/* キャラクター（右下に配置） */}
+      {/* キャラクター */}
       <div
         style={{
           position: "absolute",
@@ -157,6 +159,7 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          zIndex: 3,
         }}
       >
         <Img src={imageToShow} style={{ height: "100%" }} />
@@ -172,6 +175,7 @@ export const Video: React.FC<VideoProps> = ({ slides, fps, totalFrames }) => {
             right: 0,
             textAlign: "center",
             padding: "0 60px",
+            zIndex: 4,
           }}
         >
           <div

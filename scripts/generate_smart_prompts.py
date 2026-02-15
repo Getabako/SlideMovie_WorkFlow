@@ -251,7 +251,7 @@ class SlideContentAnalyzer:
         return keywords
 
     def generate_prompt(self, slide: Dict) -> str:
-        """スライドの内容に基づいて画像生成プロンプトを作成"""
+        """スライドの内容に基づいて画像生成プロンプトを作成（文字入り完成画像）"""
         slide_type = self.detect_slide_type(slide)
         keywords = self.extract_keywords(slide)
 
@@ -267,18 +267,35 @@ class SlideContentAnalyzer:
         # ユニークなコンセプトのみ
         concepts = list(dict.fromkeys(concepts))[:3]
 
+        # スライド内容テキストを整形
+        raw = slide.get('raw_content', '')
+        clean_content = raw.replace('## ', '').replace('**', '').replace('- ', '・').replace('#', '').strip()
+        if len(clean_content) > 300:
+            clean_content = clean_content[:300]
+
         # プロンプトを構築
         style = self.SLIDE_TYPES.get(slide_type, 'professional presentation')
 
+        concept_hint = ""
         if concepts:
-            main_concept = concepts[0]
-            prompt = f"Create a professional illustration: {main_concept}. Style: {style}. "
-        else:
-            # デフォルトプロンプト
-            prompt = f"Create a professional illustration for a presentation about: {slide['title']}. Style: {style}. "
+            concept_hint = f"テーマの視覚表現: {concepts[0]}。"
 
-        # 共通の画像要件を追加
-        prompt += "Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio."
+        prompt = f"""以下の内容を含む、完成されたプレゼンテーションスライド画像を1枚生成してください。
+
+タイトル: {slide['title']}
+
+内容:
+{clean_content}
+
+要件:
+- 日本語テキストを画像内に直接レンダリングすること（テキストボックスではなく画像の一部として）
+- タイトルは大きく目立つように配置
+- 内容テキストは読みやすいフォントサイズで配置
+- {concept_hint}スタイル: {style}
+- プロフェッショナルで洗練されたデザイン、教育プレゼンテーション向け
+- スライド全体が1枚の完成画像として成立すること
+- アスペクト比は3:4（縦長）
+"""
 
         return prompt
 

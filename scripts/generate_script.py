@@ -57,15 +57,32 @@ def parse_marp_slides(slide_file):
                         line.strip() == '}'):
                     content_lines.append(line)
 
+        # speaker_notesをHTMLコメントから抽出
+        speaker_notes = ''
+        notes_match = re.search(
+            r'<!--\s*(?:speaker_notes|notes|ノート|原稿)\s*[:：]?\s*(.*?)-->',
+            slide_raw, re.DOTALL
+        )
+        if notes_match:
+            speaker_notes = notes_match.group(1).strip()
+            # コメント部分をcontent_linesから除去
+            content_lines = [
+                line for line in content_lines
+                if not (line.strip().startswith('<!--') or line.strip().endswith('-->'))
+            ]
+
         # <style>タグのみのセクションはスキップ
         content_text = '\n'.join(content_lines).strip()
+        # コメント全体を除去（複数行コメント対応）
+        content_text = re.sub(r'<!--.*?-->', '', content_text, flags=re.DOTALL).strip()
         if not title and not content_text:
             continue
 
         slides.append({
             'index': len(slides) + 1,
             'title': title,
-            'content': content_text
+            'content': content_text,
+            'speaker_notes': speaker_notes,
         })
 
     return slides
@@ -118,7 +135,34 @@ def generate_script_for_slide(model, slide, total_slides, max_retries=3):
     Returns:
         生成された原稿テキスト
     """
-    prompt = f"""
+    # speaker_notesがあればそれを原稿のベースにする
+    speaker_notes = slide.get('speaker_notes', '')
+
+    if speaker_notes:
+        prompt = f"""
+あなたはプレゼンテーションの原稿を作成する専門家です。
+以下のスライド情報と原稿メモから、自然で分かりやすいナレーション原稿を日本語で作成してください。
+
+スライド番号: {slide['index']} / {total_slides}
+タイトル: {slide['title']}
+スライド上のテキスト（キーワードのみ）:
+{slide['content']}
+
+原稿メモ（これを元に原稿を作成）:
+{speaker_notes}
+
+要件:
+1. 原稿メモの内容を自然な話し言葉に変換してください
+2. スライド上のキーワードに触れつつ、メモの詳細な説明を喋りとして展開してください
+3. 1スライドあたり30〜60秒程度の長さにしてください
+4. 聞き手に語りかけるような口調にしてください
+5. 「えー」「あのー」などの言葉は入れないでください
+6. スライド番号や「このスライドでは」などの言及は避けてください
+
+原稿のみを出力してください（説明や補足は不要です）。
+"""
+    else:
+        prompt = f"""
 あなたはプレゼンテーションの原稿を作成する専門家です。
 以下のスライド情報から、自然で分かりやすい原稿を日本語で作成してください。
 

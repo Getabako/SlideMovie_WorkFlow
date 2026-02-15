@@ -37,6 +37,15 @@ def parse_marp_slides(md_path: Path) -> list[dict]:
         if title_match:
             title = title_match.group(1).strip()
         
+        # speaker_notesを抽出（原稿メモ）
+        notes = ''
+        notes_match = re.search(
+            r'<!--\s*(?:speaker_notes|notes|ノート|原稿)\s*[:：]?\s*(.*?)-->',
+            raw, re.DOTALL
+        )
+        if notes_match:
+            notes = notes_match.group(1).strip()
+        
         # Markdown記法を整理
         clean = raw
         clean = re.sub(r'<!--.*?-->', '', clean, flags=re.DOTALL)  # コメント除去
@@ -53,6 +62,7 @@ def parse_marp_slides(md_path: Path) -> list[dict]:
             'number': i,
             'title': title or f'スライド{i}',
             'content': clean,
+            'speaker_notes': notes,
             'raw': raw
         })
     

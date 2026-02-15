@@ -1,96 +1,43 @@
 slide_number,title,prompt,character,aspect_ratio
-001,Geminiで,"[プロンプト内容]
-A 30代前半のエネルギッシュな日本人男性、塾頭高崎翔太が、秋田県の美しい自然を背景に、熱心な眼差しで、ノートパソコンに向かっている。パソコンの画面には、複雑なデータやグラフが映し出され、深掘りされたリサーチの様子を表現している。彼の周りには、関連する書籍や資料が積み重ねられ、情報収集への情熱と探求心を感じさせる。手元にはペンが置かれ、何かを書き込もうとしている様子が伺える。秋田県の穏やかな風景と、塾頭高崎翔太の熱意が融合し、情報収集の達人を目指す姿を象徴的に表現している。縦長構図、教育用途に適したクリーンなイメージ。",塾頭高崎翔太,3:4
-002,本日の目標,"[プロンプト内容]
-塾頭高崎翔太が、活気のあるセミナー会場で、タブレット端末を操作しながら熱心に講義をしている。聴衆は真剣な眼差しでメモを取ったり、PCを操作したりしている。背景には、検索エンジンのインターフェースを模した巨大なスクリーンがあり、複雑なキーワードがハイライトされている。セミナー会場は明るく、参加者の学習意欲を高めるような雰囲気。画面には、検索結果をまとめたグラフやチャートが表示され、リサーチの効率化を視覚的に表現。塾頭高崎翔太は聴衆に向かって身振り手振りを交えながら、Geminiの高度な検索テクニックについて説明している。",塾頭高崎翔太,3:4
-003,アイスブレイク,"[プロンプト内容]
-塾頭高崎翔太: 塾頭高崎翔太
-30代前半の日本人男性、塾頭高崎翔太が、パソコンの画面を前に困惑した表情をしている。パソコンの画面には、検索結果が大量に表示され、情報過多で混乱している様子がわかる。背景は現代的なオフィス環境。高崎翔太は少し前かがみになり、眉間にしわを寄せ、片手で頭を抱えている。画面の光が顔を照らし、情報の多さに圧倒されている様子を強調する。アスペクト比は3:4。教育的で親しみやすい印象になるように調整。",なし,3:4
-004,アイスブレイク,"[プロンプト内容]
-A group of students and a teacher, Shota Takasaki, are laughing and playing a simple team-building game indoors. The game involves holding hands and trying to untangle themselves into a circle. Shota Takasaki is energetically guiding the activity with a cheerful expression. The setting is a bright and modern classroom. The atmosphere is lighthearted and fun. Captured in a vibrant and engaging style suitable for an educational presentation. Aspect ratio: 3:4",塾頭高崎翔太,3:4
-005,第1部：,"[プロンプト内容]
-A 3:4 vertical image for a presentation slide titled ""Part 1: Basics of Research"". The image depicts Shota Takasaki, a Japanese male in his early 30s, standing in front of a whiteboard covered in simple diagrams and flowcharts illustrating the research process. He is pointing to one of the diagrams with a marker in his hand and has an engaging and approachable expression, as if explaining the concept to an audience. The whiteboard contains only visual aids, no text. The background is a bright, modern classroom setting. The image should convey a sense of learning and discovery.",塾頭高崎翔太,3:4
-006,リサーチとは,"[プロンプト内容]
-3:4, 塾頭高崎翔太がホワイトボードの前に立ち、リサーチについて講義をしている様子。ホワイトボードには「？」マークが大きく描かれている。高崎翔太は笑顔で、聴衆（具体的な描写は不要）に語りかけている。別のカットでは、高崎翔太がパソコンで商品の比較検討をしている。さらに別のカットでは、旅行雑誌を広げて旅行先を検討している。最後に、高崎翔太がキッチンでレシピを見ながら料理をしている。全体的に明るく、親しみやすい雰囲気。教育的なイメージ。",なし,3:4
-007,仕事で,"**提案1：競合調査**
-[プロンプト内容]
-30代前半の日本人男性、塾頭高崎翔太が、複数のモニターが並んだデスクで真剣な表情でグラフやデータを分析している。モニターには他社の製品やサービスが表示されている。彼は競合他社の情報を比較検討し、自社の戦略に役立てようとしている様子。背景は現代的なオフィス。縦長構図。
-**提案2：市場調査**
-[プロンプト内容]
-複数の人が、ホワイトボードに書かれた業界のトレンドに関するグラフやキーワードを見ながら議論している。活発な意見交換が行われている様子が伝わるように。背景は明るく開放的な会議室。縦長構図。
-**提案3：技術調査**
-[プロンプト内容]
-30代前半の日本人男性、塾頭高崎翔太が、新しいソフトウェアのチュートリアルビデオを見ながら、真剣な表情でPCを操作している。彼は新しいツールを習得し、業務効率を向上させようとしている様子。背景は自宅のデスク。縦長構図。
-**提案4：顧客調査**
-[プロンプト内容]
-さまざまな年齢層の日本人男女が、アンケートに答えている様子。調査員がタブレット端末を持って、丁寧に質問している。顧客のニーズを把握するための調査風景。背景はカフェのような雰囲気の場所。縦長構図。",なし,3:4
-008,仕事で,"[プロンプト内容]
-プロンプト:
-塾頭高崎翔太が、集中してノートパソコンに向かい、真剣な表情でキーボードを叩いている。周りには、参考資料と思われる書籍や書類が積み重ねられている。背景は、整理整頓されたオフィスデスク。塾頭高崎翔太はカジュアルな服装で、親しみやすさを演出。照明は明るく、研究に集中できる環境を表現。",塾頭高崎翔太,3:4
-009,従来のリサーチ,"[プロンプト内容]
-塾頭高崎翔太、30代前半の日本人男性。大量の書類と複数のタブを開いたノートPCに囲まれ、困惑した表情で頭を抱えている。PCの画面には、ウェブサイトの検索結果が多数表示されている。背景は、整理されていない雑然としたオフィス。塾頭の背後には、山積みの本が積み上げられている。縦長（3:4）のアスペクト比。教育・プレゼンテーション用途を意識した、リアリティのあるイラスト。",塾頭高崎翔太,3:4
-010,従来のリサーチ,"[プロンプト内容]
-塾頭高崎翔太、30代前半、焦った表情で壁掛け時計を見ている。背景は書類が山積みにされた研究室のような場所。時計の針は12時を指しており、焦燥感を強調する。彼の周囲には未整理の書類が散乱し、締め切りに追われている様子を表現する。壁にはガントチャートのようなものが貼られているが、進捗が遅れていることを示すように、赤い線で大きくバツ印がつけられている。全体的に、時間的プレッシャーと遅延によるストレスを視覚的に訴える構図。アスペクト比3:4。",塾頭高崎翔太,3:4
-011,AIを,"[プロンプト内容]
-塾頭高崎翔太が、明るい表情で、Geminiのインターフェースが大きく表示されたタブレット端末を指し示している。タブレットの画面には、複雑な情報が整理され、わかりやすくまとめられたグラフや図解が表示されている。背景は、現代的な研究室のような雰囲気で、複数のモニターや書籍が並んでいる。手前には、ノートとペンが置かれており、研究活動を想起させる。全体的に、AIの利便性と効率性が伝わるようなイメージ。アスペクト比3:4。",塾頭高崎翔太,3:4
-012,ディープリサー,Professional abstract background for: ディープリサー,なし,3:4
-013,第2部：,Professional abstract background for: 第2部：,なし,3:4
-014,リサーチの基本,Professional abstract background for: リサーチの基本,なし,3:4
-015,ステップ1：,Professional abstract background for: ステップ1：,なし,3:4
-016,ステップ1：,Professional abstract background for: ステップ1：,なし,3:4
-017,ステップ2：,Professional abstract background for: ステップ2：,なし,3:4
-018,実習1：,Professional abstract background for: 実習1：,なし,3:4
-019,実習1：,Professional abstract background for: 実習1：,なし,3:4
-020,Geminiの回答を,Professional abstract background for: Geminiの回答を,なし,3:4
-021,追加質問で,Professional abstract background for: 追加質問で,なし,3:4
-022,追加質問で,Professional abstract background for: 追加質問で,なし,3:4
-023,実習2：,Professional abstract background for: 実習2：,なし,3:4
-024,実習2：,Professional abstract background for: 実習2：,なし,3:4
-025,実習2の発展,Professional abstract background for: 実習2の発展,なし,3:4
-026,実習2の発展 (2),Professional abstract background for: 実習2の発展 (2),なし,3:4
-027,実習3：,Professional abstract background for: 実習3：,なし,3:4
-028,実習3：,Professional abstract background for: 実習3：,なし,3:4
-029,リサーチ結果を,Professional abstract background for: リサーチ結果を,なし,3:4
-030,リサーチ結果を,Professional abstract background for: リサーチ結果を,なし,3:4
-031,実習4：,Professional abstract background for: 実習4：,なし,3:4
-032,実習4：,Professional abstract background for: 実習4：,なし,3:4
-033,休憩（10分）,Professional abstract background for: 休憩（10分）,なし,3:4
-034,第3部：,Professional abstract background for: 第3部：,なし,3:4
-035,テクニック1：,Professional abstract background for: テクニック1：,なし,3:4
-036,テクニック1：,Professional abstract background for: テクニック1：,なし,3:4
-037,テクニック2：,Professional abstract background for: テクニック2：,なし,3:4
-038,テクニック2：,Professional abstract background for: テクニック2：,なし,3:4
-039,テクニック3：,Professional abstract background for: テクニック3：,なし,3:4
-040,テクニック3：,Professional abstract background for: テクニック3：,なし,3:4
-041,テクニック4：,Professional abstract background for: テクニック4：,なし,3:4
-042,テクニック4：,Professional abstract background for: テクニック4：,なし,3:4
-043,テクニック5：,Professional abstract background for: テクニック5：,なし,3:4
-044,実習5：,Professional abstract background for: 実習5：,なし,3:4
-045,実習5：,Professional abstract background for: 実習5：,なし,3:4
-046,第4部：,Professional abstract background for: 第4部：,なし,3:4
-047,AIの回答を,Professional abstract background for: AIの回答を,なし,3:4
-048,情報の信頼性を,Professional abstract background for: 情報の信頼性を,なし,3:4
-049,情報の信頼性を,Professional abstract background for: 情報の信頼性を,なし,3:4
-050,クロスチェック,Professional abstract background for: クロスチェック,なし,3:4
-051,クロスチェック,Professional abstract background for: クロスチェック,なし,3:4
-052,実習6：,Professional abstract background for: 実習6：,なし,3:4
-053,第5部：,Professional abstract background for: 第5部：,なし,3:4
-054,リサーチ結果を,Professional abstract background for: リサーチ結果を,なし,3:4
-055,リサーチ結果を,Professional abstract background for: リサーチ結果を,なし,3:4
-056,実務で,Professional abstract background for: 実務で,なし,3:4
-057,実務で,Professional abstract background for: 実務で,なし,3:4
-058,リサーチの時短,Professional abstract background for: リサーチの時短,なし,3:4
-059,テンプレート化,Professional abstract background for: テンプレート化,なし,3:4
-060,テンプレート化 (2),Professional abstract background for: テンプレート化 (2),なし,3:4
-061,まとめ（5分）,Professional abstract background for: まとめ（5分）,なし,3:4
-062,今日学んだこと,Professional abstract background for: 今日学んだこと,なし,3:4
-063,実践課題,Professional abstract background for: 実践課題,なし,3:4
-064,実践課題 (2),Professional abstract background for: 実践課題 (2),なし,3:4
-065,リサーチマスタ,Professional abstract background for: リサーチマスタ,なし,3:4
-066,リサーチマスタ,Professional abstract background for: リサーチマスタ,なし,3:4
-067,次回予告,Professional abstract background for: 次回予告,なし,3:4
-068,参考リソース,Professional abstract background for: 参考リソース,なし,3:4
-069,質問タイム,Professional abstract background for: 質問タイム,なし,3:4
-070,メッセージ,Professional abstract background for: メッセージ,なし,3:4
-071,メッセージ (2),Professional abstract background for: メッセージ (2),なし,3:4
-072,お疲れ様で,Professional abstract background for: お疲れ様で,なし,3:4
+001,AIでビジネスリサーチ&戦略立案,Professional abstract background for: AIでビジネスリサーチ&戦略立案,なし,3:4
+002,本日の目標,Professional abstract background for: 本日の目標,なし,3:4
+003,こんな悩みありませんか？,Professional abstract background for: こんな悩みありませんか？,なし,3:4
+004,第1部：ビジネスリサーチ基礎（20分）,Professional abstract background for: 第1部：ビジネスリサーチ基礎（20分）,なし,3:4
+005,ディープリサーチとは,Professional abstract background for: ディープリサーチとは,なし,3:4
+006,リサーチの3つのレベル,Professional abstract background for: リサーチの3つのレベル,なし,3:4
+007,第2部：競合分析実践（30分）,Professional abstract background for: 第2部：競合分析実践（30分）,なし,3:4
+008,競合分析フレームワーク,Professional abstract background for: 競合分析フレームワーク,なし,3:4
+009,実習1：競合3社比較（15分）,Professional abstract background for: 実習1：競合3社比較（15分）,なし,3:4
+010,競合分析から戦略へ,Professional abstract background for: 競合分析から戦略へ,なし,3:4
+011,第3部：広報戦略立案（30分）,Professional abstract background for: 第3部：広報戦略立案（30分）,なし,3:4
+012,広報戦略の基本要素,Professional abstract background for: 広報戦略の基本要素,なし,3:4
+013,実習2：SNS戦略立案（15分）,Professional abstract background for: 実習2：SNS戦略立案（15分）,なし,3:4
+014,プレスリリース作成,Professional abstract background for: プレスリリース作成,なし,3:4
+015,第4部：ビジネスプラン作成（20分）,Professional abstract background for: 第4部：ビジネスプラン作成（20分）,なし,3:4
+016,ビジネスプランの構成,Professional abstract background for: ビジネスプランの構成,なし,3:4
+017,実習3：簡易事業計画（10分）,Professional abstract background for: 実習3：簡易事業計画（10分）,なし,3:4
+018,収支シミュレーション,Professional abstract background for: 収支シミュレーション,なし,3:4
+019,第5部：レポート作成術（20分）,Professional abstract background for: 第5部：レポート作成術（20分）,なし,3:4
+020,効果的なレポート構成,Professional abstract background for: 効果的なレポート構成,なし,3:4
+021,実習4：1ページレポート作成,Professional abstract background for: 実習4：1ページレポート作成,なし,3:4
+022,ビジュアル化のコツ,Professional abstract background for: ビジュアル化のコツ,なし,3:4
+023,第6部：NotebookLMで情報管理（20分）,Professional abstract background for: 第6部：NotebookLMで情報管理（20分）,なし,3:4
+024,NotebookLMとは,Professional abstract background for: NotebookLMとは,なし,3:4
+025,NotebookLMの活用手順,Professional abstract background for: NotebookLMの活用手順,なし,3:4
+026,実習5：NotebookLM活用（10分）,Professional abstract background for: 実習5：NotebookLM活用（10分）,なし,3:4
+027,情報の体系化,Professional abstract background for: 情報の体系化,なし,3:4
+028,オーディオ要約の活用,Professional abstract background for: オーディオ要約の活用,なし,3:4
+029,第7部：実践演習（10分）,Professional abstract background for: 第7部：実践演習（10分）,なし,3:4
+030,総合演習：新規事業立案,Professional abstract background for: 総合演習：新規事業立案,なし,3:4
+031,プロンプトチェーン,Professional abstract background for: プロンプトチェーン,なし,3:4
+032,成果物チェックリスト,Professional abstract background for: 成果物チェックリスト,なし,3:4
+033,実践課題,Professional abstract background for: 実践課題,なし,3:4
+034,便利なテンプレート集,Professional abstract background for: 便利なテンプレート集,なし,3:4
+035,リサーチツール紹介,Professional abstract background for: リサーチツール紹介,なし,3:4
+036,まとめ,Professional abstract background for: まとめ,なし,3:4
+037,ビジネススキルの向上,Professional abstract background for: ビジネススキルの向上,なし,3:4
+038,次回予告,Professional abstract background for: 次回予告,なし,3:4
+039,参考リンク,Professional abstract background for: 参考リンク,なし,3:4
+040,質疑応答,Professional abstract background for: 質疑応答,なし,3:4
+041,最後のメッセージ,Professional abstract background for: 最後のメッセージ,なし,3:4
+042,ありがとうございました！,Professional abstract background for: ありがとうございました！,なし,3:4

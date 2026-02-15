@@ -1,32 +1,44 @@
 [
   {
+    "title": "if(塾)Next10_2025",
+    "html": "presentations/if(塾)Next10_2025/index.html",
+    "pdf": "presentations/if(塾)Next10_2025/if2.pdf",
+    "video": null
+  },
+  {
     "title": "①すごいぞAI_AI概論",
     "html": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.html",
-    "pdf": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論.pdf",
+    "pdf": "presentations/①すごいぞAI_AI概論/①すごいぞAI_AI概論1.pdf",
     "video": null
   },
   {
     "title": "②AIを使って画像生成をしてみよう",
-    "html": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう.html",
-    "pdf": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう.pdf",
+    "html": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう_with_images.html",
+    "pdf": "presentations/②AIを使って画像生成をしてみよう/②AIを使って画像生成をしてみよう3.pdf",
     "video": null
   },
   {
     "title": "③バナー作り",
     "html": "presentations/③バナー作り/③バナー作り_with_images.html",
-    "pdf": "presentations/③バナー作り/③バナー作り_with_images.pdf",
+    "pdf": "presentations/③バナー作り/③バナー作り2.pdf",
     "video": null
   },
   {
     "title": "④ディープリサーチ",
-    "html": "presentations/④ディープリサーチ/④ディープリサーチ_with_images.html",
-    "pdf": "presentations/④ディープリサーチ/④ディープリサーチ.pdf",
+    "html": "presentations/④ディープリサーチ/④ディープリサーチ.html",
+    "pdf": "presentations/④ディープリサーチ/④ディープリサーチ3.pdf",
+    "video": null
+  },
+  {
+    "title": "⑤スプレッドシート作成",
+    "html": "presentations/⑤スプレッドシート作成/⑤スプレッドシート作成_with_images.html",
+    "pdf": null,
     "video": null
   },
   {
     "title": "⑥資料作り",
     "html": "presentations/⑥資料作り/⑥資料作り_with_images.html",
-    "pdf": "presentations/⑥資料作り/preview.pdf",
+    "pdf": null,
     "video": null
   },
   {
@@ -37,8 +49,8 @@
   },
   {
     "title": "知能検査ケーススタディ",
-    "html": "presentations/知能検査ケーススタディ/知能検査ケーススタディ_with_images.html",
-    "pdf": "presentations/知能検査ケーススタディ/知能検査ケーススタディ_with_images_fixed.pdf",
+    "html": "presentations/知能検査ケーススタディ/知能検査ケーススタディ.html",
+    "pdf": "presentations/知能検査ケーススタディ/知能検査ケーススタディ.pdf",
     "video": null
   }
 ]

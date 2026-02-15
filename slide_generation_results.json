@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-14T16:27:30.739Z",
+  "results": [
+    {
+      "slide": 20,
+      "status": "error",
+      "error": "生成タイムアウト (180秒)",
+      "attempt": 3
+    }
+  ]
+}

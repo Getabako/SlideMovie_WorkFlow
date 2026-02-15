@@ -100,31 +100,8 @@ class PresentationImageGenerator:
         print(f"\nSlide {slide['number']}: {slide['title']}")
         print(f"  Generating image with NanoBanana (Gemini 2.5 Flash Image)...")
 
-        # 画像生成プロンプト（文字入りの完成スライド画像を生成）
-        # スライド内容からテキストを抽出
-        slide_text = slide.get('content', '')
-        # Markdown記法を除去
-        clean_text = slide_text.replace('## ', '').replace('**', '').replace('- ', '・').replace('#', '').strip()
-        # テキストを適度に切り詰め
-        if len(clean_text) > 300:
-            clean_text = clean_text[:300]
-
-        prompt = f"""以下の内容を含む、完成されたプレゼンテーションスライド画像を1枚生成してください。
-
-タイトル: {slide['title']}
-
-内容:
-{clean_text}
-
-要件:
-- 日本語テキストを画像内に直接レンダリングすること（テキストボックスではなく画像の一部として）
-- タイトルは大きく目立つように配置
-- 内容テキストは読みやすいフォントサイズで配置
-- プロフェッショナルで洗練されたデザイン
-- 背景は内容に合った色やグラデーション
-- スライド全体が1枚の完成画像として成立すること
-- アスペクト比は{self.aspect_ratio}
-"""
+        # 画像生成プロンプト
+        prompt = f"Create a professional abstract background image for a business presentation about: {slide['title']}. Vertical format, elegant design, sophisticated atmosphere, no text."
 
         max_retries = 3
         for attempt in range(max_retries):

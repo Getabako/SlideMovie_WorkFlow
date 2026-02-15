@@ -90,7 +90,7 @@ class SmartImageGenerator:
    - Clean composition
    - Vibrant but professional colors
    - 3:4 vertical aspect ratio
-   - Include relevant Japanese text/titles from the slide content directly rendered into the image
+   - No text or words in the image
 """
 
         max_retries = 3

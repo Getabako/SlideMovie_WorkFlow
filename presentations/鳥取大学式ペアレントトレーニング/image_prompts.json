@@ -1,0 +1,314 @@
+{
+  "source_file": "slides/鳥取大学式ペアレントトレーニング_slide.md",
+  "total_slides": 24,
+  "prompts": [
+    {
+      "slide_number": 1,
+      "title": "鳥取大学式ペアレントトレーニング",
+      "slide_type": "title",
+      "keywords": [
+        "鳥取大学式ペアレントトレーニング"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 鳥取大学式ペアレントトレーニング. Style: hero image, bold and impactful, cinematic. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 2,
+      "title": "本日のゴール",
+      "slide_type": "tutorial",
+      "keywords": [
+        "本日のゴール",
+        "ペアレントトレーニングの基本的な考え方",
+        "子どもの行動を3つに分類する方法",
+        "引きこもりの場面で使える具体的な声掛け"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 本日のゴール. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 3,
+      "title": "講師紹介",
+      "slide_type": "tutorial",
+      "keywords": [
+        "講師紹介"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 講師紹介. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 4,
+      "title": "ペアレントトレーニングとは？",
+      "slide_type": "concept",
+      "keywords": [
+        "ペアレントトレーニングとは？",
+        "もともとADHDなど発達障害のある子の保護者向けに開発",
+        "親が変われば、子どもも変わるという考え方",
+        "叱る・怒るに頼らない子育てスキルを身につける"
+      ],
+      "prompt": "Create a professional illustration: skill icons and badges, competency display. Style: abstract conceptual visualization, idea representation. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 5,
+      "title": "鳥取大学式の特徴",
+      "slide_type": "tutorial",
+      "keywords": [
+        "鳥取大学式の特徴",
+        "井上雅彦教授（鳥取大学）が開発",
+        "ABA（応用行動分析）をベースに構成",
+        "全6〜10回のセッション形式"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 鳥取大学式の特徴. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 6,
+      "title": "なぜ訪問看護で活用できるのか？",
+      "slide_type": "tutorial",
+      "keywords": [
+        "なぜ訪問看護で活用できるのか？",
+        "本人に直接アプローチが難しい場面が多い",
+        "保護者を通じた間接的な支援が有効",
+        "家庭内の関わり方を変えることで状況が動き出す"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: なぜ訪問看護で活用できるのか？. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 7,
+      "title": "行動を3つに分ける",
+      "slide_type": "tutorial",
+      "keywords": [
+        "行動を3つに分ける",
+        "🟢 好ましい行動",
+        "🟡 好ましくない行動",
+        "🔴 危険な行動・許しがたい行動"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 行動を3つに分ける. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 8,
+      "title": "3分類への対応の原則",
+      "slide_type": "tutorial",
+      "keywords": [
+        "3分類への対応の原則",
+        "🟢 好ましい行動 → 褒める・注目する",
+        "🟡 好ましくない行動 → 無視する（計画的無視）",
+        "🔴 危険な行動 → 制限を設ける"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 3分類への対応の原則. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 9,
+      "title": "肯定的な注目とは？",
+      "slide_type": "concept",
+      "keywords": [
+        "肯定的な注目とは？",
+        "当たり前のことでも言葉にして伝える",
+        "行動の直後にすぐ声をかける",
+        "結果ではなく行動やプロセスを褒める",
+        "ポイント：25%ルール"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 肯定的な注目とは？. Style: abstract conceptual visualization, idea representation. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 10,
+      "title": "引きこもり場面での声掛け例①",
+      "slide_type": "tutorial",
+      "keywords": [
+        "引きこもり場面での声掛け例①",
+        "❌ NG例",
+        "✅ OK例"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 引きこもり場面での声掛け例①. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 11,
+      "title": "引きこもり場面での声掛け例②",
+      "slide_type": "tutorial",
+      "keywords": [
+        "引きこもり場面での声掛け例②",
+        "❌ NG例",
+        "✅ OK例"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 引きこもり場面での声掛け例②. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 12,
+      "title": "引きこもり場面での声掛け例③",
+      "slide_type": "tutorial",
+      "keywords": [
+        "引きこもり場面での声掛け例③",
+        "❌ NG例",
+        "✅ OK例"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 引きこもり場面での声掛け例③. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 13,
+      "title": "効果的な指示の出し方",
+      "slide_type": "tutorial",
+      "keywords": [
+        "効果的な指示の出し方",
+        "**Calm（穏やか）**: 感情的にならず落ち着いて",
+        "**Close（近づいて）**: 離れた場所から叫ばない",
+        "**Quiet（静かに）**: 小さめの声でゆっくり",
+        "Calm（穏やか）",
+        "Close（近づいて）",
+        "Quiet（静かに）"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 効果的な指示の出し方. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 14,
+      "title": "計画的無視のやり方",
+      "slide_type": "tutorial",
+      "keywords": [
+        "計画的無視のやり方",
+        "注目を与えないことで行動を減らす方法",
+        "行動を無視する（人格は否定しない）",
+        "好ましい行動が出たらすぐ褒める",
+        "計画的無視とは",
+        "引きこもり場面の例"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 計画的無視のやり方. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 15,
+      "title": "計画的無視の注意点",
+      "slide_type": "tutorial",
+      "keywords": [
+        "計画的無視の注意点",
+        "無視を始めると、最初は行動がエスカレートする",
+        "これは「今まで反応してくれたのに！」というサイン",
+        "ここで折れると逆効果",
+        "家族全員で方針を統一することが重要"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 計画的無視の注意点. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 16,
+      "title": "ブロークンレコード法",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ブロークンレコード法",
+        "感情的にならない",
+        "売り言葉に買い言葉をしない",
+        "伝えたいメッセージだけを穏やかに繰り返す"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: ブロークンレコード法. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 17,
+      "title": "行動観察シートの活用",
+      "slide_type": "tutorial",
+      "keywords": [
+        "行動観察シートの活用",
+        "いつ（日時）",
+        "どんな場面で（きっかけ）",
+        "どんな行動があったか",
+        "記録する項目",
+        "ABC分析"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 行動観察シートの活用. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 18,
+      "title": "スモールステップで考える",
+      "slide_type": "tutorial",
+      "keywords": [
+        "スモールステップで考える",
+        "引きこもりのステップ例"
+      ],
+      "prompt": "Create a professional illustration: step by step progress, staircase advancement. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 19,
+      "title": "保護者自身のケア",
+      "slide_type": "tutorial",
+      "keywords": [
+        "保護者自身のケア",
+        "自分を責めすぎない",
+        "完璧な親を目指さなくていい",
+        "相談できる場所を持つ（訪問看護、支援機関）",
+        "訪問看護師の役割"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 保護者自身のケア. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 20,
+      "title": "訪問看護での実践ポイント",
+      "slide_type": "summary",
+      "keywords": [
+        "訪問看護での実践ポイント",
+        "一度に全部教えない（1回1テーマ）",
+        "「できていること」を先に伝える",
+        "具体的な場面で練習する（ロールプレイ）"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 訪問看護での実践ポイント. Style: key points recap, bullet point visualization. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 21,
+      "title": "よくある質問",
+      "slide_type": "tutorial",
+      "keywords": [
+        "よくある質問",
+        "Q: 褒めるところが見つかりません",
+        "Q: 無視したら余計に暴れました",
+        "Q: 何年も引きこもっています。今からでも遅くない？"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: よくある質問. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 22,
+      "title": "まとめ",
+      "slide_type": "summary",
+      "keywords": [
+        "まとめ",
+        "行動を3つに分けて対応を変える",
+        "好ましい行動には肯定的な注目を",
+        "25%ルール：少しでもできたら褒める"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: まとめ. Style: key points recap, bullet point visualization. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": true
+    },
+    {
+      "slide_number": 23,
+      "title": "参考文献・リソース",
+      "slide_type": "resources",
+      "keywords": [
+        "参考文献・リソース",
+        "井上雅彦『家庭で無理なく対応できるペアレント・トレーニング』",
+        "岩坂英巳『困っている子をほめて育てるペアレント・トレーニング』",
+        "まめの木クリニック ペアレントトレーニング資料"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: 参考文献・リソース. Style: resource library, tools collection. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    },
+    {
+      "slide_number": 24,
+      "title": "ありがとうございました",
+      "slide_type": "tutorial",
+      "keywords": [
+        "ありがとうございました"
+      ],
+      "prompt": "Create a professional illustration for a presentation about: ありがとうございました. Style: step-by-step guide, instructional diagram. Modern flat design, clean composition, vibrant colors, suitable for educational presentation. No text or words in the image. High quality, 3:4 vertical aspect ratio.",
+      "needs_instructor": false
+    }
+  ]
+}

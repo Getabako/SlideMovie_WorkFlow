@@ -1,0 +1,81 @@
+**********************************************************************
+
+    User support of VOICEPEAK 6 Narrator Set(Commercial use allowed)
+
+**********************************************************************
+
+Basically, AHS technical support is provided in Japanese text. 
+
+To have technical support from AHS, you need to register with AHS to be
+"AHS User" then to register your purchased product on the user page.
+You would also need a "Support Number" which is included in the product
+package. (We are sorry but the GUI of AHS user registration page is 
+available only in Japanese.) 
+
+If you are not registered with AHS, then we could not provide you with
+customer support. Your Support Number should be on your purchase
+ confirmation Email. Thank you very much for your understanding.
+
+We could not re-issue your Serial Number and Support Number when it's lost.
+Please store the information related to your purchase in the safe place.
+
+
+====AHS user registration page========================================
+
+Here you could access to AHS user registration page. 
+(Sorry, the GUI is available only in Japanese text.)
+
+AHS user registration page
+https://www.ah-soft.com/regist/
+
+
+Once you have finished your user registration,
+then [Product Registration] and respective [Inquiry Forms] would become
+accessible.
+
+
+====Inquiry/Customer Support Request==================================
+
+AHS would provide customer support only via Email. AHS does not provide
+customer support by phone. If you wish to have customer support from AHS,
+then please log-in as AHS User then use [Inquiry Form] on the page.
+You need to enter your Support Number on the form. Without Support Number
+entered, AHS could not provide customer support.
+
+How to request customer support
+
+STEP1: Register as AHS User on the AHS website
+
+STEP2: Login with your ID & password
+
+STEP3: Click [Ç≤çwì¸å„ÇÃÇ®ñ‚Ç¢çáÇÌÇπ](inquiry for purchased product] 
+at the top.
+
+STEP4: Enter your question or problem with details.
+Then click [ämîFÇ∑ÇÈ](check).
+
+STEP5: If you are OK with what you wrote, then click [ëóêMÇ∑ÇÈ](submit)
+
+Note:
+It might take 3 - 5 Japanese working days to respond.
+The more detailed and articulate your inquiry is, the more quickly and
+precisely
+
+AHS could assist you.
+AHS customer support could not support for lost serial numbers and
+Windows registry. Nor your specific hardware devices.
+AHS's customer support is for standard program operations.
+Not for irregular usage.
+
+
+----------------------------------
+For Linux OS user
+----------------------------------
+Can Inquire on the Dreamtonics site below.
+https://www.ah-soft.com/voice/linux/
+
+Please contact by email on the website.
+
+
+======================================================================
+

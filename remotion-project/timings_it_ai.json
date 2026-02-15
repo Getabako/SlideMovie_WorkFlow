@@ -1,0 +1,456 @@
+{
+  "fps": 30,
+  "totalFrames": 20735,
+  "slides": [
+    {
+      "slide": 1,
+      "startFrame": 0,
+      "endFrame": 353,
+      "audioFile": "audio_it_ai/slide_001.wav",
+      "audioStartFrame": 60,
+      "audioDuration": 8.794666666666666,
+      "subtitles": [
+        {
+          "text": "子どもとデジタルの新しい関わり方。消費者ではなく、創造者を育てる。今日はこのテーマでお話しします。",
+          "startFrame": 60,
+          "endFrame": 323
+        }
+      ]
+    },
+    {
+      "slide": 2,
+      "startFrame": 353,
+      "endFrame": 1026,
+      "audioFile": "audio_it_ai/slide_002.wav",
+      "audioStartFrame": 413,
+      "audioDuration": 19.448,
+      "subtitles": [
+        {
+          "text": "「使える」と「使いこなせる」は全く違います。私たちの子供は生まれた時からスマホやAIが身近にある「デジタルネイティブ世代」です。しかし、IT機器の与え方を間違えると、将来の可能性を閉ざす「受動的な消費者」になってしまう危険性があります。",
+          "startFrame": 413,
+          "endFrame": 996
+        }
+      ]
+    },
+    {
+      "slide": 3,
+      "startFrame": 1026,
+      "endFrame": 1661,
+      "audioFile": "audio_it_ai/slide_003.wav",
+      "audioStartFrame": 1086,
+      "audioDuration": 18.173333333333332,
+      "subtitles": [
+        {
+          "text": "あなたのお子さんは、どちら側にいますか？左は消費者。動画を見る、ゲームをする、SNSを眺める。右は創造者。プログラミング、動画編集、デザイン制作。この違いが将来を大きく左右します。",
+          "startFrame": 1086,
+          "endFrame": 1631
+        }
+      ]
+    },
+    {
+      "slide": 4,
+      "startFrame": 1661,
+      "endFrame": 2267,
+      "audioFile": "audio_it_ai/slide_004.wav",
+      "audioStartFrame": 1721,
+      "audioDuration": 17.224,
+      "subtitles": [
+        {
+          "text": "その使い方、実は「学びの質」のサインです。お子さんが普段、ゲームやYouTubeをどのように使っているか、一度じっくり観察してみてください。同じツールでも、使い方によって「天と地ほどの差」が生まれています。",
+          "startFrame": 1721,
+          "endFrame": 2237
+        }
+      ]
+    },
+    {
+      "slide": 5,
+      "startFrame": 2267,
+      "endFrame": 3022,
+      "audioFile": "audio_it_ai/slide_005.wav",
+      "audioStartFrame": 2327,
+      "audioDuration": 22.168,
+      "subtitles": [
+        {
+          "text": "マインクラフトで見える「深める力」の差。深められない子は、目の前のモブを倒して満足、同じことの繰り返し。深められる子は、「この建物を作りたい」と目標を持ち、分からないことを自分で調べ、試行錯誤して創意工夫する。同じゲームでも学びの質が全く違います。",
+          "startFrame": 2327,
+          "endFrame": 2992
+        }
+      ]
+    },
+    {
+      "slide": 6,
+      "startFrame": 3022,
+      "endFrame": 3697,
+      "audioFile": "audio_it_ai/slide_006.wav",
+      "audioStartFrame": 3082,
+      "audioDuration": 19.514666666666667,
+      "subtitles": [
+        {
+          "text": "YouTubeで見える「能動性」の差。受動的な視聴は、おすすめに出てきた動画を何となく見る、流れてくるものをただ消費する。能動的な視聴は、知りたいことを目的を持って検索する、疑問や興味から自分で選ぶ、見た後に実際にやってみる。",
+          "startFrame": 3082,
+          "endFrame": 3667
+        }
+      ]
+    },
+    {
+      "slide": 7,
+      "startFrame": 3697,
+      "endFrame": 4192,
+      "audioFile": "audio_it_ai/slide_007.wav",
+      "audioStartFrame": 3757,
+      "audioDuration": 13.533333333333333,
+      "subtitles": [
+        {
+          "text": "「またゲームしてる」で、一括りにしていませんか？マイクラで壮大な建築を創造する子。マイクラでただモブを倒し続ける子。この2人を、同じ扱いにしてはいけません。",
+          "startFrame": 3757,
+          "endFrame": 4163
+        }
+      ]
+    },
+    {
+      "slide": 8,
+      "startFrame": 4192,
+      "endFrame": 4846,
+      "audioFile": "audio_it_ai/slide_008.wav",
+      "audioStartFrame": 4252,
+      "audioDuration": 18.813333333333333,
+      "subtitles": [
+        {
+          "text": "親の役割は「禁止」から「方向づけ」へ。大人がすべきことは、子どもの活動に興味を持ち、「深める方向」に導く関わりです。具体的な問いかけ例として、「すごい！これ、どうやって作ったの？」「どうやって調べたの？教えて！」",
+          "startFrame": 4252,
+          "endFrame": 4816
+        }
+      ]
+    },
+    {
+      "slide": 9,
+      "startFrame": 4846,
+      "endFrame": 5599,
+      "audioFile": "audio_it_ai/slide_009.wav",
+      "audioStartFrame": 4906,
+      "audioDuration": 22.11466666666667,
+      "subtitles": [
+        {
+          "text": "子どもの可能性を引き出す「魔法の言葉」。ただ禁止する声かけ、「ゲームやめなさい！」「YouTubeばかり見て！」ではなく、深める方向に導く声かけを。「それ、もっとすごいことできないかな？」「調べたら、もっと面白いやり方があるかもよ？」「自分で何か作ってみたらどう？」",
+          "startFrame": 4906,
+          "endFrame": 5569
+        }
+      ]
+    },
+    {
+      "slide": 10,
+      "startFrame": 5599,
+      "endFrame": 6216,
+      "audioFile": "audio_it_ai/slide_010.wav",
+      "audioStartFrame": 5659,
+      "audioDuration": 17.594666666666665,
+      "subtitles": [
+        {
+          "text": "その「遊び」、消費ですか？成長ですか？ゲームであっても、「上達しよう」という努力が見えれば、それは価値のある時間です。上手い人の動画を研究する、攻略情報を自分で調べる、練習して技術を磨く。",
+          "startFrame": 5659,
+          "endFrame": 6186
+        }
+      ]
+    },
+    {
+      "slide": 11,
+      "startFrame": 6216,
+      "endFrame": 6818,
+      "audioFile": "audio_it_ai/slide_011.wav",
+      "audioStartFrame": 6276,
+      "audioDuration": 17.088,
+      "subtitles": [
+        {
+          "text": "「消費者」から「発信者」への道。今の「好き」が、未来の仕事になる時代。その共通点は、他者とつながる「情報発信者」であることです。プロゲーマー、YouTuber、配信者、インフルエンサー。",
+          "startFrame": 6276,
+          "endFrame": 6788
+        }
+      ]
+    },
+    {
+      "slide": 12,
+      "startFrame": 6818,
+      "endFrame": 7541,
+      "audioFile": "audio_it_ai/slide_012.wav",
+      "audioStartFrame": 6878,
+      "audioDuration": 21.128,
+      "subtitles": [
+        {
+          "text": "「見せる側」の視点を育てる問いかけ。「受け取る」だけでなく「発信する」意識を育てることで、情報を加工し、伝える力が身につきます。問いかけの例として、「このゲームの面白さ、人に教えるならどう説明する？」「自分のプレイを動画にしてみたら、面白いかもね！」",
+          "startFrame": 6878,
+          "endFrame": 7511
+        }
+      ]
+    },
+    {
+      "slide": 13,
+      "startFrame": 7541,
+      "endFrame": 7881,
+      "audioFile": "audio_it_ai/slide_013.wav",
+      "audioStartFrame": 7601,
+      "audioDuration": 8.36,
+      "subtitles": [
+        {
+          "text": "最初の「道具」が、子どもの未来を決める。スマートフォンは消費に最適化されたデバイス。タップするだけの受動的な操作、創作作業には不向き、最初のデバイスとしてはリスクが高い。PCは創造に向いているデバイス。キーボードによる能動的な入力、プログラミングや動画編集が快適、「作る側」の視点が自然と身につく。",
+          "startFrame": 7601,
+          "endFrame": 7851
+        }
+      ]
+    },
+    {
+      "slide": 14,
+      "startFrame": 7881,
+      "endFrame": 8846,
+      "audioFile": "audio_it_ai/slide_014.wav",
+      "audioStartFrame": 7941,
+      "audioDuration": 29.194666666666667,
+      "subtitles": [
+        {
+          "text": "子どものデジタルジャーニー・ロードマップ。ステップ1、PCから始めよう。小学校低学年から。タイピング練習、Scratchなどでプログラミング体験。ステップ2、タブレットは目的を持って。必要に応じて。学習アプリなど、用途を限定。ステップ3、スマホは最後に。中学生以降。自己管理ができる年齢になってから、親子でルールを明確に。",
+          "startFrame": 7941,
+          "endFrame": 8816
+        }
+      ]
+    },
+    {
+      "slide": 15,
+      "startFrame": 8846,
+      "endFrame": 9454,
+      "audioFile": "audio_it_ai/slide_015.wav",
+      "audioStartFrame": 8906,
+      "audioDuration": 17.288,
+      "subtitles": [
+        {
+          "text": "あなたの一つの「問い」が、世界を変える創造者を育てる。デジタル世界は、消費するだけの場所ではありません。子どもたちが未来をちが未来を創るための、無限のキャンバスです。その最初の筆を渡すのは、あなたです。",
+          "startFrame": 8906,
+          "endFrame": 9424
+        }
+      ]
+    },
+    {
+      "slide": 16,
+      "startFrame": 9454,
+      "endFrame": 9790,
+      "audioFile": "audio_it_ai/slide_016.wav",
+      "audioStartFrame": 9514,
+      "audioDuration": 8.208,
+      "subtitles": [
+        {
+          "text": "AI時代の子育て、新しい「学びの地図」をひらく。ここからはAIとの付き合い方についてお話しします。",
+          "startFrame": 9514,
+          "endFrame": 9760
+        }
+      ]
+    },
+    {
+      "slide": 17,
+      "startFrame": 9790,
+      "endFrame": 10519,
+      "audioFile": "audio_it_ai/slide_017.wav",
+      "audioStartFrame": 9850,
+      "audioDuration": 21.314666666666668,
+      "subtitles": [
+        {
+          "text": "AIは、もうすぐそばにいる。2022年11月、ChatGPT登場。わずか2ヶ月で1億ユーザーを突破。子どもたちも日常的にAIに触れる時代へ。学校でもAI活用の議論が活発化。これは、避けては通れない新しい現実です。",
+          "startFrame": 9850,
+          "endFrame": 10489
+        }
+      ]
+    },
+    {
+      "slide": 18,
+      "startFrame": 10519,
+      "endFrame": 11038,
+      "audioFile": "audio_it_ai/slide_018.wav",
+      "audioStartFrame": 10579,
+      "audioDuration": 14.322666666666667,
+      "subtitles": [
+        {
+          "text": "これまでのルール：「年齢」という線引き。ChatGPT、Claude、Gemini、Copilot。ほとんどのサービスが13歳以上、18歳未満は保護者同意がルールです。",
+          "startFrame": 10579,
+          "endFrame": 11008
+        }
+      ]
+    },
+    {
+      "slide": 19,
+      "startFrame": 11038,
+      "endFrame": 11892,
+      "audioFile": "audio_it_ai/slide_019.wav",
+      "audioStartFrame": 11098,
+      "audioDuration": 25.469333333333335,
+      "subtitles": [
+        {
+          "text": "でも、大切なのは年齢だけではない。専門家が指摘するのは、年齢よりも子どもの発達度合いです。批判的思考力、物事を鵜呑みにしない力。情報リテラシー、情報の正しさを見抜く力。自己管理能力、自分で使い方をコントロールする力。重要なのは、保護者と一緒に始めること。",
+          "startFrame": 11098,
+          "endFrame": 11862
+        }
+      ]
+    },
+    {
+      "slide": 20,
+      "startFrame": 11892,
+      "endFrame": 12656,
+      "audioFile": "audio_it_ai/slide_020.wav",
+      "audioStartFrame": 11952,
+      "audioDuration": 22.493333333333332,
+      "subtitles": [
+        {
+          "text": "保護者の役割は「禁止する人」から「案内する人」へ。やってはいけないこと。完全に禁止する、これは現実的でない。野放しにする、これはリスクが高い。やるべきこと。一緒に使って特性を理解する。AIの限界と注意点を教える。良い使い方の手本を見せる。",
+          "startFrame": 11952,
+          "endFrame": 12626
+        }
+      ]
+    },
+    {
+      "slide": 21,
+      "startFrame": 12656,
+      "endFrame": 13318,
+      "audioFile": "audio_it_ai/slide_021.wav",
+      "audioStartFrame": 12716,
+      "audioDuration": 19.069333333333333,
+      "subtitles": [
+        {
+          "text": "AIとの付き合い方には、二つの道がある。思考停止の道。宿題の答えをコピー、AIの回答を鵜呑み、考えることを放棄。思考を深める道。分からないことを深掘り、自分で検証、考えの整理に使う。",
+          "startFrame": 12716,
+          "endFrame": 13288
+        }
+      ]
+    },
+    {
+      "slide": 22,
+      "startFrame": 13318,
+      "endFrame": 13911,
+      "audioFile": "audio_it_ai/slide_022.wav",
+      "audioStartFrame": 13378,
+      "audioDuration": 16.773333333333333,
+      "subtitles": [
+        {
+          "text": "最もありがちな落とし穴：「単発質問」。「織田信長について教えて」、回答を読んで終わり。これでは、検索エンジンと変わりません。表面的な情報しか得られない。自分の頭で考える機会を失う。",
+          "startFrame": 13378,
+          "endFrame": 13881
+        }
+      ]
+    },
+    {
+      "slide": 23,
+      "startFrame": 13911,
+      "endFrame": 14699,
+      "audioFile": "audio_it_ai/slide_023.wav",
+      "audioStartFrame": 13971,
+      "audioDuration": 23.269333333333332,
+      "subtitles": [
+        {
+          "text": "本当の価値は「対話」を続けることで生まれる。「織田信長について教えて」から始めて、「なぜ楽市楽座を始めたの？」「当時の経済状況は？」「他の大名と比べてどう違った？」「現代のビジネスに活かせる点は？」と深掘りする。1つのテーマを多角的に深掘りすることで、本当の理解につながる。",
+          "startFrame": 13971,
+          "endFrame": 14669
+        }
+      ]
+    },
+    {
+      "slide": 24,
+      "startFrame": 14699,
+      "endFrame": 15278,
+      "audioFile": "audio_it_ai/slide_024.wav",
+      "audioStartFrame": 14759,
+      "audioDuration": 16.309333333333335,
+      "subtitles": [
+        {
+          "text": "上級編：AIに「答え」ではなく「問い」をもらう。AIに「問い」を生成させる。「この考えの弱点は何？」「反対意見を教えて」。AIとディベートする。「私はこう思うけど、どう思う？」",
+          "startFrame": 14759,
+          "endFrame": 15248
+        }
+      ]
+    },
+    {
+      "slide": 25,
+      "startFrame": 15278,
+      "endFrame": 16265,
+      "audioFile": "audio_it_ai/slide_025.wav",
+      "audioStartFrame": 15338,
+      "audioDuration": 29.904,
+      "subtitles": [
+        {
+          "text": "実践例1：学習の「プロセス」を助けてもらう。数学の問題。バツ、「この問題の答えを教えて」。マル、「途中まで解いたけど、ここから先のヒントを頂戴」「別の解き方はある？」。読書感想文。バツ、「まるまるの読書感想文を書いて」。マル、「この本の感想、もっと良くするにはどうすればいい？」「この表現、別の言い方はある？」",
+          "startFrame": 15338,
+          "endFrame": 16235
+        }
+      ]
+    },
+    {
+      "slide": 26,
+      "startFrame": 16265,
+      "endFrame": 17089,
+      "audioFile": "audio_it_ai/slide_026.wav",
+      "audioStartFrame": 16325,
+      "audioDuration": 24.472,
+      "subtitles": [
+        {
+          "text": "実践例2：子どもの「主体性」を伸ばす使い方。調べ学習・自由研究。バツ、「自由研究のテーマを決めて」。マル、「私はまるまるに興味があるんだけど、どんな研究テーマが考えられる？」「この実験、家でできる？」「結果をどうまとめればいい？」。好奇心を広げるパートナーとして使う。",
+          "startFrame": 16325,
+          "endFrame": 17059
+        }
+      ]
+    },
+    {
+      "slide": 27,
+      "startFrame": 17089,
+      "endFrame": 18015,
+      "audioFile": "audio_it_ai/slide_027.wav",
+      "audioStartFrame": 17149,
+      "audioDuration": 27.874666666666666,
+      "subtitles": [
+        {
+          "text": "思考力を育む「4つのステップ」。1、まず自分で考える。自分の意見をまとめてからAIに聞く。2、AIの回答を疑う。「本当にそう？」と一度立ち止まる。3、追加質問で深掘り。「なぜ？」「他には？」を繰り返す。4、最後は自分で判断。AIはあくまで参考。結論は自分自身で出す。",
+          "startFrame": 17149,
+          "endFrame": 17985
+        }
+      ]
+    },
+    {
+      "slide": 28,
+      "startFrame": 18015,
+      "endFrame": 18848,
+      "audioFile": "audio_it_ai/slide_028.wav",
+      "audioStartFrame": 18075,
+      "audioDuration": 24.768,
+      "subtitles": [
+        {
+          "text": "安全な旅のための注意点。情報の正確性、AIは間違えることがある。重要な情報は必ず元の情報源で確認する。プライバシー、個人情報、名前、住所、学校名などは絶対に入力しない。依存しすぎない、AIなしでも考える習慣を大切にし、バランスを取る。",
+          "startFrame": 18075,
+          "endFrame": 18818
+        }
+      ]
+    },
+    {
+      "slide": 29,
+      "startFrame": 18848,
+      "endFrame": 19744,
+      "audioFile": "audio_it_ai/slide_029.wav",
+      "audioStartFrame": 18908,
+      "audioDuration": 26.877333333333333,
+      "subtitles": [
+        {
+          "text": "この旅の先に、私たちが本当に育てたい力。情報リテラシー、溢れる情報の中から、本物を見抜く力。批判的思考力、物事を鵜呑みにせず、多角的に考える力。創造力、AIを使いこなし、新しいものを生み出す力。コミュニケーション力、AIとも人とも、的確な対話ができる力。",
+          "startFrame": 18908,
+          "endFrame": 19714
+        }
+      ]
+    },
+    {
+      "slide": 30,
+      "startFrame": 19744,
+      "endFrame": 20735,
+      "audioFile": "audio_it_ai/slide_030.wav",
+      "audioStartFrame": 19804,
+      "audioDuration": 30.042666666666666,
+      "subtitles": [
+        {
+          "text": "さあ、どこから始めよう？小学校低学年、6歳から8歳。親子で一緒に質問を考えたり、AIに絵を描いてもらったりして、まずは楽しむことから。小学校高学年、9歳から12歳。調べ学習の補助や、プログラミングのサポート役として。中学生以上、13歳から。徐々に自立した活用へ。AIの回答を批判的に見る姿勢を育てる。",
+          "startFrame": 19804,
+          "endFrame": 20705
+        }
+      ]
+    }
+  ]
+}

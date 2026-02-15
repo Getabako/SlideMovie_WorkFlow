@@ -1,6 +1,14 @@
-/* Google Fonts - M PLUS 2 */
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@800&display=swap');
+/* Google Fonts - M PLUS 2 (ゴシック体) */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;600;700;800;900&display=swap');
+
+/* Noto Sans JP (バックアップ用ゴシック体) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap');
 
 /* M PLUS 2のfont-weightマッピング:
- * 800 = Heavy (ExtraBold)
+ * 400 = Regular
+ * 500 = Medium
+ * 600 = SemiBold
+ * 700 = Bold
+ * 800 = ExtraBold
+ * 900 = Black
  */

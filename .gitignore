@@ -24,3 +24,6 @@ presentations/scripts_output/
 .tmp/
 *.tmp
 .env
+drive_token.pickle
+youtube_token.pickle
+*.pickle

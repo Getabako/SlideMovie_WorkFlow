@@ -8,7 +8,8 @@ import os
 import json
 import re
 from pathlib import Path
-from pydub import AudioSegment
+from mutagen.mp3 import MP3
+from mutagen import File as MutagenFile
 
 def get_audio_duration(audio_file):
     """
@@ -20,8 +21,27 @@ def get_audio_duration(audio_file):
     Returns:
         音声の長さ（秒）
     """
-    audio = AudioSegment.from_file(audio_file)
-    return len(audio) / 1000.0  # ミリ秒から秒に変換
+    try:
+        # MP3の場合
+        if audio_file.lower().endswith('.mp3'):
+            audio = MP3(audio_file)
+            return audio.info.length
+        else:
+            # その他の形式
+            audio = MutagenFile(audio_file)
+            if audio is not None and audio.info is not None:
+                return audio.info.length
+            else:
+                raise Exception(f"Cannot read audio file: {audio_file}")
+    except Exception as e:
+        print(f"Warning: Could not read audio duration with mutagen: {e}")
+        # フォールバック: ffprobeを使用
+        import subprocess
+        result = subprocess.run(
+            ['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', audio_file],
+            capture_output=True, text=True
+        )
+        return float(result.stdout.strip())
 
 def find_line_break_position(text, max_chars):
     """
